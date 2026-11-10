@@ -1,77 +1,7377 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#10192e"><title>北京导游证 · 19天闯关 V2</title><style>
-:root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0e172c;color:#f4f7ff}.app{max-width:620px;margin:auto;min-height:100dvh;padding:18px 17px 96px;background:radial-gradient(circle at 10% 0%,#273a65 0,transparent 38%),#10192e}h1{font-size:27px;line-height:1.3;margin:24px 0 8px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:0 0 7px}.sub{color:#b2c2dc;font-size:13px;line-height:1.65}.top{display:flex;align-items:center;justify-content:space-between;gap:9px}.chip{background:#304463;border:1px solid #53688f;border-radius:99px;padding:7px 11px;font-size:12px}.panel{background:#1d2b47;border:1px solid #374c6e;border-radius:20px;padding:17px;margin:14px 0}.hero{background:linear-gradient(135deg,#345ba1,#6652a0);border-radius:22px;padding:20px;margin:20px 0}.hero strong{font-size:37px}.meters{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.meter{background:#ffffff1e;padding:12px 6px;text-align:center;border-radius:13px}.meter b{display:block;font-size:22px}.meter span{font-size:11px;color:#e0e8f7}.progress{height:9px;background:#ffffff31;border-radius:9px;overflow:hidden;margin:15px 0}.progress i{display:block;height:100%;background:#91edcb}.btn{display:block;width:100%;border:0;border-radius:14px;background:#91ecc5;color:#102638;padding:13px 14px;font:inherit;font-weight:800;min-height:47px;cursor:pointer}.btn.alt{background:#304564;color:#eaf1ff}.btn.outline{border:1px solid #516d91;background:transparent;color:#dfe9ff}.btn:disabled{opacity:.45}.split{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tabs{position:fixed;bottom:0;left:0;right:0;z-index:9;background:#111d34f5;display:flex;justify-content:center;gap:2px;border-top:1px solid #354967;padding:9px 6px calc(9px + env(safe-area-inset-bottom))}.tabs button{border:0;color:#acbed9;background:transparent;min-width:0;max-width:125px;flex:1;padding:8px 2px;border-radius:12px;font-size:12px}.tabs .sel{background:#344d70;color:#bafce0}.row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #364867}.row:last-child{border:0}.row main{flex:1;min-width:0}.row small{display:block;color:#adc1dc;margin-top:4px;line-height:1.4}.badge{display:inline-block;background:#334b72;border-radius:7px;padding:5px 8px;font-size:11px;color:#dbe9ff}.question{font-size:21px;font-weight:750;line-height:1.65;margin:18px 0}.opt{width:100%;border:1px solid #4a6384;background:#263a5b;color:white;text-align:left;padding:15px;margin:8px 0;border-radius:13px;font:inherit;line-height:1.5}.opt.good{background:#1c594b;border-color:#7be4b4}.opt.bad{background:#683b49;border-color:#f2a0a0}.explain{background:#283e5b;border-left:3px solid #92e7c2;padding:14px;border-radius:8px;line-height:1.7;margin:14px 0}.filter{width:100%;padding:12px;border:1px solid #586d8c;border-radius:12px;background:#1a2944;color:#fff;font:inherit}.muted{color:#b1c2db}a{color:#9becc7;overflow-wrap:anywhere}.site{padding:14px 0;border-bottom:1px solid #344766}.site:last-child{border:0}.prompt{padding:13px;border-radius:12px;background:#2b3e5e;line-height:1.75}.clock{font-size:42px;text-align:center;font-variant-numeric:tabular-nums;margin:14px}.tiny{font-size:11px;line-height:1.6;color:#b7c8e0}.code{font-size:13px;line-height:1.7}.inline{width:auto;min-height:38px;padding:8px 12px}.space{height:8px}.empty{text-align:center;padding:25px 10px;line-height:1.8;color:#c7d3e7}summary{cursor:pointer;line-height:1.5;font-weight:700}.group{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.group button{border:1px solid #4a6183;background:#2a3f62;color:#e9f1ff;border-radius:99px;padding:9px 11px}.group button.active{background:#91ecc5;color:#14283b}.warn{background:#3a3449;padding:13px;border-radius:10px;font-size:12px;line-height:1.7}
-</style></head><body><div class="app"><div class="top"><span class="chip">🏯 北京考区 · 初考 2026</span><span class="chip" id="date"></span></div><main id="main"></main></div><nav class="tabs"><button data-tab="home" onclick="jump('home')">🏠<br>今日</button><button data-tab="plan" onclick="jump('plan')">🗓<br>计划</button><button data-tab="wrong" onclick="jump('wrong')">📕<br>错题</button><button data-tab="speak" onclick="jump('speak')">🎙️<br>面试</button><button data-tab="library" onclick="jump('library')">📚<br>题库</button></nav><script>const BANK=[{"t":0,"q":"根据《中华人民共和国旅游法》，旅游者有权自主选择旅游产品和服务，并拒绝旅游经营者的哪种行为？","a":["强制交易","出示服务说明","依法核验身份","介绍行程"],"k":0,"e":"旅游者享有自主选择权，有权拒绝旅游经营者的强制交易行为。","id":"old0","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":0,"q":"下列哪项属于旅游者依法享有的权利？","a":["要求导游无条件更改所有行程","要求旅行社隐瞒危险信息","知悉其购买的旅游产品和服务的真实情况","不遵守旅游目的地公共秩序"],"k":2,"e":"旅游者对所购旅游产品和服务享有知情权。","id":"old1","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":1,"q":"旅行社组织旅游活动，通常应当与旅游者订立哪一种形式的合同？","a":["仅口头合同","书面合同","无需合同","仅短信表情确认"],"k":1,"e":"旅行社组织和安排旅游活动，应当与旅游者订立合同；包价旅游合同应采用书面形式。","id":"old2","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":1,"q":"在包价旅游合同中，以下哪项通常属于应当载明的事项？","a":["导游的私人住址","游客个人存款情况","旅游行程安排","游客私人通讯录"],"k":2,"e":"包价旅游合同应包括旅游行程安排等重要内容。","id":"old3","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":2,"q":"旅游者在人身、财产安全遇到危险时，有权请求谁给予救助和保护？","a":["仅其他游客","旅游经营者、当地政府和相关机构","仅旅游景点摄影师","仅旅游博主"],"k":1,"e":"《旅游法》规定旅游者在人身、财产安全遇到危险时，有权请求救助和保护。","id":"old4","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":2,"q":"旅游者应当尊重旅游目的地的哪些方面？","a":["当地文化传统和风俗习惯","只遵守出发地的风俗","只尊重购物场所规定","无需遵守公共秩序"],"k":0,"e":"旅游者应尊重当地风俗习惯、文化传统和宗教信仰等。","id":"old5","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":3,"q":"导游从事导游活动时，对旅游者的人身安全风险，应当如何处理？","a":["完全不予提示","仅向同事提示","及时作出真实说明和明确警示","事故后才说明"],"k":2,"e":"对可能危及旅游者人身、财产安全的情况，导游应作出真实说明和明确警示，并采取必要措施。","id":"old6","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":3,"q":"关于导游执业，下列做法更符合职业规范的是？","a":["擅自增加购物活动","根据个人收益更改行程","诱导游客参加自费活动","按照合同和接待计划提供服务"],"k":3,"e":"导游应当遵守旅游合同约定和职业规范，不擅自变更行程。","id":"old7","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":4,"q":"地陪接团前，首先应核对哪类与服务直接相关的信息？","a":["游客社交媒体粉丝数","接待计划与抵达时间地点","游客手机品牌","景区纪念品销售额"],"k":1,"e":"接团前核对接待计划、抵达交通工具、时间、地点和人数等是基础准备。","id":"old8","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":4,"q":"接站时，接团人员为防止接错团队，优先应核实什么？","a":["团队名称与人数等接待信息","游客衣着颜色","游客的购物计划","团员的手机壁纸"],"k":0,"e":"应核对团名、人数、领队等信息，确认接待对象。","id":"old9","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":5,"q":"一次清楚的景点讲解通常更适合怎样组织？","a":["大量堆砌术语","只背诵年代","围绕重点形成逻辑清晰的介绍","完全忽略游客兴趣"],"k":2,"e":"讲解应突出重点、逻辑清晰，兼顾准确性与游客需求。","id":"old10","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":5,"q":"在旅游讲解中，导游引用历史传说时应当怎样处理？","a":["一律当作史实","区分传说和有依据的史实","刻意隐藏来源","根据游客反应随意编造"],"k":1,"e":"历史事实和民间传说应加以区分，避免误导。","id":"old11","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":6,"q":"旅游团中有游客突然昏倒，导游最合适的第一步是？","a":["继续讲解","只拍照留存","立即组织求助并联系急救服务","等待旅游团投票"],"k":2,"e":"紧急情况应优先确保安全，及时求助医疗急救并协调现场处置。","id":"old12","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":6,"q":"遇到强降雨导致景区发布封闭公告，导游最恰当的做法是？","a":["带团绕行警戒线","遵守管制并协调安全替代安排","让游客自行决定是否翻越围栏","隐瞒景区停业信息"],"k":1,"e":"应遵守安全管控，做好信息告知和行程协调。","id":"old13","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":7,"q":"送团前导游应重点再次核实哪项内容？","a":["离开交通班次、时间及集合要求","当地网红排行榜","游客社交媒体资料","纪念品利润"],"k":0,"e":"送团前核对航班或车次、离站时间和集合安排，减少误机误车风险。","id":"old14","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":7,"q":"团队行程结束后，导游处理遗留问题应采取哪种态度？","a":["直接删除全部联络方式","及时记录和协调解决","统一推给游客","拒绝汇报"],"k":1,"e":"善后服务包括妥善处理遗留事项、反馈和总结。","id":"old15","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":8,"q":"秦始皇统一六国后推行的统一文字主要是哪一种？","a":["甲骨文","小篆","楷书","行书"],"k":1,"e":"秦朝以小篆作为统一文字的规范形式。","id":"old16","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":8,"q":"下列哪项被广泛认为是中国古代四大发明之一？","a":["瓷器","算盘","指南针","丝绸"],"k":2,"e":"四大发明通常指造纸术、印刷术、火药、指南针。","id":"old17","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":9,"q":"《清明上河图》通常与哪位画家联系在一起？","a":["顾恺之","吴道子","张择端","唐寅"],"k":2,"e":"《清明上河图》作者通常认为是北宋画家张择端。","id":"old18","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":9,"q":"《红楼梦》通常被归入哪一文学体裁？","a":["章回体长篇小说","唐诗","汉赋","元杂剧"],"k":0,"e":"《红楼梦》是中国古典章回体长篇小说的代表作品。","id":"old19","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":10,"q":"我国少数民族中，以泼水节闻名的是哪一个民族？","a":["傣族","藏族","回族","蒙古族"],"k":0,"e":"泼水节是傣族等民族的重要传统节日。","id":"old20","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":10,"q":"佛教传入中国主要发生在以下哪个时期？","a":["明清时期","两汉之际","宋元时期","民国时期"],"k":1,"e":"佛教约于两汉之际传入中国，之后逐渐传播发展。","id":"old21","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":11,"q":"中国古代建筑常以哪种结构体系为典型特征？","a":["木构架体系","全玻璃幕墙","钢筋混凝土框架","张拉膜结构"],"k":0,"e":"传统中国建筑以木构架体系为典型，辅以斗拱等构件。","id":"old22","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":11,"q":"中国传统建筑中的“斗拱”主要与哪一部分有关？","a":["屋面及梁柱之间的承托与传力","庭院排水管道","地下供暖","外墙玻璃"],"k":0,"e":"斗拱是传统木结构建筑中的承托和传力构件。","id":"old23","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":12,"q":"中国古典园林常见的造景手法是？","a":["借景","全封闭无窗","一律规则对称","完全取消水景"],"k":0,"e":"借景是中国古典园林常见的空间组织与造景手法。","id":"old24","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":12,"q":"苏州古典园林更典型地体现了哪一类园林特色？","a":["江南私家园林","现代主题乐园","古罗马园林","热带植物园"],"k":0,"e":"苏州古典园林是江南私家园林艺术的重要代表。","id":"old25","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":13,"q":"我国面积最大的淡水湖通常是以下哪一个？","a":["青海湖","鄱阳湖","纳木错","艾丁湖"],"k":1,"e":"鄱阳湖通常被称为我国面积最大的淡水湖，其水域面积具有季节变化。","id":"old26","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":13,"q":"我国地势总的特点是？","a":["东高西低","西高东低，呈阶梯状分布","南高北低且全部平坦","全国平均海拔相同"],"k":1,"e":"我国地势整体西高东低，呈三级阶梯状下降。","id":"old27","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":14,"q":"地方导游基础知识复习时，最应优先核对的是？","a":["报考省份的地方考纲与特色景点","所有省份同等篇幅盲背","游客个人旅行日记","网红榜单热度"],"k":0,"e":"地方基础知识应结合报考地的考试大纲，掌握本地历史文化、景观和物产。","id":"old28","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":14,"q":"现场导游考试的景点讲解范围，通常应以什么为准？","a":["所在省公布的现场考试大纲","任意短视频推荐","旅行社促销文案","考生个人喜好"],"k":0,"e":"各省发布现场考试大纲，讲解景点和规则应以所在地官方要求为准。","id":"old29","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":15,"q":"在介绍地方饮食与特产时，导游优先应该保证信息具有什么特征？","a":["越夸张越好","准确且能说明地方文化背景","只有售价没有来源","任何传说都当成史实"],"k":1,"e":"介绍风物特产应重准确性与文化解释，避免夸大宣传。","id":"old30","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":15,"q":"导游介绍某地非物质文化遗产项目，最好重点讲清什么？","a":["表演者的私生活","传承方式及文化价值","未经核实的商业排名","个人购物提成"],"k":1,"e":"非遗讲解重点应是起源背景、技艺特征、传承与文化价值。","id":"old31","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":16,"q":"笔试错题复盘更有效的方式是？","a":["只记正确选项字母","找到对应知识点并间隔复练","只刷会的题","完全不看解析"],"k":1,"e":"记录错因并在间隔后重做更有助于稳固知识。","id":"old32","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":17,"q":"2026年导游资格考试笔试设置为几张合并试卷？","a":["一张","两张","三张","四张"],"k":1,"e":"《政策与法律法规》＋《导游业务》一张；《全国导游基础知识》＋《地方导游基础知识》一张。","id":"old33","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"t":18,"q":"笔试考前一天最适合的安排是什么？","a":["熬夜背新书","只做极难偏题","复核准考证和交通并回顾重点错题","临时更换所有教材"],"k":2,"e":"考前应优先确认考务信息、休息与巩固知识，避免过度负荷。","id":"old34","cat":"全国笔试","source":"原创练习 · 2026考纲考点"},{"id":"bj0","cat":"北京地方","q":"北京是我国的哪一类行政区？","a":["自治区","直辖市","特别行政区","省"],"k":1,"e":"北京是中华人民共和国首都、直辖市。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj1","cat":"北京地方","q":"北京的城市传统空间骨架最具代表性的是？","a":["北京中轴线","京杭铁路","长安街以南环路","机场高速"],"k":0,"e":"北京中轴线体现了古都规划秩序，2024年列入世界遗产名录。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj2","cat":"北京地方","q":"下列哪组均位于北京？","a":["故宫、天坛、颐和园","兵马俑、故宫、黄鹤楼","布达拉宫、天坛、拙政园","莫高窟、长城、岳阳楼"],"k":0,"e":"故宫、天坛、颐和园都位于北京。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj3","cat":"北京地方","q":"北京传统民居中较有代表性的院落形式是？","a":["四合院","吊脚楼","碉楼","窑洞"],"k":0,"e":"北京四合院通常围绕院落布置房屋，反映传统居住文化。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj4","cat":"北京地方","q":"北京传统街巷中，“胡同”通常指的是？","a":["城市街巷","水渠名称","山间栈道","城墙敌楼"],"k":0,"e":"胡同是北京传统街巷空间的重要组成部分。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj5","cat":"北京地方","q":"故宫主要位于北京哪条传统城市规划轴线上？","a":["中轴线","西直门大街","二环辅路","通惠河"],"k":0,"e":"故宫处于北京传统中轴线的核心地段。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj6","cat":"北京地方","q":"北京传统工艺“景泰蓝”的工艺类别是？","a":["金属胎掐丝珐琅","木版年画","丝织刺绣","石刻拓印"],"k":0,"e":"景泰蓝常指铜胎掐丝珐琅工艺。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj7","cat":"北京地方","q":"“京剧”在艺术门类中属于？","a":["戏曲","曲艺相声","交响乐","民歌"],"k":0,"e":"京剧是中国戏曲的代表性剧种之一。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj8","cat":"北京地方","q":"下列哪座博物馆位于天安门广场东侧？","a":["中国国家博物馆","北京自然博物馆","故宫珍宝馆","首都博物馆"],"k":0,"e":"中国国家博物馆位于天安门广场东侧。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj9","cat":"北京地方","q":"北京重要的古人类遗址是？","a":["周口店北京人遗址","半坡遗址","河姆渡遗址","三星堆遗址"],"k":0,"e":"周口店北京人遗址是研究古人类的重要遗址，也是世界遗产。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj10","cat":"北京地方","q":"以下哪个属于北京传统商业文化代表街区？","a":["前门大栅栏","南京夫子庙","上海城隍庙","成都宽窄巷子"],"k":0,"e":"前门大栅栏是北京传统商业街区的代表。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj11","cat":"北京地方","q":"北京传统小吃中具有代表性的是？","a":["豆汁儿","肠粉","螺蛳粉","热干面"],"k":0,"e":"豆汁儿是北京地方饮食文化中的传统小吃。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj12","cat":"北京地方","q":"“北京中轴线——中国理想都城秩序的杰作”于哪一年列入世界遗产名录？","a":["2014年","2019年","2024年","2026年"],"k":2,"e":"北京中轴线于2024年列入《世界遗产名录》。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj13","cat":"北京地方","q":"京杭大运河历史上与北京城市发展的哪一方面关系密切？","a":["漕运与物资运输","海上远洋捕鲸","高原牧业","盐湖采矿"],"k":0,"e":"大运河的重要历史功能包括漕运和物资运输，对北京发展影响深远。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj14","cat":"北京地方","q":"北京孔庙与国子监主要关联哪类历史文化？","a":["儒家礼制与古代教育","道教炼丹","宫廷园林","军事城防"],"k":0,"e":"孔庙与祭孔礼制相关，国子监是古代中央官学。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj15","cat":"北京地方","q":"恭王府主要是一处什么类型的建筑遗存？","a":["清代王府及花园","明代皇家祭坛","近代火车站","古代佛塔"],"k":0,"e":"恭王府是清代王府建筑群，兼有花园空间。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj16","cat":"北京地方","q":"雍和宫如今较为人熟知的宗教功能是？","a":["藏传佛教寺院","天主教堂","伊斯兰教清真寺","道教宫观"],"k":0,"e":"雍和宫是北京著名的藏传佛教寺院。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj17","cat":"北京地方","q":"北京奥林匹克公园包含以下哪一场馆？","a":["国家体育场（鸟巢）","上海东方明珠","广州塔","深圳平安金融中心"],"k":0,"e":"国家体育场（鸟巢）位于北京奥林匹克公园区域。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj18","cat":"六大讲解","q":"故宫博物院所在的建筑群通常称作？","a":["紫禁城","圆明园","避暑山庄","大明宫"],"k":0,"e":"故宫以明清两代宫殿建筑群紫禁城为基础。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj19","cat":"六大讲解","q":"故宫内廷“三宫”通常指？","a":["乾清宫、交泰殿、坤宁宫","太和殿、中和殿、保和殿","养心殿、奉先殿、宁寿宫","午门、神武门、东华门"],"k":0,"e":"乾清宫、交泰殿、坤宁宫组成内廷后三宫。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj20","cat":"六大讲解","q":"故宫外朝“三大殿”是？","a":["太和殿、中和殿、保和殿","乾清宫、交泰殿、坤宁宫","文华殿、武英殿、养心殿","太和门、午门、神武门"],"k":0,"e":"外朝三大殿为太和殿、中和殿、保和殿。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj21","cat":"六大讲解","q":"天坛圜丘坛主要与哪一类古代典礼有关？","a":["祭天","祭地","科举","封禅泰山"],"k":0,"e":"圜丘坛为明清帝王祭天的重要场所。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj22","cat":"六大讲解","q":"天坛祈年殿主要与哪一类祈祷活动联系密切？","a":["祈谷","祭海","阅兵","科举"],"k":0,"e":"祈年殿用于祈谷等相关礼仪。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj23","cat":"六大讲解","q":"颐和园最著名的湖泊是？","a":["昆明湖","后海","什刹海","密云水库"],"k":0,"e":"昆明湖与万寿山构成颐和园山水格局。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj24","cat":"六大讲解","q":"颐和园长廊坐落于哪个湖泊北岸一带？","a":["昆明湖","太湖","西湖","洞庭湖"],"k":0,"e":"颐和园长廊沿昆明湖北岸一带展开。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj25","cat":"六大讲解","q":"八达岭长城属于北京哪一重要历史建筑体系？","a":["明长城","秦始皇陵","大运河","清西陵"],"k":0,"e":"八达岭是明长城的重要地段。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj26","cat":"六大讲解","q":"明十三陵主要是哪个朝代皇帝陵寝群？","a":["明朝","唐朝","宋朝","元朝"],"k":0,"e":"明十三陵是明代皇帝陵寝群，位于北京昌平区。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj27","cat":"六大讲解","q":"明十三陵中通常供游客参观且知名度很高的地下宫殿位于？","a":["定陵","长陵","景陵","泰陵"],"k":0,"e":"定陵地宫是明十三陵中的著名参观内容。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj28","cat":"六大讲解","q":"天安门广场中心位置的重要纪念建筑是？","a":["人民英雄纪念碑","天坛祈年殿","景山万春亭","北海白塔"],"k":0,"e":"人民英雄纪念碑位于天安门广场中心区域。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj29","cat":"六大讲解","q":"景山公园内的万春亭常被用来观赏？","a":["北京中轴线与故宫全景","海滨日出","黄山云海","漓江山水"],"k":0,"e":"景山万春亭地势较高，可俯瞰故宫与中轴线。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj30","cat":"业务法规","q":"游客在行程中出现突发疾病，导游首先应当？","a":["优先联系急救与保障人身安全","先安排购物","要求其他游客自行处理","等全部行程结束再处置"],"k":0,"e":"突发疾病应第一时间采取安全措施并请求专业医疗救助。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj31","cat":"业务法规","q":"导游介绍历史传说时，最符合职业要求的是？","a":["清楚区分传说与史实","把传说一律说成史实","为了精彩任意编造","只讲传说不讲依据"],"k":0,"e":"应真实、准确讲解，避免把未经证实的内容当作历史事实。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj32","cat":"业务法规","q":"旅行社安排旅游活动，哪些做法更符合法律和服务要求？","a":["按合同提供约定服务","未协商强制增加购物点","隐瞒明显安全风险","擅自减少约定景点"],"k":0,"e":"旅行社及导游应按照合同约定提供服务。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj33","cat":"业务法规","q":"2026年北京初考笔试安排是？","a":["两张合卷，上午各90分钟","四张分卷，每张120分钟","只有一张卷","笔试与面试同一张卷"],"k":0,"e":"科目一二合卷9:00–10:30，科目三四合卷10:30–12:00。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj34","cat":"历年回忆","q":"【2023回忆考点改编】新民主主义革命的开端通常以哪一历史事件为标志？","a":["五四运动","辛亥革命","戊戌变法","西安事变"],"k":0,"e":"五四运动发生在1919年。来源为第三方2023考后回忆题考点，题干与选项重新编写。","tag":"2023回忆改编","source":"2023考后回忆考点改编 · 环球网校 · 非官方原卷"},{"id":"bj35","cat":"历年回忆","q":"【2023回忆考点改编】中国面积最大的群岛是哪一群岛？","a":["舟山群岛","庙岛群岛","南沙群岛","长山群岛"],"k":0,"e":"舟山群岛一般被认为是我国最大的群岛。来源为第三方2023考后回忆题考点，选项系重新编写。","tag":"2023回忆改编","source":"2023考后回忆考点改编 · 环球网校 · 非官方原卷"},{"id":"bj36","cat":"历年回忆","q":"【2023回忆考点改编】《滕王阁序》中“穷且益坚，不坠青云之志”出自哪位作者？","a":["王勃","苏轼","李白","杜甫"],"k":0,"e":"该名句出自王勃《滕王阁序》。2023第三方回忆题涉及该知识点，此题为改编。","tag":"2023回忆改编","source":"2023考后回忆考点改编 · 环球网校 · 非官方原卷"},{"id":"bj37","cat":"历年回忆","q":"【2023回忆考点改编】中国古代诗歌总集《诗经》的三大类别是？","a":["风、雅、颂","赋、比、兴","唐、宋、元","经、史、子"],"k":0,"e":"《诗经》内容一般分为风、雅、颂；赋、比、兴是常见表现手法。2023考后回忆题考点改编。","tag":"2023回忆改编","source":"2023考后回忆考点改编 · 环球网校 · 非官方原卷"},{"id":"bj38","cat":"历年回忆","q":"【2023回忆考点改编】传统屋顶中有一条正脊、四条垂脊和四条戗脊的是？","a":["歇山顶","庑殿顶","悬山顶","硬山顶"],"k":0,"e":"歇山顶由九脊构成，常称九脊顶。来源为2023第三方回忆题考点改编。","tag":"2023回忆改编","source":"2023考后回忆考点改编 · 环球网校 · 非官方原卷"},{"id":"bj39","cat":"历年回忆","q":"【2023回忆考点改编】以下哪座石窟的奉先寺有著名卢舍那大佛？","a":["龙门石窟","敦煌莫高窟","云冈石窟","麦积山石窟"],"k":0,"e":"奉先寺卢舍那大佛为洛阳龙门石窟代表性造像。来源为2023第三方回忆题考点改编。","tag":"2023回忆改编","source":"2023考后回忆考点改编 · 环球网校 · 非官方原卷"},{"id":"bj40","cat":"全国笔试","q":"以下哪一项属于中国古代四大发明？","a":["活字印刷术","蒸汽机","电灯","电话"],"k":0,"e":"印刷术是中国古代四大发明之一。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj41","cat":"全国笔试","q":"以下哪座建筑属于中国古代坛庙建筑？","a":["北京天坛","上海外滩海关大楼","广州塔","国家大剧院"],"k":0,"e":"天坛是明清皇家祭天建筑群。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj42","cat":"全国笔试","q":"“借景”主要属于哪一类传统艺术手法？","a":["园林造景","书法笔法","青铜冶炼","戏曲唱腔"],"k":0,"e":"借景通过组织园外景观增加园林空间层次。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj43","cat":"全国笔试","q":"秦始皇统一后作为官方规范文字推广的是？","a":["小篆","楷书","草书","行书"],"k":0,"e":"秦代统一文字以小篆为规范。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj44","cat":"全国笔试","q":"“三山五园”主要与哪座城市的历史园林相关？","a":["北京","南京","西安","开封"],"k":0,"e":"三山五园指北京西郊皇家园林群。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj45","cat":"全国笔试","q":"下列与北京地区文化相关的国家级代表性非遗是？","a":["京剧","昆曲仅属福建","粤剧仅属北京","川剧仅属天津"],"k":0,"e":"京剧是北京重要的代表性传统戏曲文化。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj46","cat":"北京地方","q":"北京的“什刹海”主要以哪种景观与城市生活文化闻名？","a":["湖泊水系与胡同街区","热带雨林","海滨沙滩","高山冰川"],"k":0,"e":"什刹海兼有水面景观、胡同和传统街区。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj47","cat":"北京地方","q":"北京的北海公园以哪座建筑作为著名地标？","a":["白塔","雷峰塔","大雁塔","六和塔"],"k":0,"e":"北海琼华岛白塔是园内标志性景观。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj48","cat":"北京地方","q":"以下哪个场所主要关联北京传统皇家祭天仪式？","a":["天坛","圆明园","恭王府","钟鼓楼"],"k":0,"e":"天坛是明清帝王祭天与祈谷的重要场所。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj49","cat":"北京地方","q":"与北京胡同文化关系最密切的传统住宅院落为？","a":["四合院","福建土楼","徽州围屋","川西吊脚楼"],"k":0,"e":"北京四合院与胡同共同构成典型传统街区风貌。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"},{"id":"bj50","cat":"北京地方","q":"北京传统工艺中，有“燕京八绝”之称的一组工艺包含？","a":["景泰蓝","苏绣","龙泉青瓷","宜兴紫砂"],"k":0,"e":"景泰蓝是燕京八绝之一。","tag":"北京专项","source":"原创练习 · 对照2026北京考纲"}];
-const SOURCES=[["2026 北京考试通知", "北京市文化和旅游局 · 2026", "https://whlyj.beijing.gov.cn/zwgk/tzgg/202608/t20260806_4811381.html"], ["2026 北京面试大纲（原件）", "北京市文化和旅游局 · 2026", "https://whlyj.beijing.gov.cn/zwgk/tzgg/202607/P020260731709313684567.pdf"], ["2026 全国笔试大纲", "文化和旅游部 · 2026", "https://zwgk.mct.gov.cn/zfxxgkml/scgl/202607/t20260730_966721.html"], ["2023 科目三四回忆题", "环球网校 · 2023 考后回忆，非官方", "https://www.hqwx.com/dyz-kaoshi/news/17267375252553.html"], ["2023 科目一二回忆题", "环球网校 · 2023 考后回忆，非官方", "https://www.hqwx.com/dyz-kaoshi/news/17267243769244.html"], ["2022–2025 历年题资料索引", "环球青藤 · 第三方资料", "https://www.hqwx.com/dyz-kaoshi/news/17719033232584.html"]];
-const SITES=[["天安门及天安门广场", "天安门城楼、广场格局、人民英雄纪念碑、人民大会堂与国家博物馆", "按位置与空间格局开场，说明天安门及广场的国家象征意义，再讲纪念性建筑，最后介绍参观秩序。", "请按从北向南的空间顺序介绍广场重要景观。"], ["故宫", "明清皇宫、紫禁城、中轴线、外朝三大殿、内廷后三宫", "先交代历史与整体布局，再用“外朝—内廷”串联太和殿、乾清宫等主要建筑，避免只堆年代。", "外朝三大殿和内廷后三宫各有什么区别？"], ["天坛", "明清皇家祭天建筑群、圜丘坛、皇穹宇、祈年殿、礼制文化", "用祭天与祈谷的不同功能串起建筑，再讲中轴布局、建筑色彩与礼制象征。", "圜丘坛与祈年殿用途有什么区别？"], ["颐和园", "万寿山、昆明湖、长廊、佛香阁、皇家园林、借景", "从山水格局切入，围绕昆明湖与万寿山讲园林空间，选长廊或佛香阁深入展开。", "颐和园如何体现中国园林的山水布局？"], ["长城", "古代军事防御工程、明长城、八达岭、城墙、敌台、关城", "先讲建造与防御作用，再以八达岭等北京段为例说明城墙、敌台与关隘；强调长城不是单一年代修建。", "城墙、敌台与关城各起什么作用？"], ["明十三陵", "昌平、明代皇家陵寝群、长陵、定陵、神道、陵寝礼制", "先讲选址与陵寝整体格局，再以长陵、定陵说明建筑与历史，收束于保护文物的意义。", "明十三陵为何称“十三陵”，定陵以什么闻名？"]];
-const QUESTION_SITES=["天安门及天安门广场", "故宫", "天坛", "颐和园", "长城", "明十三陵", "周口店北京人遗址", "大运河", "中轴线", "恭王府", "北海", "景山", "雍和宫", "奥林匹克公园", "孔庙和国子监"];
-const PLAN=["北京：城市概况与中轴线", "北京：故宫与天安门", "北京：天坛与祭祀礼制", "北京：颐和园与皇家园林", "北京：长城与明十三陵", "北京：胡同、非遗与饮食", "北京：其他9处问答景点", "政策法规：旅游法与旅游合同", "政策法规：权益与导游规范", "导游业务：接团与讲解", "导游业务：安全与应急", "全国基础：历史、文学", "全国基础：宗教、民族", "全国基础：建筑、园林", "地方基础：跨省地理与北京", "2023回忆题考点重练", "面试：6景点口述计时", "全科模拟与薄弱知识", "准考证检查与错题冲刺"];
-
-const EXAM=new Date(2026,10,21), START=new Date(2026,10,2), KEY='guide-beijing-v2';
-let state={xp:0,wrong:{},done:{},history:[],review:{},spoken:{},favorites:{}};try{state=Object.assign(state,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){};
-const old=(()=>{try{return JSON.parse(localStorage.getItem('tour-guide-19day-v1')||'{}')}catch(e){return {}}})();if(!state.migrated&&old){state.xp=Math.max(state.xp,old.xp||0);state.migrated=true;}
-const byid=Object.fromEntries(BANK.map(x=>[x.id,x]));let view='home',deck=[],qi=0,answer=null,score=0,mode='',focusDay=0,category='全部',speakingIndex=0,seconds=180,tick=null;
-const $=id=>document.getElementById(id),esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
-function nDays(){let x=new Date();return Math.max(0,Math.ceil((EXAM-new Date(x.getFullYear(),x.getMonth(),x.getDate()))/86400000))}
-function day(){let x=new Date();return Math.max(0,Math.min(18,Math.floor((new Date(x.getFullYear(),x.getMonth(),x.getDate())-START)/86400000)))}
-function list(title,sub,content){return `<section class="panel"><h2>${title}</h2>${sub?`<p class="sub">${sub}</p>`:''}${content}</section>`}
-function jump(v){stopTimer();view=v;document.querySelectorAll('nav button').forEach(el=>el.classList.toggle('sel',el.dataset.tab===v));render();window.scrollTo(0,0)}
-function btn(s,fun,cls='alt'){return `<button class="btn ${cls}" onclick="${fun}">${s}</button>`}
-function render(){let t='';if(view==='home'){
-let d=day(),cnt=Object.keys(state.done).length,w=Object.keys(state.wrong).length,rev=due().length;
-t=`<h1>北京导游证 · 每天闯一关 🧭</h1><div class="sub">2026 全国导游资格考试 · 北京考区初考</div><section class="hero"><div class="top"><span class="chip">第 ${d+1} / 19 天</span><span>笔试倒计时 ${nDays()} 天</span></div><h2 style="margin-top:18px">${PLAN[d]}</h2><div class="sub" style="color:#f1edff">每日 10–20 分钟：记考点 → 做题 → 错题复习</div><div class="progress"><i style="width:${cnt/19*100}%"></i></div><div class="meters"><div class="meter"><b>${state.xp}</b><span>经验值</span></div><div class="meter"><b>${cnt}</b><span>完成天数</span></div><div class="meter"><b>${w}</b><span>当前错题</span></div></div></section>`+
-list('今日学习卡','按照北京考区大纲设计',`<p style="line-height:1.8">${TIPS[d]}</p>${btn('⚡ 今日 8 题挑战',`begin('today',${d})`,'')}`)+
-`<div class="split">${btn(`🔁 到期复习 ${rev} 题`,"begin('review')")}${btn('🎙️ 口述面试',"jump('speak')")}</div>`+
-list('笔试时间与提醒','2026年11月21日（周六）',`<div class="row"><main><b>09:00–10:30</b><small>政策法规＋导游业务</small></main></div><div class="row"><main><b>10:30–12:00</b><small>全国＋地方导游基础知识</small></main></div><p class="tiny">11月16日9:00起可下载准考证；北京面试时间以现场考试准考证为准。<br>参考：北京市文化和旅游局2026年8月6日通知。</p>`)}
-else if(view==='plan'){t=`<h1>19 天冲刺地图</h1><p class="sub">可以提前练习任何一天；先北京专项，再全国笔试与面试。</p><section class="panel">${PLAN.map((p,i)=>`<div class="row"><span class="chip">${state.done[i]?'✓':'D'+(i+1)}</span><main><b>${p}</b><small>11月${2+i}日 · ${state.done[i]?'已完成':'待闯关'}</small></main><button class="btn inline alt" onclick="begin('day',${i})">开始</button></div>`).join('')}</section>`}
-else if(view==='quiz'){let q=deck[qi];if(!q){t='<div class="empty">没有匹配的题目。</div>'; }else {t=`<div class="top" style="margin-top:24px"><button class="btn inline outline" onclick="jump('home')">← 退出</button><span class="chip">${qi+1} / ${deck.length}</span></div><div class="progress"><i style="width:${qi/deck.length*100}%"></i></div><section class="panel"><span class="badge">${esc(q.cat)} · ${esc(q.tag||'练习')}</span><div class="question">${esc(q.q)}</div>${q.a.map((x,i)=>`<button class="opt ${answer!==null?(i===q.k?'good':answer===i?'bad':''):''}" ${answer!==null?'disabled':''} onclick="choose(${i})">${'ABCD'[i]}. ${esc(x)} ${answer!==null&&i===q.k?'✓':''}</button>`).join('')}${answer!==null?`<div class="explain"><b>${answer===q.k?'答对了 +10 XP':'这道题已放入错题本'}</b><p>${esc(q.e)}</p><div class="tiny">资料标记：${esc(q.source||'原创练习')}</div></div>${btn(qi===deck.length-1?'完成闯关':'下一题 →','next()','')}`:''}</section>`}}
-else if(view==='result'){t=`<h1>闯关结算 🎉</h1><section class="hero"><strong>${score}/${deck.length}</strong><p>正确率 ${Math.round(score/deck.length*100)}% · 获得 ${score*10} XP</p></section><div class="split">${btn('返回首页',"jump('home')",'')}${btn('再练错题',"begin('wrong')")}</div>`}
-else if(view==='wrong'){let ids=Object.keys(state.wrong),dueids=due();t=`<h1>记忆回顾中心</h1><p class="sub">错题间隔重复：答错次日提醒，答对后按1、3、7天安排重练。记录仅存当前浏览器。</p><div class="split">${btn(`到期复习 ${dueids.length}`,"begin('review')",'')}${btn(`全部错题 ${ids.length}`,"begin('wrong')")}</div>`+
-list('薄弱题目','答对后才会移出错题本',ids.length?ids.slice(0,40).map(id=>`<div class="row"><main><b>${esc(byid[id]?.q||'已移除题目')}</b><small>错题次数 ${state.wrong[id]}</small></main></div>`).join(''):'<div class="empty">目前无待攻克的错题，继续保持！</div>')+
-list('学习记录','最近10次挑战',state.history.length?state.history.slice(-10).reverse().map(x=>`<div class="row"><main><b>${x.date} · ${x.kind}</b><small>得分 ${x.score}/${x.total}</small></main></div>`).join(''):'<p class="sub">完成一次闯关后，这里会显示记录。</p>')}
-else if(view==='speak'){let site=SITES[speakingIndex];t=`<h1>北京面试口述训练 🎙️</h1><p class="sub">北京市2026官方大纲：机考；讲解范围6处，景点知识问答范围15处。这里是自练倒计时，不代表官方规定讲解时长。</p><div class="group">${SITES.map((s,i)=>`<button class="${speakingIndex===i?'active':''}" onclick="selectSite(${i})">${s[0]}</button>`).join('')}</div>`+
-list(site[0]+' · 讲解结构','按“开场—概况—重点—结尾”组织口述',`<p class="prompt"><b>必讲线索：</b>${site[1]}</p><p class="prompt"><b>组织方法：</b>${site[2]}</p><p class="prompt"><b>模拟追问：</b>${site[3]}</p><div class="clock" id="clock">${timefmt(seconds)}</div><div class="split"><button class="btn" id="timerbtn" onclick="toggleTimer()">▶ 开始计时</button>${btn('↻ 重置计时','resetTimer()')}</div><div class="space"></div>${btn(state.spoken[speakingIndex]?'✅ 已练习过 · 再完成一次':'✅ 我已完成本景点口述','markSpoken()','outline')}`)+
-list('15处景点知识问答范围','北京2026现场考试大纲逐项核对',`<div class="code">${QUESTION_SITES.map((x,i)=>`${i+1}. ${x}`).join('<br>')}</div><hr style="border:0;border-top:1px solid #435877"><p class="sub">综合能力还包括：北京城市概况、传统文化与民俗（世界遗产、非遗、博物馆、红色教育基地、胡同与四合院、商业街及老字号）、《北京市旅游条例》和2026年时事政治。</p>`) }
-else if(view==='library'){t=`<h1>分类题库与历年题</h1><p class="sub">当前内置 ${BANK.length} 题，其中2023年公开回忆考点改编 ${BANK.filter(q=>q.cat==='历年回忆').length} 题。其他题为原创练习；未声称是官方原题。</p>`+
-`<select class="filter" onchange="category=this.value;render()"><option value="全部">全部科目</option>${[...new Set(BANK.map(q=>q.cat))].map(x=>`<option ${category===x?'selected':''}>${x}</option>`).join('')}</select><div class="space"></div>${btn('开始本分类 15 题',"begin('category')",'')}`+
-list('北京地方＋六景点','2026北京考区',`<p class="sub">地方专项含北京历史、城市空间、胡同、传统工艺、世界遗产；面试专门练六处官方景点。</p>${btn('只刷北京相关题',"begin('beijing')")}`)+
-list('历年回忆考点','2023年第三方回忆题改编 · 可点开原资料核对',`${btn('练2023回忆改编题',"begin('recall')")}<p class="tiny">为避免照搬第三方试卷，题干和选项已改编，保留对应的知识考点。2022、2024、2025目前仅收录资料入口，未验证可复制的具体试题内容，不会虚构年份。</p>`)+
-list('真题与考试大纲来源','可在联网时打开；小游戏的内置题目可离线答题',SOURCES.map(s=>`<div class="row"><main><b>${esc(s[0])}</b><small>${esc(s[1])}</small></main><a href="${s[2]}" target="_blank" rel="noopener noreferrer">查看 ↗</a></div>`).join(''))+
-`<p class="warn">重要：第三方“真题”可能是考生回忆题，答案可能出错、内容可能不全。2026年政策法规和时政以当年最新有效规定及官方大纲为准。</p>`}
-$('main').innerHTML=t}
-function rotate(a,n){if(!a.length)return [];const offset=(new Date().getDate()*3+state.history.length*5)%a.length;return [...a.slice(offset),...a.slice(0,offset)].slice(0,n)}
-function due(){let now=new Date();now.setHours(0,0,0,0);return Object.keys(state.review).filter(id=>byid[id]&&new Date(state.review[id].due+'T00:00:00')<=now)}
-function begin(which,d){let a=[];let di=d??day();if(which==='today'||which==='day'){let cats=(di<=6?['北京地方','六大讲解']:di<=8?['业务法规','全国笔试']:di<=10?['业务法规','全国笔试']:di<=14?['全国笔试','北京地方']:di===15?['历年回忆']:di===16?['六大讲解','北京地方']:['全国笔试','北京地方','六大讲解','业务法规','历年回忆']);a=rotate(BANK.filter(x=>cats.includes(x.cat)),8);let pending=BANK.filter(x=>state.wrong[x.id]&&!a.includes(x));let review=rotate(pending,2);a=a.slice(0,8-review.length).concat(review);}
-else if(which==='review')a=due().map(x=>byid[x]).filter(Boolean).slice(0,30);else if(which==='wrong')a=Object.keys(state.wrong).map(x=>byid[x]).filter(Boolean).slice(0,40);else if(which==='beijing')a=rotate(BANK.filter(x=>['北京地方','六大讲解'].includes(x.cat)),15);else if(which==='recall')a=rotate(BANK.filter(x=>x.cat==='历年回忆'),20);else a=rotate(BANK.filter(x=>category==='全部'||x.cat===category),15);
-if(!a.length){alert(which==='review'?'今天没有到期的复习题，先练其他关卡吧。':'当前没有可练的错题。');return}deck=a;qi=0;score=0;answer=null;mode=which;focusDay=di;jump('quiz')}
-function dateAfter(n){let d=new Date();d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
-function choose(i){if(answer!==null)return;let q=deck[qi];answer=i;let r=state.review[q.id]||{level:0};if(i===q.k){score++;state.xp+=10;delete state.wrong[q.id];r.level=Math.min(3,r.level+1);r.due=dateAfter([0,1,3,7][r.level]);}else{state.wrong[q.id]=(state.wrong[q.id]||0)+1;r.level=0;r.due=dateAfter(1)}state.review[q.id]=r;save();render()}
-function next(){qi++;answer=null;if(qi===deck.length){if(mode==='today'||mode==='day')state.done[focusDay]=dateAfter(0);state.history.push({date:dateAfter(0),kind:mode,score,total:deck.length});save();jump('result')}else render()}
-function selectSite(i){stopTimer();speakingIndex=i;seconds=180;render()}
-function timefmt(v){return `${String(Math.floor(v/60)).padStart(2,'0')}:${String(v%60).padStart(2,'0')}`}
-function stopTimer(){if(tick!==null){clearInterval(tick);tick=null}}
-function toggleTimer(){if(tick!==null){stopTimer();render();return}tick=setInterval(()=>{seconds=Math.max(0,seconds-1);let c=$('clock');if(c)c.textContent=timefmt(seconds);if(seconds===0){stopTimer();let b=$('timerbtn');if(b)b.textContent='已结束 · 重新计时';}},1000);let b=$('timerbtn');if(b)b.textContent='⏸ 暂停计时'}
-function resetTimer(){stopTimer();seconds=180;render()}
-function markSpoken(){state.spoken[speakingIndex]=(state.spoken[speakingIndex]||0)+1;state.xp+=15;save();render()}
-const TIPS=[
-'北京古都空间以中轴线为重要骨架；复习北京城市历史、地理特点及古都格局。',
-'天安门及天安门广场、故宫都在6处讲解名单内。故宫外朝三大殿与内廷后三宫是重点。',
-'天坛讲“祭天、祈谷、礼制与建筑”：圜丘坛、皇穹宇、祈年殿注意区分用途。',
-'颐和园讲清万寿山—昆明湖关系、长廊、佛香阁与中国古典园林造景手法。',
-'长城重视防御功能及北京明长城；明十三陵重视陵寝布局、长陵与定陵。',
-'北京胡同、四合院、景泰蓝、京剧、老字号和地方饮食都适合整理成一页记忆卡。',
-'除6处讲解景点，北京面试的15处问答名单还包括周口店、大运河、中轴线、恭王府、北海、景山、雍和宫、奥林匹克公园、孔庙和国子监。',
-'政策法规关注旅游者权益、包价旅游合同、旅行社与导游执业规则。',
-'旅游合同、告知义务、安全保障、消费者权益等应结合最新有效法律理解，不死背过时数字。',
-'导游业务按接团前准备、接站、途中讲解、景点服务、送团服务梳理全流程。',
-'突发疾病与安全事故优先保障生命安全，寻求专业救助，妥善协调。',
-'全国基础记忆朝代与历史文化、著名作品作者、诗词名句及世界文化遗产。',
-'宗教、民族节庆、礼仪习俗等考点注意地域差异，不要混淆。',
-'重点掌握木构架、斗拱、屋顶形式与古典园林的借景、对景。',
-'地方基础不只考北京；全国各省代表景观、饮食、非遗与区域地理也要复习。',
-'2023年公开回忆题中出现的考点包括五四运动、舟山群岛、《诗经》、王勃及屋顶形制。这里收录的是改编题。',
-'按北京官方6处景点逐一进行口述，注意逻辑与准确性。网页自练定时3分钟，不代表官方考试时长。',
-'全科混刷，错题优先；再口述一个最不熟悉的北京景点。',
-'11月16日起可打印准考证，考前检查证件、考场与路线。面试日期以北京准考证为准。'];
-function init(){let t=new Date();$('date').textContent=(t.getMonth()+1)+'月'+t.getDate()+'日';jump('home')}init();
-</script></body></html>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>北京导游备考 · 考纲版</title><style>
+:root{--bg:#f3f5ef;--ink:#182c2a;--muted:#566763;--green:#196b51;--line:#d6ded5}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,sans-serif}header{background:#153d34;color:white;padding:28px max(20px,calc((100vw - 1000px)/2))}header p{color:#c2d8ce;margin:6px 0}h1{font-size:28px;margin:0}h2{font-size:24px;margin:0 0 14px}h3{margin:0 0 12px}nav{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:0;background:#f3f5eff5;padding:12px 0;z-index:2;border-bottom:1px solid var(--line)}main{max-width:1000px;margin:auto;padding:0 18px 60px}button,select,input{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:10px;background:white;color:var(--ink);padding:10px 16px}button:hover{border-color:var(--green)}button.active,.primary{background:var(--green);color:white;border-color:var(--green)}button:disabled{opacity:.5;cursor:default}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:24px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:16px}.grid .card{margin:0}.muted,small{color:var(--muted)}.tag{font-size:13px;background:#edf2e9;border-radius:6px;padding:3px 8px;display:inline-block;margin:0 6px 6px 0}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}.option{width:100%;text-align:left;margin:6px 0;padding:15px;display:flex;gap:12px}.option.selected{background:#e4f1e8;border:2px solid var(--green)}.option.correct{border-color:#196b51;background:#e2f4e6}.option.wrong{border-color:#b63838;background:#fceaea}.question{font-size:21px;line-height:1.6}.explain{border-left:4px solid var(--green);background:#f0f6ed;padding:16px;margin:18px 0}a{color:#17694e;overflow-wrap:anywhere}.warning{background:#fff6df;padding:14px;border-radius:10px}.stat{font-size:32px;font-weight:750}.numbers{display:flex;flex-wrap:wrap;gap:5px;max-height:240px;overflow:auto}.numbers button{padding:5px;width:43px}.numbers .done{background:#daeee2}.numbers .flag{border:2px solid #b57a16}.timer{font-variant-numeric:tabular-nums;color:#a64220;font-weight:750}progress{width:100%;accent-color:var(--green)}select,input{padding:9px;border:1px solid var(--line);border-radius:8px;max-width:100%}footer{font-size:13px;margin-top:30px;color:var(--muted)}details{margin:14px 0}summary{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #e5a334;outline-offset:3px}@media(max-width:600px){.card{padding:18px}h1{font-size:23px}nav button{padding:8px 10px;font-size:14px}.question{font-size:19px}}
+</style><header><small style="color:#bde1ca">2026 · 北京考区 · 中文类备考</small><h1>导游备考，每天进一关</h1><p>真题考点核验 · 双卷计时模拟 · 每日闯关</p></header><main><nav id="nav"></nav><div id="app"></div><footer>题库核验日期：2026-11-10。独立学习工具，非官方考试系统。练习记录仅保存在当前浏览器；清理浏览器数据会丢失记录。<br>正式考试安排、评分与合格要求以当年官方通知为准。</footer></main><script>const BANK=[
+  {
+    "id": "v3-1-001",
+    "subject": 1,
+    "type": "S",
+    "q": "某旅行社违规安排购物，游客返程后第25天要求其协助退货。适用旅游法规定的特殊退货期限是？",
+    "options": [
+      "行程结束后7日",
+      "行程结束后15日",
+      "行程结束后30日",
+      "购买之日起30日"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "这是违规指定购物的特殊救济，起算点为行程结束，不是购物日，也不是网购七日规则。",
+    "source": "law",
+    "locator": "第35条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-002",
+    "subject": 1,
+    "type": "S",
+    "q": "境内旅游因人数不足无法成团，旅行社依法解除合同，至少应提前多久通知？",
+    "options": [
+      "3日",
+      "7日",
+      "15日",
+      "30日"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "境内提前7日，出境提前30日；注意区分国内、出境两种情形。",
+    "source": "law",
+    "locator": "第63条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-003",
+    "subject": 1,
+    "type": "S",
+    "q": "出境团未达到约定成团人数，旅行社应至少提前多少日通知解除合同？",
+    "options": [
+      "7日",
+      "15日",
+      "30日",
+      "60日"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "出境旅游提前30日。提前期限不够而造成损失的，还须依法赔偿。",
+    "source": "law",
+    "locator": "第63条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-004",
+    "subject": 1,
+    "type": "S",
+    "q": "游客在行程开始前将合同权利义务转让给朋友，因此增加的手续费用依法由谁承担？",
+    "options": [
+      "旅行社",
+      "履行辅助人",
+      "旅游者和第三人",
+      "地接社"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "无正当理由旅行社不得拒绝转让；增加费用由旅游者和第三人承担。",
+    "source": "law",
+    "locator": "第64条",
+    "topic": "旅游合同与责任",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第2页：包价合同转让考点",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-005",
+    "subject": 1,
+    "type": "S",
+    "q": "旅游者在行程结束前自行解除包价合同，旅行社的退款计算原则是？",
+    "options": [
+      "一概不退",
+      "全额无条件退还",
+      "扣除必要费用后退余款",
+      "一律扣50%"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "游客有解除权，但须承担必要费用，不能套用固定百分比代替实际规则。",
+    "source": "law",
+    "locator": "第65条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-006",
+    "subject": 1,
+    "type": "S",
+    "q": "不可抗力导致游客滞留，旅行社采取安置措施后，增加的食宿费原则上由谁承担？",
+    "options": [
+      "旅游者",
+      "旅行社",
+      "地接社",
+      "双方各承担一半"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "增加食宿费由旅游者承担；增加返程费则由双方分担，两项不能混淆。",
+    "source": "law",
+    "locator": "第67条第4项",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-007",
+    "subject": 1,
+    "type": "S",
+    "q": "不可抗力导致游客滞留，增加的返程费用依法如何承担？",
+    "options": [
+      "全由游客",
+      "全由旅行社",
+      "旅行社与游客分担",
+      "全由保险公司"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "法条规定分担，未规定必须各半，不能擅自写成50%。",
+    "source": "law",
+    "locator": "第67条第4项",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-008",
+    "subject": 1,
+    "type": "S",
+    "q": "因旅行社原因导致行程中解除合同，合理返程费用由谁承担？",
+    "options": [
+      "游客",
+      "旅行社",
+      "游客与旅行社分担",
+      "旅游主管部门"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "区分有责解除与不可抗力滞留；因旅行社或履行辅助人原因解除，返程费由旅行社承担。",
+    "source": "law",
+    "locator": "第68条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-009",
+    "subject": 1,
+    "type": "S",
+    "q": "旅行社具备履行条件，经游客要求仍拒绝履行，造成滞留等严重后果，游客还可要求旅游费用多少倍的赔偿金？",
+    "options": [
+      "不足1倍",
+      "1倍以上3倍以下",
+      "3倍以上5倍以下",
+      "固定10倍"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "适用须同时有履行条件、要求后仍拒绝、严重后果，不能用于所有一般违约。",
+    "source": "law",
+    "locator": "第70条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-010",
+    "subject": 1,
+    "type": "S",
+    "q": "景区提高门票价格，应当提前多久公布？",
+    "options": [
+      "1个月",
+      "3个月",
+      "6个月",
+      "12个月"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "提高门票价的法定提前公布期为6个月，与旅游合同解约通知期限不同。",
+    "source": "law",
+    "locator": "第44条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-011",
+    "subject": 1,
+    "type": "S",
+    "q": "景区将多个景点门票合并销售，合并价格的法定上限是？",
+    "options": [
+      "最高单项票价格",
+      "各单项票价格之和",
+      "价格之和的120%",
+      "由经营者自行决定，无上限"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "不得高于单项票价之和，游客还有选择单项票的权利。",
+    "source": "law",
+    "locator": "第44条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-012",
+    "subject": 1,
+    "type": "S",
+    "q": "合同约定核心游览项目临时停止开放，景区仅在入口贴通知但不减价。依法还应怎样处理？",
+    "options": [
+      "无需处理",
+      "相应减少收费",
+      "只赠纪念品即可",
+      "只允许改期不许减价"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "公示和相应减少收费是并列义务，不可用通知替代减价。",
+    "source": "law",
+    "locator": "第44条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-013",
+    "subject": 1,
+    "type": "S",
+    "q": "景区餐饮场地出租给第三方，实际经营者给游客造成损害，景区依法承担什么责任？",
+    "options": [
+      "补充责任",
+      "连带责任",
+      "仅管理过错责任",
+      "不承担任何责任"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "景区、住宿经营者将部分项目或场地交给他人经营的，承担法定连带责任。",
+    "source": "law",
+    "locator": "第54条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-014",
+    "subject": 1,
+    "type": "S",
+    "q": "地接社履行接待业务造成包价合同违约，游客向组团社主张责任，组团社应当？",
+    "options": [
+      "让游客只能起诉地接社",
+      "承担责任后可向地接社追偿",
+      "仅在地接社破产时赔偿",
+      "只负责调解"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "对外合同责任仍由组团社承担，其后可以依法追偿。",
+    "source": "law",
+    "locator": "第71条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-015",
+    "subject": 1,
+    "type": "S",
+    "q": "旅行社安排临时聘用导游带团，导游服务费用应怎样支付？",
+    "options": [
+      "按购物佣金抵扣",
+      "全额向导游支付合同载明的导游服务费",
+      "只付一半",
+      "游客满意才支付"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "临聘不免除旅行社支付导游服务费的责任。",
+    "source": "law",
+    "locator": "第38、60条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-016",
+    "subject": 1,
+    "type": "S",
+    "q": "旅游行程单在包价合同中的法律地位是？",
+    "options": [
+      "仅供参考的广告",
+      "合同的组成部分",
+      "仅在盖双章时才有效",
+      "只约束地接社"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "行程开始前提供的旅游行程单属于包价合同组成部分。",
+    "source": "law",
+    "locator": "第59条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-017",
+    "subject": 1,
+    "type": "S",
+    "q": "旅行社销售另一家旅行社的包价产品并代签合同，合同应载明？",
+    "options": [
+      "仅代理社信息",
+      "仅委托社信息",
+      "委托社与代理社基本信息",
+      "仅旅游者信息"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "委托销售和接待委托的披露义务不同，前者需两社信息。",
+    "source": "law",
+    "locator": "第60条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-018",
+    "subject": 1,
+    "type": "S",
+    "q": "旅游服务质量保证金除游客权益损害赔偿外，还可用于？",
+    "options": [
+      "发放员工工资",
+      "垫付游客遇险紧急救助费用",
+      "支付营销费用",
+      "垫付股东分红"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "保证金具有权益赔偿和紧急救助垫付用途，不是旅行社日常运营账户。",
+    "source": "law",
+    "locator": "第31条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-019",
+    "subject": 1,
+    "type": "S",
+    "q": "游客要求新增自费项目，依法成立的例外条件还包括？",
+    "options": [
+      "导游个人同意",
+      "不影响其他旅游者行程安排",
+      "商店提供收据",
+      "只要价格低于市场价"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "协商一致或游客要求之外，仍须不影响其他游客的行程安排。",
+    "source": "law",
+    "locator": "第35条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-020",
+    "subject": 1,
+    "type": "S",
+    "q": "有关旅游人身意外伤害保险，旅游法对旅行社的要求是？",
+    "options": [
+      "代替游客强制购买任何产品",
+      "提示团队游客按规定投保",
+      "只需投保责任险，无须提示",
+      "仅出境游需要提示"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "提示投保义务与经营者责任保险不是同一种保险关系。",
+    "source": "law",
+    "locator": "第61条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-021",
+    "subject": 1,
+    "type": "S",
+    "q": "包价合同因不可抗力不能继续履行，哪些主体有权解除？",
+    "options": [
+      "仅旅行社",
+      "仅游客",
+      "旅行社和游客均有权",
+      "仅旅游主管部门"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "双方均可解除；能部分履行时还存在合理变更及不同意变更的解除问题。",
+    "source": "law",
+    "locator": "第67条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-022",
+    "subject": 1,
+    "type": "S",
+    "q": "导游未经旅行社委派，以个人名义直接收款带团，这主要违反哪项要求？",
+    "options": [
+      "讲解必须用普通话",
+      "不得私自承揽导游业务",
+      "不得跨省带团",
+      "不得接受临聘"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "有导游证也不能代替接受旅行社委派的执业要求。",
+    "source": "law",
+    "locator": "第40条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-023",
+    "subject": 1,
+    "type": "S",
+    "q": "游客在行程中严重侵害他人权益，且不听劝阻、不能制止，组团社可依法？",
+    "options": [
+      "解除合同并按必要费用结算",
+      "没收全部团费和证件",
+      "只罚款不得解约",
+      "让其他游客投票罚款"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "符合第66条的解除条件仍应扣除必要费用后退余款，不能没收证件。",
+    "source": "law",
+    "locator": "第66条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-024",
+    "subject": 1,
+    "type": "S",
+    "q": "预订住宿发生超售，经营者无法按约供房，应当首先依法承担？",
+    "options": [
+      "只退订金即可",
+      "不低于原标准住宿的安排义务，新增费用自行承担",
+      "游客自行加价的义务",
+      "只有致歉义务"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "住宿经营者应安排不低于原标准的住宿，增加费用由其承担；法定例外另论。",
+    "source": "law",
+    "locator": "第75条",
+    "topic": "旅游合同与责任",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-025",
+    "subject": 1,
+    "type": "S",
+    "q": "游客因重大误解订立合同，自知道或应当知道撤销事由起，未行使撤销权多久即消灭？",
+    "options": [
+      "30日",
+      "90日",
+      "1年",
+      "3年"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "90日仅对应重大误解；一般撤销事由和胁迫的规则另有规定。",
+    "source": "civil",
+    "locator": "第152条",
+    "topic": "民事行为与期限",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第2页：撤销权期限（原回忆摘要缺少适用条件）",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-026",
+    "subject": 1,
+    "type": "S",
+    "q": "游客受胁迫订立合同，撤销权一年期间从何时起算？",
+    "options": [
+      "签约当天",
+      "首次付款时",
+      "胁迫行为终止时",
+      "行程结束时"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "胁迫从行为终止起算，不能与重大误解的知悉时间混用。",
+    "source": "civil",
+    "locator": "第152条",
+    "topic": "民事行为与期限",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-027",
+    "subject": 1,
+    "type": "S",
+    "q": "除法律另有规定外，普通诉讼时效期间为？",
+    "options": [
+      "1年",
+      "2年",
+      "3年",
+      "5年"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "普通时效3年，通常自知道或应当知道权利受损及义务人起算。",
+    "source": "civil",
+    "locator": "第188条",
+    "topic": "民事行为与期限",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-028",
+    "subject": 1,
+    "type": "S",
+    "q": "9岁儿童独自接受无附加义务的小礼物，行为效力如何？",
+    "options": [
+      "当然无效",
+      "须追认才有效",
+      "可以独立实施",
+      "须法院许可"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "8周岁以上未成年人属限制民事行为能力人，可独立实施纯获利益行为。",
+    "source": "civil",
+    "locator": "第19条",
+    "topic": "民事行为与期限",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第2页：8周岁儿童民事行为能力考点",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-029",
+    "subject": 1,
+    "type": "S",
+    "q": "17岁游客以自己的劳动收入为主要生活来源，其民事行为能力原则上属于？",
+    "options": [
+      "无行为能力",
+      "限制行为能力",
+      "视为完全行为能力",
+      "只有监护人同意后才完全"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "16周岁以上未成年人符合劳动收入条件的，视为完全民事行为能力人。",
+    "source": "civil",
+    "locator": "第18条",
+    "topic": "民事行为与期限",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-030",
+    "subject": 1,
+    "type": "S",
+    "q": "6岁儿童独立签署高价旅游合同，应如何认定其民事法律行为？",
+    "options": [
+      "有效",
+      "效力待定",
+      "无效",
+      "可撤销"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "不满8周岁属无民事行为能力人，其实施的民事法律行为无效，由法定代理人代理。",
+    "source": "civil",
+    "locator": "第20、144条",
+    "topic": "民事行为与期限",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-031",
+    "subject": 1,
+    "type": "S",
+    "q": "旅行社利用游客危困状态、缺乏判断能力，订立显失公平合同，受损方可请求？",
+    "options": [
+      "确认所有合同当然无效",
+      "法院或仲裁机构撤销",
+      "主管部门直接罚款代替撤销",
+      "只能继续履行"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "显失公平在满足法定条件时属于可撤销，不等于当然无效。",
+    "source": "civil",
+    "locator": "第151条",
+    "topic": "民事行为与期限",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-032",
+    "subject": 1,
+    "type": "S",
+    "q": "当事人自民事法律行为发生之日起五年内未行使撤销权，其后果是？",
+    "options": [
+      "撤销权仍可无限期行使",
+      "撤销权消灭",
+      "自动转为普通债权",
+      "仅中止一年"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "五年是撤销权的最长期间；不得与普通诉讼时效混用。",
+    "source": "civil",
+    "locator": "第152条",
+    "topic": "民事行为与期限",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-033",
+    "subject": 1,
+    "type": "S",
+    "q": "纪念品售价120元，销售方构成欺诈，消费者依法要求增加赔偿（不含退还价款），最低是多少？",
+    "options": [
+      "120元",
+      "240元",
+      "360元",
+      "500元"
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "价款三倍为360元，不足500元，增加赔偿按500元计算。",
+    "source": "consumer",
+    "locator": "第55条",
+    "topic": "消费者权益与计算",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-034",
+    "subject": 1,
+    "type": "S",
+    "q": "游客购买800元商品遭经营者欺诈，依法请求增加赔偿（不含退价款），一般金额是多少？",
+    "options": [
+      "800元",
+      "1600元",
+      "2400元",
+      "3200元"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "增加赔偿为价款三倍；退还本金与增加赔偿应分别计算。",
+    "source": "consumer",
+    "locator": "第55条",
+    "topic": "消费者权益与计算",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-035",
+    "subject": 1,
+    "type": "S",
+    "q": "游客受邀试用商品，经营者能否以未付款为由免除安全保障义务？",
+    "options": [
+      "可以，免费不受保护",
+      "不可以，免费提供也应保障安全",
+      "只有签合同才保障",
+      "由试用者承担全部责任"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "经营者对提供的商品或服务应保障人身财产安全，不能以免费试用逃避。",
+    "source": "consumer",
+    "locator": "第18条",
+    "topic": "消费者权益与计算",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-036",
+    "subject": 1,
+    "type": "S",
+    "q": "游客要求开具购物发票，商家称打折商品不开发票，正确判断是？",
+    "options": [
+      "打折可免开",
+      "只需出示电子订单",
+      "消费者索要时必须出具发票等凭证",
+      "由导游代写即可"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "消费者索要发票等购货凭证或服务单据，经营者必须出具。",
+    "source": "consumer",
+    "locator": "第22条",
+    "topic": "消费者权益与计算",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-037",
+    "subject": 1,
+    "type": "S",
+    "q": "目的地风险提示颜色为橙色，对应哪一级？",
+    "options": [
+      "一级特别严重",
+      "二级严重",
+      "三级较重",
+      "四级一般"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "红、橙、黄、蓝依次对应一至四级。",
+    "source": "safety",
+    "locator": "第16条",
+    "topic": "风险级别与报告",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-038",
+    "subject": 1,
+    "type": "S",
+    "q": "目的地发布一级风险，已在风险区域的旅游团应采取什么措施？",
+    "options": [
+      "继续原行程",
+      "仅增加提示",
+      "组织撤离",
+      "等游客全体同意再决定"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "一级风险要求停止前往并组织已在区域游客撤离。",
+    "source": "safety",
+    "locator": "第18条",
+    "topic": "风险级别与报告",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第3页：风险提示措施",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-039",
+    "subject": 1,
+    "type": "S",
+    "q": "目的地发布二级风险，对已在该区域游客的措施是？",
+    "options": [
+      "一律只提醒即可",
+      "调整或中止行程",
+      "按四级风险处理",
+      "无须改变原安排"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "二级与一级的区别在于已在风险区的措施：调整或中止，对比一级组织撤离。",
+    "source": "safety",
+    "locator": "第18条",
+    "topic": "风险级别与报告",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第3页：风险提示措施",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-040",
+    "subject": 1,
+    "type": "S",
+    "q": "旅游经营单位负责人接到旅游突发事件报告后，一般应在多久内向规定部门报告？",
+    "options": [
+      "30分钟",
+      "1小时",
+      "2小时",
+      "24小时"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "现场人员立即报告负责人，负责人接报后1小时内向有关部门报告。",
+    "source": "safety",
+    "locator": "第14条",
+    "topic": "风险级别与报告",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第2页：旅游突发事件报告期限",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-041",
+    "subject": 1,
+    "type": "S",
+    "q": "遇可能危及游客人身安全的紧急情形，导游变更接待计划的程序是？",
+    "options": [
+      "只经司机同意",
+      "征得多数游客同意并立即报告旅行社",
+      "须全体游客一致且次日报告",
+      "导游可自行决定且免于报告"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "紧急变更的法定条件为多数旅游者同意与立即报告旅行社。",
+    "source": "guide",
+    "locator": "第13条",
+    "topic": "导游执业",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-042",
+    "subject": 1,
+    "type": "S",
+    "q": "导游依法拒绝游客提出的侮辱人格要求，其性质是？",
+    "options": [
+      "违反服务义务",
+      "行使法定拒绝权",
+      "擅自中止合同",
+      "必须退还全部团费"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "导游人格尊严应受尊重，可拒绝侮辱人格或违反职业道德的不合理要求。",
+    "source": "guide",
+    "locator": "第10条",
+    "topic": "导游执业",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-043",
+    "subject": 1,
+    "type": "S",
+    "q": "持有导游资格证但未取得导游证的人员，能否据此直接接受旅行社委派执业？",
+    "options": [
+      "可以，资格证等同导游证",
+      "不可以，执业还须依法取得导游证",
+      "只要佩戴工牌即可",
+      "仅境内可以"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "资格证明与执业证件不同，不能混同。",
+    "source": "guide",
+    "locator": "第2—4条",
+    "topic": "导游执业",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-044",
+    "subject": 1,
+    "type": "S",
+    "q": "导游向旅游者讲解地方风俗时应遵循的法定边界是？",
+    "options": [
+      "以迎合个别游客为唯一标准",
+      "不得掺杂庸俗下流内容",
+      "只准介绍自然不准介绍人文",
+      "不得讲解宗教建筑"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "应尊重习俗和宗教信仰，介绍人文自然，不能迎合低级趣味。",
+    "source": "guide",
+    "locator": "第12条",
+    "topic": "导游执业",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-045",
+    "subject": 1,
+    "type": "T",
+    "q": "双方同意增加购物，就可以不考虑其他游客的行程安排。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "例外仍受不影响其他旅游者行程安排的条件限制。",
+    "source": "law",
+    "locator": "第35条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-046",
+    "subject": 1,
+    "type": "T",
+    "q": "通过互联网经营旅行社业务，同样需要旅行社业务经营许可。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "网络经营不免许可义务，主页显著位置还须标明许可证信息。",
+    "source": "law",
+    "locator": "第48条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-047",
+    "subject": 1,
+    "type": "T",
+    "q": "旅行社可以要求临聘导游先垫付团队接待费用。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "安排导游为团队提供服务，不得要求其垫付或收取费用。",
+    "source": "law",
+    "locator": "第38条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-048",
+    "subject": 1,
+    "type": "T",
+    "q": "景区接待人数上限以经营者自定的最大售票数量为准。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "最大承载量由景区主管部门核定，不是经营者任意确定。",
+    "source": "law",
+    "locator": "第45条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-049",
+    "subject": 1,
+    "type": "T",
+    "q": "景区门票合并销售后，游客依法仍可选择购买其中的单项票。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "合并销售不能剥夺购买单项票的选择权。",
+    "source": "law",
+    "locator": "第44条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-050",
+    "subject": 1,
+    "type": "T",
+    "q": "包价旅游合同可仅以口头形式订立。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "包价旅游合同必须采用书面形式。",
+    "source": "law",
+    "locator": "第58条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-051",
+    "subject": 1,
+    "type": "T",
+    "q": "导游服务费用应在安排导游服务的包价合同中载明。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "费用披露属于合同要求。",
+    "source": "law",
+    "locator": "第60条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-052",
+    "subject": 1,
+    "type": "T",
+    "q": "游客将合同转让给第三人，只要旅行社没有正当理由就不得拒绝。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "该规则适用于行程开始前，增加费用由旅游者和第三人承担。",
+    "source": "law",
+    "locator": "第64条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-053",
+    "subject": 1,
+    "type": "T",
+    "q": "旅行社可因游客不参加另行付费项目而解除包价合同。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "不参加自费项目不属于第66条所列解除事由。",
+    "source": "law",
+    "locator": "第66条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-054",
+    "subject": 1,
+    "type": "T",
+    "q": "履行辅助人原因导致游客人身损害，游客只能向组团社索赔。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "游客可请求组团社，也可请求履行辅助人承担赔偿责任。",
+    "source": "law",
+    "locator": "第71条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-055",
+    "subject": 1,
+    "type": "T",
+    "q": "依法解除包价旅游合同后，旅行社对行程中游客的合理返程协助义务随即消失。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "行程中解除仍应协助返回出发地或指定合理地点。",
+    "source": "law",
+    "locator": "第68条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-056",
+    "subject": 1,
+    "type": "T",
+    "q": "旅行社组织旅游活动，应向合格的供应商订购产品和服务。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "供应商资质与服务能力不能只按价格筛选。",
+    "source": "law",
+    "locator": "第34条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-057",
+    "subject": 1,
+    "type": "T",
+    "q": "旅游者未如实告知与旅游活动相关的健康信息，违反旅游法规定的义务。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "游客参加旅游活动时应如实告知相关个人健康信息。",
+    "source": "law",
+    "locator": "第15条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-058",
+    "subject": 1,
+    "type": "T",
+    "q": "旅游纠纷申请仲裁，应当有旅游者与经营者达成的仲裁协议。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "仲裁依据协议，与提起诉讼、申请调解不同。",
+    "source": "law",
+    "locator": "第92条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-059",
+    "subject": 1,
+    "type": "T",
+    "q": "旅游纠纷中人数众多且有共同请求的游客，可以推选代表参加处理。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "代表可参加协商、调解、仲裁、诉讼活动。",
+    "source": "law",
+    "locator": "第94条",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-060",
+    "subject": 1,
+    "type": "T",
+    "q": "因不可抗力采取安全措施支出的费用，法律一律要求旅行社独自承担。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "这类安全措施费用由旅行社与游客分担。",
+    "source": "law",
+    "locator": "第67条第3项",
+    "topic": "法律条件辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-061",
+    "subject": 1,
+    "type": "T",
+    "q": "7岁儿童与9岁儿童在民法典中属于同一种民事行为能力类别。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "前者不满8岁为无行为能力；后者为限制行为能力。",
+    "source": "civil",
+    "locator": "第19、20条",
+    "topic": "民事规则辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-062",
+    "subject": 1,
+    "type": "T",
+    "q": "重大误解的撤销权期限与普通诉讼时效均为三年。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "重大误解撤销权知悉后90日；普通诉讼时效原则上3年。",
+    "source": "civil",
+    "locator": "第152、188条",
+    "topic": "民事规则辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-063",
+    "subject": 1,
+    "type": "T",
+    "q": "民事法律行为部分无效，不影响其他部分效力的，其他部分仍然有效。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "部分无效不必然导致整体无效。",
+    "source": "civil",
+    "locator": "第156条",
+    "topic": "民事规则辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-064",
+    "subject": 1,
+    "type": "T",
+    "q": "自然人的民事权利能力始于出生、终于死亡。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "民事权利能力与完全民事行为能力的取得时间不同。",
+    "source": "civil",
+    "locator": "第13条",
+    "topic": "民事规则辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-065",
+    "subject": 1,
+    "type": "M",
+    "q": "包价旅游合同依法应当载明哪些内容？",
+    "options": [
+      "最低成团人数",
+      "每位游客必须购买的纪念品金额",
+      "旅游服务安排和标准",
+      "旅游者银行账户全部流水",
+      "违约责任和纠纷解决方式"
+    ],
+    "answer": [
+      0,
+      2,
+      4
+    ],
+    "explanation": "第58条包含成团人数、自由活动、服务标准及违约处理；银行流水不是法定必载事项。 本题选项中“每位游客必须购买的纪念品金额”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第58条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-066",
+    "subject": 1,
+    "type": "M",
+    "q": "订立包价合同时，旅行社应告知游客哪些事项？",
+    "options": [
+      "不适宜参加旅游的情形",
+      "活动安全注意事项",
+      "所有情况下经营者一概免责的结论",
+      "目的地风俗与宗教禁忌",
+      "旅行社全体股东财产状况"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "合同告知应覆盖适宜性、安全、责任边界及目的地禁忌，不包括无关股东财产。 本题选项中“所有情况下经营者一概免责的结论”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第62条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-067",
+    "subject": 1,
+    "type": "M",
+    "q": "哪些情形属于旅游法允许旅行社解除合同的法定事由？",
+    "options": [
+      "游客患病可能危及其他游客安全",
+      "携带危险物且拒交处理",
+      "严重侵害他人权益且不听劝阻不能制止",
+      "游客拒绝购买纪念品",
+      "游客依法投诉"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "患病危及他人安全、危险物品拒交处理、严重侵权且劝阻不能制止，须满足第66条具体条件；拒购和投诉本身不是解约依据。",
+    "source": "law",
+    "locator": "第66条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-068",
+    "subject": 1,
+    "type": "M",
+    "q": "不合理低价游违规购物发生后，符合法律的救济有哪些？",
+    "options": [
+      "行程结束后30日内要求协助退货",
+      "旅行社先行垫付退货货款",
+      "不区分是否违规，所有自费项目一律无条件退款",
+      "以购物已开发票为由拒绝任何救济",
+      "仅能追究商店而不能向旅行社主张"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "这是旅游法针对违规购物、自费的特别救济，不等于所有购物均无条件退。 本题选项中“不区分是否违规，所有自费项目一律无条件退款”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第35条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-069",
+    "subject": 1,
+    "type": "M",
+    "q": "不可抗力影响行程时，哪些费用承担表述正确？",
+    "options": [
+      "滞留增加食宿费用一律由旅行社承担",
+      "滞留增加返程由双方分担",
+      "安全措施支出由双方分担",
+      "变更导致费用减少应退还游客",
+      "所有已付费用一律全退"
+    ],
+    "answer": [
+      1,
+      2,
+      3
+    ],
+    "explanation": "解除时可扣已付且不可退费用；不同费用类型分别适用规则。 本题选项中“滞留增加食宿费用一律由旅行社承担”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第67条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-070",
+    "subject": 1,
+    "type": "M",
+    "q": "旅游经营者提供服务时，哪些属于法定义务？",
+    "options": [
+      "保护经营中知悉的个人信息",
+      "商品服务符合安全要求",
+      "未获质量等级时可先使用该等级称谓",
+      "未获等级时可使用相同等级标识",
+      "所有风险全部转嫁游客"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "等级称谓须有取得依据；信息和安全义务不能随意排除。 本题选项中“未获质量等级时可先使用该等级称谓”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第50、52条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-071",
+    "subject": 1,
+    "type": "M",
+    "q": "关于地接社接待委托，符合法律的是？",
+    "options": [
+      "经旅游者同意",
+      "地接社具有相应资质",
+      "组团社与地接社订立书面委托合同",
+      "可按低于实际接待服务成本的费用结算",
+      "委托后组团社不再承担合同责任"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "合法委托不意味着组团社免除对游客的合同责任。 本题选项中“可按低于实际接待服务成本的费用结算”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第69、71条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-072",
+    "subject": 1,
+    "type": "M",
+    "q": "发生旅游纠纷，法律列明的解决途径有哪些？",
+    "options": [
+      "双方协商",
+      "向有关组织申请调解",
+      "依据仲裁协议申请仲裁",
+      "向法院起诉",
+      "由导游作终局裁决"
+    ],
+    "answer": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "explanation": "导游可协助沟通，但无终局裁决权。",
+    "source": "law",
+    "locator": "第92条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-073",
+    "subject": 1,
+    "type": "M",
+    "q": "哪些情形体现了对游客选择权的合法保护？",
+    "options": [
+      "可拒绝强制交易",
+      "可选择购买景区单项票",
+      "行程结束后仍可无条件将已履行合同转让",
+      "拒绝购物即加收合同外服务费",
+      "自由放弃所有法定安全管制"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "选择权不意味着可规避安全管制，也不能因拒购被另行收费。 本题选项中“行程结束后仍可无条件将已履行合同转让”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第9、35、44、64条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-074",
+    "subject": 1,
+    "type": "M",
+    "q": "关于旅游保险，下列正确的是？",
+    "options": [
+      "旅行社应提示团队游客投保人身意外险",
+      "经营者责任保险与游客人身意外险完全等同",
+      "投保责任险不等于旅行社绝对免责",
+      "一旦投保就可安排无资质高风险项目",
+      "所有险种保障范围完全相同"
+    ],
+    "answer": [
+      0,
+      2
+    ],
+    "explanation": "保险不能替代经营许可和安全义务，应看险种与责任范围。 本题选项中“经营者责任保险与游客人身意外险完全等同”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第47、56、61条",
+    "topic": "合同条款与责任组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-075",
+    "subject": 1,
+    "type": "M",
+    "q": "哪些属于民法典规定的可撤销民事法律行为情形？",
+    "options": [
+      "重大误解",
+      "一方欺诈导致违背真实意思",
+      "胁迫导致违背真实意思",
+      "游客仅因签约后后悔，即可主张显失公平",
+      "任何一般价格上涨"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "重大误解、欺诈和胁迫须分别满足法定条件；仅因事后后悔或普通价格波动，不当然产生撤销权。",
+    "source": "civil",
+    "locator": "第147—151条",
+    "topic": "民事案例组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-076",
+    "subject": 1,
+    "type": "M",
+    "q": "8周岁以上未成年人，可以独立实施哪些行为？",
+    "options": [
+      "纯获利益的行为",
+      "与年龄智力相适应的行为",
+      "任何高价旅游合同",
+      "任何对外担保",
+      "无附加义务接受礼物"
+    ],
+    "answer": [
+      0,
+      1,
+      4
+    ],
+    "explanation": "限制行为能力人的独立行为范围有限；纯获利益可独立实施。",
+    "source": "civil",
+    "locator": "第19条",
+    "topic": "民事案例组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-077",
+    "subject": 1,
+    "type": "M",
+    "q": "哪些情况会使撤销权消灭？",
+    "options": [
+      "知悉后明确放弃",
+      "重大误解知悉后90日未行使",
+      "行为发生起5年内未行使",
+      "受胁迫后立即请求法院撤销",
+      "依法及时请求仲裁机构撤销"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "期限届满或放弃可导致消灭，及时行使并非消灭事由。",
+    "source": "civil",
+    "locator": "第152条",
+    "topic": "民事案例组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-078",
+    "subject": 1,
+    "type": "M",
+    "q": "关于民事行为能力，哪些表述正确？",
+    "options": [
+      "成年人原则上是完全行为能力人",
+      "不满8周岁为无行为能力人",
+      "满16岁即一律视为完全民事行为能力人",
+      "所有未成年人均无行为能力",
+      "8岁以上未成年人通常为限制行为能力人"
+    ],
+    "answer": [
+      0,
+      1,
+      4
+    ],
+    "explanation": "须区分年龄层与法律规定的例外。 本题选项中“满16岁即一律视为完全民事行为能力人”为干扰项，不符合所列依据。",
+    "source": "civil",
+    "locator": "第18—22条",
+    "topic": "民事案例组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-079",
+    "subject": 1,
+    "type": "M",
+    "q": "风险颜色与级别对应正确的是？",
+    "options": [
+      "红色—一级",
+      "橙色—二级",
+      "黄色—四级",
+      "蓝色—四级",
+      "红色—四级"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "按风险严重程度由一级至四级递减。 本题选项中“黄色—四级”为干扰项，不符合所列依据。",
+    "source": "safety",
+    "locator": "第16条",
+    "topic": "风险措施辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-080",
+    "subject": 1,
+    "type": "M",
+    "q": "风险提示发布后的措施，哪些搭配正确？",
+    "options": [
+      "四级—一律组织全部游客撤离",
+      "三级—必要安全防范",
+      "二级—停止前往，已在区域调整或中止",
+      "一级—停止前往并组织撤离",
+      "二级—只需发一条提醒"
+    ],
+    "answer": [
+      1,
+      2,
+      3
+    ],
+    "explanation": "级别决定措施强度，不能把二级措施降为四级。 本题选项中“四级—一律组织全部游客撤离”为干扰项，不符合所列依据。",
+    "source": "safety",
+    "locator": "第18条",
+    "topic": "风险措施辨析",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第3页：风险提示措施，多选",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-1-081",
+    "subject": 1,
+    "type": "M",
+    "q": "消费者权益受到侵害时，消法列明的争议解决方式有哪些？",
+    "options": [
+      "与经营者协商和解",
+      "请求消协调解",
+      "由导游直接作出对双方有约束力的裁决",
+      "依仲裁协议仲裁",
+      "向人民法院诉讼"
+    ],
+    "answer": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "explanation": "五类途径并列；投诉和仲裁不是同一程序。 本题选项中“由导游直接作出对双方有约束力的裁决”为干扰项，不符合所列依据。",
+    "source": "consumer",
+    "locator": "第39条",
+    "topic": "消费者权益辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-1-082",
+    "subject": 1,
+    "type": "M",
+    "q": "经营者采用格式条款时，哪些做法违反消费者保护要求？",
+    "options": [
+      "排除消费者主要权利",
+      "减轻或免除经营者应承担责任",
+      "加重消费者责任",
+      "对重大利害关系条款作显著提示",
+      "应消费者要求说明条款"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "排除主要权利、减免应负责任、加重消费者责任属于不公平、不合理的安排；显著提示和解释说明是应尽义务。",
+    "source": "consumer",
+    "locator": "第26条",
+    "topic": "消费者权益辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-001",
+    "subject": 2,
+    "type": "S",
+    "q": "全陪发现地接社计划比组团合同少了一个景点，出发前最恰当的处理是？",
+    "options": [
+      "以地接社较新的接待计划替换组团合同",
+      "核对合同与接待计划，联系地接社并向组团社反映落实",
+      "由导游自行增加景点并承诺承担全部费用",
+      "先征求游客口头同意即可免于向组团社报告"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "全陪负有监督、协助接待计划按约实施的职责；接待计划差异应提前核实协调。",
+    "source": "service",
+    "locator": "3.3.1、5.1.4",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-002",
+    "subject": 2,
+    "type": "S",
+    "q": "两支团队同航班抵达，导游旗名称相似，地陪接站核验应重点依靠？",
+    "options": [
+      "只核旅行社名称，不核团号人数",
+      "接待计划、团队身份及人数的交叉核对",
+      "只核总人数相同，不核接待对象",
+      "以游客出示同航班登机牌为唯一依据"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "旗帜是识别辅助，不能代替团队身份和人数核验。",
+    "source": "service",
+    "locator": "5.2.3",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-003",
+    "subject": 2,
+    "type": "S",
+    "q": "接团前对游客证件票据的交接，最规范的做法是？",
+    "options": [
+      "只点件数不核内容",
+      "核对登记适用性、可用性并保存交接记录",
+      "让游客签名后不再核查",
+      "交给司机全权处理"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "资料交接既要核对适宜可用，也需可追溯记录。",
+    "source": "service",
+    "locator": "5.1.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-004",
+    "subject": 2,
+    "type": "S",
+    "q": "接团前已知道游客中有人对某食材过敏，最合理的准备是？",
+    "options": [
+      "到餐厅再临时协商",
+      "提前落实用餐特殊要求，并保护相关信息",
+      "先取消其餐饮项目，事后通知旅行社",
+      "仅给游客发提示，不向相关接待方落实需求"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "在熟悉游客需求基础上提前与相关服务者沟通落实；不扩大健康信息传播范围。",
+    "source": "service",
+    "locator": "5.1.1、5.1.4",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-005",
+    "subject": 2,
+    "type": "S",
+    "q": "抵达前航班时刻调整，地陪应如何处理最稳妥？",
+    "options": [
+      "只按接待计划印刷时间到场",
+      "核实确切抵达时间，联络司机及全陪调整接站衔接",
+      "仅调整司机到场时间，不核实游客实际抵达点",
+      "只通知全陪，不同步负责接送的司机"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "交通信息须动态核实，纸面计划不能替代最新抵达信息。",
+    "source": "service",
+    "locator": "5.1.4",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-006",
+    "subject": 2,
+    "type": "S",
+    "q": "旅行中协调全陪与地陪的职责，正确的是？",
+    "options": [
+      "全陪负责当地全部具体讲解，地陪只陪同",
+      "地陪落实当地接待，全陪监督协助全程计划实施",
+      "地陪可以独立改变组团合同",
+      "全陪只管往返航班"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "注意全程监督协助与目的地具体接待的分工。",
+    "source": "service",
+    "locator": "3.3.1、3.3.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-007",
+    "subject": 2,
+    "type": "S",
+    "q": "当地景点出现导游现场无法解决的履约问题，全陪应向谁请示？",
+    "options": [
+      "仅向游客家属",
+      "组团社",
+      "仅向司机",
+      "仅向酒店前台"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "全陪在当地落实与监督服务，难以解决的问题及时请示组团社。",
+    "source": "service",
+    "locator": "5.6.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-008",
+    "subject": 2,
+    "type": "S",
+    "q": "导游旗的准备检查，重点是？",
+    "options": [
+      "悬挂越多饰物越醒目",
+      "名称标识清晰易辨，内容合规",
+      "只要颜色鲜艳即可",
+      "只检查旗杆长度"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "服务规范强调标识易识别和内容符合公序良俗，而非饰物数量。",
+    "source": "service",
+    "locator": "5.1.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-009",
+    "subject": 2,
+    "type": "S",
+    "q": "首次乘旅游客车前，哪组信息最有助于减少返程找错车？",
+    "options": [
+      "司机年龄与车价",
+      "车号、标志、停车地点和开车时间",
+      "车上座椅品牌",
+      "车队成立年份"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "应告知能帮助游客识别、按时返回车辆的实际信息。",
+    "source": "service",
+    "locator": "5.3.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-010",
+    "subject": 2,
+    "type": "S",
+    "q": "游客已全部登车，司机准备开车，地陪应优先补做哪项遗漏环节？",
+    "options": [
+      "再次介绍酒店星级",
+      "礼貌清点人数并作安全提示",
+      "立即讲景点掌故",
+      "先播放宣传片"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "登车不等于核对齐员；人数与安全提示是出发前关键环节。",
+    "source": "service",
+    "locator": "5.2.3",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-011",
+    "subject": 2,
+    "type": "S",
+    "q": "旅游客车进入高速路后，游客要求导游站到车前讲解，导游应？",
+    "options": [
+      "仅在直线路段站立讲解",
+      "在导游专座就坐，采用安全方式讲解",
+      "征得多数游客同意后站立讲解",
+      "站在导游专座旁并抓稳扶手讲解"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "规范明确高速公路或危险路段不站立讲解；游客要求不能免除安全责任。",
+    "source": "service",
+    "locator": "5.3.1、5.3.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-012",
+    "subject": 2,
+    "type": "S",
+    "q": "交通工具临时不能正常运行，导游处理的核心组合是？",
+    "options": [
+      "先自行承诺全部赔偿，再报旅行社审核",
+      "联系交通部门和旅行社、安抚游客并协调安排",
+      "让全团先自购替代票，再统一要求旅行社报销",
+      "直接取消后续行程，待退团后处理食宿"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "应保持各方沟通并稳定情绪，赔偿与替代安排要依法依约协调。",
+    "source": "service",
+    "locator": "5.3.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-013",
+    "subject": 2,
+    "type": "S",
+    "q": "因公共交通原因滞留当地过夜，导游应当？",
+    "options": [
+      "认为非己方责任而停止协助",
+      "协助相关部门或请示旅行社安排食宿",
+      "直接认定所有费用由司机承担",
+      "先离团等待次日通知"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "协助安置和最终费用责任是两个问题，不能因责任未定拒绝帮助。",
+    "source": "service",
+    "locator": "5.3.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-014",
+    "subject": 2,
+    "type": "S",
+    "q": "飞机上游客出现突发情况，导游最应遵循的协作关系是？",
+    "options": [
+      "替代机长作决定",
+      "配合乘务人员及时处理",
+      "自行要求飞机改变航线",
+      "等落地后再报告"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "在公共交通工具上应配合乘务人员处理，尊重其运行安全职责。",
+    "source": "service",
+    "locator": "5.3.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-015",
+    "subject": 2,
+    "type": "S",
+    "q": "在酒店办理团队入住，分房方案主要由哪类导游准备并协助实施？",
+    "options": [
+      "全陪导游",
+      "景区讲解员",
+      "仅旅游客车司机",
+      "游客必须自行完成"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "规范将分房方案与相应入住协助列入全陪职责。",
+    "source": "service",
+    "locator": "5.4.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-016",
+    "subject": 2,
+    "type": "S",
+    "q": "游客入住后反映房间设施不能正常使用，导游应采取什么处理路径？",
+    "options": [
+      "立即要求游客自行换店",
+      "协调饭店解决，必要时联系旅行社处理履约问题",
+      "认为钥匙已发就结束义务",
+      "只在意见表记录"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "住宿服务包括协助处理入住问题，不能只完成钥匙交付。",
+    "source": "service",
+    "locator": "5.4",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-017",
+    "subject": 2,
+    "type": "S",
+    "q": "景区游览前，导游核对游览安排应以什么为基准？",
+    "options": [
+      "游客临时提出的所有要求",
+      "旅游合同约定的接待计划",
+      "司机最熟悉的路线",
+      "购物店营业时间"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "合同是核实游览服务的基准，现场执行仍需依法依约调整。",
+    "source": "service",
+    "locator": "5.6.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-018",
+    "subject": 2,
+    "type": "S",
+    "q": "带团游览时发现部分老人步速明显落后，最合适的是？",
+    "options": [
+      "照旧赶路，让其自行追上",
+      "关注特殊群体动向，调整组织节奏与协作安排",
+      "一律要求其放弃景点",
+      "只在结束后询问"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "服务应特别关注老人、未成年人、残疾人等群体，不能机械按统一步速执行。",
+    "source": "service",
+    "locator": "5.6.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-019",
+    "subject": 2,
+    "type": "S",
+    "q": "团队超过10人，导游旗使用符合规范的是？",
+    "options": [
+      "保持旗杆直立、旗面易辨",
+      "挂满多种玩偶遮住旅行社标识",
+      "仅司机持旗",
+      "导游旗可随意垫坐"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "导游旗承担识别和组织作用，应规范持用和保管。",
+    "source": "service",
+    "locator": "5.6.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-020",
+    "subject": 2,
+    "type": "S",
+    "q": "送站前发现返程票据与接待计划日期不一致，导游应？",
+    "options": [
+      "以最早收到的文件为准直接送站",
+      "核实联程返程票据并联系旅行社，确认实际出发安排",
+      "由游客自行判断",
+      "到机场再处理"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "离站服务要求提前确认票据，避免把可提前解决的问题留到现场。",
+    "source": "service",
+    "locator": "5.9",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-021",
+    "subject": 2,
+    "type": "S",
+    "q": "客人离团后行李延误仍未解决，导游应？",
+    "options": [
+      "认为合同已结束而不再协助",
+      "继续妥善处理遗留问题，协助取证理赔并必要时请示",
+      "自行承诺全额赔偿",
+      "只保留游客电话不跟进"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "后续工作明确包括延误、破损、遗失行李的协助处理。",
+    "source": "service",
+    "locator": "5.10.1",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-022",
+    "subject": 2,
+    "type": "S",
+    "q": "一次带团发生重大事故，导游的工作总结应重点包含？",
+    "options": [
+      "只写满意度平均值",
+      "事件经过、处理结果及相关证明材料",
+      "删除所有事故信息",
+      "只写发生日期"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "重大事故的经过、处置与证据应完整报告，不能用一般总结替代。",
+    "source": "service",
+    "locator": "5.10.2",
+    "topic": "接待准备与协同",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-023",
+    "subject": 2,
+    "type": "S",
+    "q": "游客要求导游编造猎奇的宗教故事以活跃气氛，最佳回应是？",
+    "options": [
+      "为气氛可以编造",
+      "用准确、尊重信仰的内容讲解并说明传说性质",
+      "把所有宗教内容省略",
+      "让游客自行给故事定论"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "讲解须尊重宗教信仰和职业道德，不能以迎合要求替代准确性。",
+    "source": "guide",
+    "locator": "第12条",
+    "topic": "讲解与现场履约",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-024",
+    "subject": 2,
+    "type": "S",
+    "q": "行进中发生危及人身安全的紧急情形，导游征得多数游客同意调整路线后，还须？",
+    "options": [
+      "行程结束再报告",
+      "立即报告旅行社",
+      "只告知景区销售处",
+      "补收紧急处理费"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "紧急变更不免立即报告义务。",
+    "source": "guide",
+    "locator": "第13条",
+    "topic": "讲解与现场履约",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-025",
+    "subject": 2,
+    "type": "S",
+    "q": "游客提出有辱导游人格的要求，导游拒绝后仍按约服务，法律评价是？",
+    "options": [
+      "一拒绝即构成擅自离团",
+      "依法行使拒绝权且继续履约",
+      "必须获得全体游客批准",
+      "只要道歉就须照做"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "导游可拒绝侮辱人格或违反职业道德的不合理要求。",
+    "source": "guide",
+    "locator": "第10条",
+    "topic": "讲解与现场履约",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-026",
+    "subject": 2,
+    "type": "S",
+    "q": "一条临水游览路线可能危及游客安全，导游的义务应包括？",
+    "options": [
+      "仅说“后果自负”",
+      "真实说明、明确警示并按要求采取预防措施",
+      "只收集免责声明",
+      "只在发生事故后报告"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "风险告知和预防措施不能被免责话术替代。",
+    "source": "guide",
+    "locator": "第14条",
+    "topic": "讲解与现场履约",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-027",
+    "subject": 2,
+    "type": "S",
+    "q": "导游收到游客要求更换高标准酒店，应当采用哪种处理方式？",
+    "options": [
+      "口头承诺不管旅行社意见",
+      "联系旅行社核定变更，明确费用和书面约定",
+      "自行决定用购物佣金补差",
+      "直接认定游客违约"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "导游不能擅自改变合同，需旅行社核定并明确变更与费用。",
+    "source": "law",
+    "locator": "第69条；结合服务规范7.2.1",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-028",
+    "subject": 2,
+    "type": "S",
+    "q": "地陪建议把游客带到合同外购物点，称全部游客签字即可。还必须核查什么？",
+    "options": [
+      "是否给导游返佣",
+      "安排是否符合法定例外且不影响其他游客行程",
+      "商店面积是否够大",
+      "是否提供免费饮料"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "游客同意并不是不合理低价、回扣及变相强迫购物的免责条件。",
+    "source": "law",
+    "locator": "第35条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-029",
+    "subject": 2,
+    "type": "S",
+    "q": "游客向导游提出投诉，导游最合理的处理是？",
+    "options": [
+      "要求撤回投诉后才服务",
+      "记录事实、协助沟通并依法依约继续提供服务",
+      "当场裁定游客败诉",
+      "因投诉立即解除合同"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "投诉是游客权利，不能以投诉为由拒绝履约；导游无裁决权。",
+    "source": "law",
+    "locator": "第12、69、92条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-030",
+    "subject": 2,
+    "type": "S",
+    "q": "因暴雨造成不可抗力滞留，游客质疑新增食宿费，导游应如何解释？",
+    "options": [
+      "所有费用都由旅行社承担",
+      "区分新增食宿与返程费用，说明各自法定承担规则",
+      "全部费用均由游客承担",
+      "必须均分每项费用"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "食宿由游客承担，返程双方分担，告知时须区分费用性质。",
+    "source": "law",
+    "locator": "第67条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-031",
+    "subject": 2,
+    "type": "S",
+    "q": "地接酒店降低标准，全陪最适当的立场是？",
+    "options": [
+      "仅转述酒店解释",
+      "依据包价合同核实差异，联系接待方及组团社落实补救",
+      "把降低标准写成游客自愿",
+      "认为地接社负责便不介入"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "全陪监督协助按约履行，组团社的对外责任不能以委托转移。",
+    "source": "law",
+    "locator": "第69—71条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-032",
+    "subject": 2,
+    "type": "S",
+    "q": "游客发生安全事故后要求救助，旅行社一时无法确定责任归属，导游应？",
+    "options": [
+      "先等责任鉴定",
+      "先协助及时救助并报告，费用责任依法另行处理",
+      "取得免责书后才联系救助",
+      "以未买意外险为由拒绝"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "紧急救助不能以责任未定或未投保为前提拖延。",
+    "source": "law",
+    "locator": "第12、81条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-033",
+    "subject": 2,
+    "type": "S",
+    "q": "游客在合理自由活动时间受伤，能否只凭“自由活动”就认定旅行社完全免责？",
+    "options": [
+      "可以，所有责任终止",
+      "不可以，仍需核查提示与救助等法定义务履行情况",
+      "旅行社必然全责",
+      "导游个人必然全责"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "不能以活动标签替代对安全义务、具体事实和因果关系的判断。",
+    "source": "law",
+    "locator": "第62、79—81条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-034",
+    "subject": 2,
+    "type": "S",
+    "q": "入境团队游客出现非法滞留迹象，导游报告旅行社后应协助依法向哪些主体报告？",
+    "options": [
+      "只向酒店",
+      "公安机关、旅游主管部门或我国驻外机构等法定主体",
+      "只向航空公司",
+      "只向游客雇主"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "应按出入境具体情形履行法定报告要求，而非私下隐瞒处理。",
+    "source": "law",
+    "locator": "第55条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-035",
+    "subject": 2,
+    "type": "S",
+    "q": "景区提示即将达到核定最大承载量，导游应如何安排？",
+    "options": [
+      "让游客从侧门进入",
+      "配合预约、疏导分流及旅行社协调安排",
+      "要求景区临时提高核定上限",
+      "以已付款为由强行进场"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "合同履行受安全容量管制约束，应协同处理而非绕过管制。",
+    "source": "law",
+    "locator": "第45条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-036",
+    "subject": 2,
+    "type": "S",
+    "q": "带团结束，商店欲向导游索取全团手机号码营销，应当如何处理？",
+    "options": [
+      "为方便复购可直接提供",
+      "保护游客个人信息，不擅自对外提供",
+      "只去掉姓名就可提供",
+      "让司机代发即可"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "在经营活动中知悉的信息负保密义务，营销需求不能代替合法处理依据。",
+    "source": "law",
+    "locator": "第52条",
+    "topic": "业务情境中的法律应用",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-037",
+    "subject": 2,
+    "type": "S",
+    "q": "旅行团在境外遭遇旅游突发事件，领队应立即向哪些对象报告最完整？",
+    "options": [
+      "只向国内家属",
+      "当地警方、我国驻当地使领馆或派出机构及旅行社负责人",
+      "只向组团社财务",
+      "仅在回国后报告主管部门"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "境外现场报告与旅行社负责人随后向所在地主管部门报告是不同层级。",
+    "source": "safety",
+    "locator": "第15条",
+    "topic": "应急处置与风险研判",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-038",
+    "subject": 2,
+    "type": "S",
+    "q": "境外领队报告突发事件后，旅行社负责人向所在地旅游主管部门报告的期限是？",
+    "options": [
+      "接报后1小时内",
+      "接报后24小时内",
+      "返程后3日",
+      "保险赔付后"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "接报后1小时内报告；不得等候理赔或事故结案。",
+    "source": "safety",
+    "locator": "第15条",
+    "topic": "应急处置与风险研判",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-039",
+    "subject": 2,
+    "type": "S",
+    "q": "某地从黄色风险升级为橙色风险，尚未出发的团队应如何处理？",
+    "options": [
+      "仍只做一般提示",
+      "停止组团或带团前往风险区域",
+      "等待升级红色才处理",
+      "签免责书即可继续"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "橙色为二级，未出发的应停止前往，不能维持三级措施。",
+    "source": "safety",
+    "locator": "第16、18条",
+    "topic": "应急处置与风险研判",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-040",
+    "subject": 2,
+    "type": "S",
+    "q": "某地蓝色风险已经消失，对其提示结束规则理解正确的是？",
+    "options": [
+      "所有风险均须等待专项结束公告",
+      "三级、四级提示可不发布结束时间，风险消失自然结束",
+      "蓝色风险永不结束",
+      "导游可在风险未消失前宣布结束"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "不能把一级、二级的结束信息要求机械用于三级、四级。",
+    "source": "safety",
+    "locator": "第17条",
+    "topic": "应急处置与风险研判",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-041",
+    "subject": 2,
+    "type": "S",
+    "q": "境外机场游客托运行李未到，领队应优先协助游客联系？",
+    "options": [
+      "旅店前台",
+      "机场行李查询台或承运人行李服务柜台",
+      "国内景区客服",
+      "当地出租车公司"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "应在承运人相关渠道查询申报，再根据结果办理索赔理赔。",
+    "source": "service",
+    "locator": "7.2.3.2",
+    "topic": "失物走失与需求管理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-042",
+    "subject": 2,
+    "type": "S",
+    "q": "团队一名未成年人在景区走失，报警时机应如何掌握？",
+    "options": [
+      "等待24小时",
+      "等到闭园再报",
+      "立即报警",
+      "找到全部同行人签字后报警"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "老人、未成年人、残疾人等特殊群体走失，规范要求立即报警。",
+    "source": "service",
+    "locator": "7.2.4.1",
+    "topic": "失物走失与需求管理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-043",
+    "subject": 2,
+    "type": "S",
+    "q": "普通成年游客走失，全陪参与寻找时，地陪原则上的分工是？",
+    "options": [
+      "全团无人照看一起四散找人",
+      "带领其余团队继续游览并保持联络",
+      "先自行离团",
+      "只在原地等候全部信息"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "在规范的分工下，全陪组织协助寻找，地陪继续带团；特殊风险情形需立即升级处置。",
+    "source": "service",
+    "locator": "7.2.4.1",
+    "topic": "失物走失与需求管理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-044",
+    "subject": 2,
+    "type": "S",
+    "q": "旅游者提出变更合同的特殊要求，旅行社核准后导游应如何落实？",
+    "options": [
+      "只在群聊发个表情",
+      "按旅行社要求签订书面变更约定",
+      "只要求司机记住",
+      "一律不留任何材料"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "核准与书面约定共同保证变更可核查，避免口头承诺争议。",
+    "source": "service",
+    "locator": "7.2.1.1",
+    "topic": "失物走失与需求管理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-045",
+    "subject": 2,
+    "type": "S",
+    "q": "客人离团前委托导游处理遗留物品，最稳妥的方式是？",
+    "options": [
+      "一律口头答应任何要求",
+      "按规定核实托办事项，必要时请示旅行社并留痕",
+      "视为导游私人业务收取任意费用",
+      "只让下一团游客代送"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "托办事项仍属服务后续工作，须合规且具可履行性。",
+    "source": "service",
+    "locator": "5.10.1",
+    "topic": "失物走失与需求管理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-046",
+    "subject": 2,
+    "type": "S",
+    "q": "导游接受游客对服务质量的评价，其主要用途应是？",
+    "options": [
+      "只筛选好评公布",
+      "发现差距并改进后续服务",
+      "以评价替代合同履行",
+      "要求游客统一满分"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "质量评价应服务于问题识别与持续改进，而非操控评分。",
+    "source": "service",
+    "locator": "第8章",
+    "topic": "失物走失与需求管理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-047",
+    "subject": 2,
+    "type": "T",
+    "q": "接团准备只需了解行程，无需了解游客特殊需求。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "准备还包括游客基本情况、特殊要求及注意事项。",
+    "source": "service",
+    "locator": "5.1.1",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-048",
+    "subject": 2,
+    "type": "T",
+    "q": "导游接收旅游者资料票据时，应核对登记并保存交接记录。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "交接记录支持后续追溯，不能只依赖口头交付。",
+    "source": "service",
+    "locator": "5.1.2",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-049",
+    "subject": 2,
+    "type": "T",
+    "q": "导游在高速公路或危险路段可站立讲解，只要多数游客同意即可。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "规范的交通安全要求不因游客同意而免除。",
+    "source": "service",
+    "locator": "5.3.2",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-050",
+    "subject": 2,
+    "type": "T",
+    "q": "地陪确认团队身份后，在开车前仍须礼貌清点人数。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "身份核验与出发清点是不同控制点。",
+    "source": "service",
+    "locator": "5.2.3",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-051",
+    "subject": 2,
+    "type": "T",
+    "q": "全陪发现地方服务难以落实的重大问题，应及时请示组团社。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "全陪承担全程监督协助职责，需与组团社保持联系。",
+    "source": "service",
+    "locator": "5.6.2",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-052",
+    "subject": 2,
+    "type": "T",
+    "q": "导游的后续工作不包括游客离团后的行李延误协助。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "行李延误、破损、遗失及保险取证均可属于遗留问题处理。",
+    "source": "service",
+    "locator": "5.10.1",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-053",
+    "subject": 2,
+    "type": "T",
+    "q": "境外机场行李损坏，领队可以协助游客向承运人申报并办理相关索赔事宜。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "应通过行李查询或承运人服务渠道处理并留存材料。",
+    "source": "service",
+    "locator": "7.2.3.2",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-054",
+    "subject": 2,
+    "type": "T",
+    "q": "未成年人走失必须满24小时才能报警。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "特殊群体走失应立即报警。",
+    "source": "service",
+    "locator": "7.2.4.1",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-055",
+    "subject": 2,
+    "type": "T",
+    "q": "导游服务应兼顾依法依约与满足游客合理、可能实现的需求。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "合理且可能并不意味着接受所有要求。",
+    "source": "service",
+    "locator": "7.1",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-056",
+    "subject": 2,
+    "type": "T",
+    "q": "旅游者要求变更合同，导游可绕过旅行社直接口头同意。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "特殊情况须请示旅行社核定，同意后按要求书面约定。",
+    "source": "service",
+    "locator": "7.2.1.1",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-057",
+    "subject": 2,
+    "type": "T",
+    "q": "导游工作结束后，应按财务规定结账并归还所借物品。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "后续工作同时包括总结、结账、归还物品。",
+    "source": "service",
+    "locator": "5.10.2",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-058",
+    "subject": 2,
+    "type": "T",
+    "q": "全陪导游只负责游客到达目的地之前的交通服务。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "全陪承担境内全程陪同、监督协助接待计划实施等服务。",
+    "source": "service",
+    "locator": "3.3.1",
+    "topic": "服务流程辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-059",
+    "subject": 2,
+    "type": "T",
+    "q": "游客拒绝参加自费活动，导游可以据此降低其合同内餐饮标准。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "应按合同履约，不得因拒绝额外消费降低标准。",
+    "source": "law",
+    "locator": "第35、69条",
+    "topic": "接待权责辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-060",
+    "subject": 2,
+    "type": "T",
+    "q": "游客已投保意外险，旅行社就不再负有安全救助义务。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "投保不能替代法定安全与救助义务。",
+    "source": "law",
+    "locator": "第61、81条",
+    "topic": "接待权责辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-061",
+    "subject": 2,
+    "type": "T",
+    "q": "行程单属于包价合同的一部分，导游不能以“仅供参考”随意改变其约定。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "合同义务与法定变更情形须分清。",
+    "source": "law",
+    "locator": "第59、69条",
+    "topic": "接待权责辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-062",
+    "subject": 2,
+    "type": "T",
+    "q": "在旅游活动中，旅游者应配合合法的安全防范和应急处置措施。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "权利保护与依法配合安全措施并行。",
+    "source": "law",
+    "locator": "第15条",
+    "topic": "接待权责辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-063",
+    "subject": 2,
+    "type": "T",
+    "q": "红色提示对应最高的一级风险。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "级别数字越小，严重程度越高。",
+    "source": "safety",
+    "locator": "第16条",
+    "topic": "风险业务辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-064",
+    "subject": 2,
+    "type": "T",
+    "q": "目的地二级风险发布后，旅行社可用游客免责书替代停止前往措施。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "签字不能代替法定风险应对措施。",
+    "source": "safety",
+    "locator": "第18条",
+    "topic": "风险业务辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-065",
+    "subject": 2,
+    "type": "T",
+    "q": "境外旅游突发事件只需向当地警方报告，不需要报告国内旅行社。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "领队还应报告使领馆或派出机构与旅行社负责人。",
+    "source": "safety",
+    "locator": "第15条",
+    "topic": "风险业务辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-066",
+    "subject": 2,
+    "type": "T",
+    "q": "三级风险的应对要求是采取必要的安全防范措施。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "四级加强提示，三级必要防范，二级停止前往，一级还须组织撤离。",
+    "source": "safety",
+    "locator": "第18条",
+    "topic": "风险业务辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-067",
+    "subject": 2,
+    "type": "M",
+    "q": "接团前的规范准备包括哪些？",
+    "options": [
+      "核对接待计划",
+      "掌握游客特殊要求",
+      "不必核对票据日期，只核对张数",
+      "确认交通食宿接待衔接",
+      "以往年同团经验替代本次核对"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "准备要针对本次团队与现行安排，不能只沿用旧经验。 本题选项中“不必核对票据日期，只核对张数”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.1",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-068",
+    "subject": 2,
+    "type": "M",
+    "q": "地陪迎接服务的合理步骤包括？",
+    "options": [
+      "确认应接团队",
+      "核实人数并提醒行李",
+      "由游客自行找车，导游可提前离开接站点",
+      "开车前清点与安全提示",
+      "仅看旗色不核团队身份"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "从确认团队到安全出发形成连续核验，不能跳过身份核对。 本题选项中“由游客自行找车，导游可提前离开接站点”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.2.3",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-069",
+    "subject": 2,
+    "type": "M",
+    "q": "旅游客车服务中，符合规范的做法有哪些？",
+    "options": [
+      "只告知车身颜色，不必说明停车点和开车时间",
+      "提醒系安全带",
+      "在导游专座就坐",
+      "高速路站立以便互动",
+      "提醒约定开车时间"
+    ],
+    "answer": [
+      1,
+      2,
+      4
+    ],
+    "explanation": "安全、识别与时间信息均应落实；高速路不站立讲解。 本题选项中“只告知车身颜色，不必说明停车点和开车时间”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.3",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-070",
+    "subject": 2,
+    "type": "M",
+    "q": "交通工具无法正常运行时，导游可以采取哪些措施？",
+    "options": [
+      "联络交通部门",
+      "与旅行社沟通",
+      "安抚游客",
+      "未经旅行社核准就承诺全部损失全额报销",
+      "立即认定游客承担全部损失"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "协助处置与最终责任认定应分开，不能未经核实一概定责。 本题选项中“未经旅行社核准就承诺全部损失全额报销”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.3.1",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-071",
+    "subject": 2,
+    "type": "M",
+    "q": "全陪在地方接待中的职责包括？",
+    "options": [
+      "监督接待计划落实",
+      "协助地陪",
+      "自行取消合同内项目以减少地接成本",
+      "难解问题请示组团社",
+      "一概不介入当地服务"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "全陪并非到达目的地就结束职责。 本题选项中“自行取消合同内项目以减少地接成本”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.6.2",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-072",
+    "subject": 2,
+    "type": "M",
+    "q": "游览服务中应特别关注的游客群体包括？",
+    "options": [
+      "老年人",
+      "未成年人",
+      "残疾人",
+      "只需照顾能额外付小费者",
+      "仅高消费游客"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "特殊关照以实际需要与安全为依据，而非消费额。 本题选项中“只需照顾能额外付小费者”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.6.2",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-073",
+    "subject": 2,
+    "type": "M",
+    "q": "离站服务需要提前落实哪些事项？",
+    "options": [
+      "返程或联程票据",
+      "到站时间安排",
+      "行李证件提醒",
+      "不核验票据与身份，只凭团队名单登乘",
+      "将所有核验留到停止登机后"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "时间、票据、物品与登乘流程应事先衔接。 本题选项中“不核验票据与身份，只凭团队名单登乘”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.9",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-074",
+    "subject": 2,
+    "type": "M",
+    "q": "导游工作结束后的事项包括？",
+    "options": [
+      "遗留问题处理",
+      "工作总结",
+      "可将公款与个人带团收入混同结算",
+      "归还所借物品",
+      "抹去事故经过记录"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "结束接待不等于终止所有后续义务，事故更需完整报告。 本题选项中“可将公款与个人带团收入混同结算”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "5.10",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-075",
+    "subject": 2,
+    "type": "M",
+    "q": "处理游客走失时，哪些做法符合规范及安全原则？",
+    "options": [
+      "了解最后出现位置和线索",
+      "仅自行寻找，无须向旅行社报告",
+      "特殊群体走失立即报警",
+      "联系可能有线索的景区住宿方",
+      "无论何种风险均必须等24小时"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "24小时不能成为特殊群体或紧急危险情况延迟报警的理由。 本题选项中“仅自行寻找，无须向旅行社报告”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "7.2.4",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-076",
+    "subject": 2,
+    "type": "M",
+    "q": "游客境外机场行李未到，领队应协助哪些事项？",
+    "options": [
+      "向机场或承运人查询申报",
+      "留存查询申报材料",
+      "未取得承运人结论就确定固定赔偿金额",
+      "必要时与旅行社沟通",
+      "替航空公司保证当天必达"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "协助取证申报，不能作未经确认的承运承诺。 本题选项中“未取得承运人结论就确定固定赔偿金额”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "7.2.3",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-077",
+    "subject": 2,
+    "type": "M",
+    "q": "旅游服务的改进应以哪些信息为依据？",
+    "options": [
+      "游客评价",
+      "接待过程中发现的问题",
+      "只使用好评，排除负面评价资料",
+      "合同履行差距",
+      "只保留好评并删除负面信息"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "质量评价要真实反映服务差距并用于改进。 本题选项中“只使用好评，排除负面评价资料”为干扰项，不符合所列依据。",
+    "source": "service",
+    "locator": "第8章、5.10.2",
+    "topic": "业务综合判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-078",
+    "subject": 2,
+    "type": "M",
+    "q": "游客希望临时增加购物，导游判断时应关注哪些因素？",
+    "options": [
+      "是否符合双方协商一致或游客要求的条件",
+      "是否影响其他游客行程",
+      "仅检查商店返佣比例是否足够",
+      "合同变更是否依法处理",
+      "游客提出后导游即可强制全团购买"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "主动请求也不能合法化强迫消费或侵害其他游客行程。 本题选项中“仅检查商店返佣比例是否足够”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第35、69条",
+    "topic": "案例权责综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-079",
+    "subject": 2,
+    "type": "M",
+    "q": "因地接酒店履约不当造成团队住宿降标，规范处理应包括？",
+    "options": [
+      "核实合同标准",
+      "联系地接社协调补救",
+      "以委托地接社为由拒绝向组团社反映",
+      "留存实际差异和处理记录",
+      "将游客投诉权作为补房条件"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "应围绕履约补救与证据，不能附加放弃投诉条件。 本题选项中“以委托地接社为由拒绝向组团社反映”为干扰项，不符合所列依据。",
+    "source": "law",
+    "locator": "第69—71条",
+    "topic": "案例权责综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-080",
+    "subject": 2,
+    "type": "M",
+    "q": "面对游客个人信息，导游应当？",
+    "options": [
+      "限于服务需要处理",
+      "避免擅自对商家提供",
+      "对已知信息履行保密义务",
+      "向营销群公开证件照片",
+      "把健康信息发到公开社交平台"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "旅行社与导游服务过程中获知的信息不能随意公开或另作营销用途。",
+    "source": "law",
+    "locator": "第52条",
+    "topic": "案例权责综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-081",
+    "subject": 2,
+    "type": "M",
+    "q": "境外发生旅游突发事件，领队即时报告对象包括？",
+    "options": [
+      "当地警方",
+      "中国驻当地使领馆或政府派出机构",
+      "旅行社负责人",
+      "仅游客单位",
+      "仅保险销售人员"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "保险协助可后续开展，但不能替代法定即时报告链条。",
+    "source": "safety",
+    "locator": "第15条",
+    "topic": "应急报告综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-082",
+    "subject": 2,
+    "type": "M",
+    "q": "二级风险提示发布后，旅行社依法应采取哪些措施？",
+    "options": [
+      "停止组团前往风险区",
+      "停止带团前往风险区",
+      "已在风险区调整或中止行程",
+      "只发提醒后按原行程前往",
+      "用免责书替代安全措施"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "二级的措施比三级、四级严格，签字不免义务。",
+    "source": "safety",
+    "locator": "第18条",
+    "topic": "应急报告综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-2-083",
+    "subject": 2,
+    "type": "M",
+    "q": "导游根据管理条例在紧急情况下调整接待计划，应具备哪些要件？",
+    "options": [
+      "出现可能危及游客人身安全的紧急情形",
+      "征得多数旅游者同意",
+      "立即报告旅行社",
+      "仅商店要求即可",
+      "导游可免于任何后续说明"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "权限限于安全紧急情形，不能用于商业便利或省时。",
+    "source": "guide",
+    "locator": "第13条",
+    "topic": "紧急变更程序",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-001",
+    "subject": 3,
+    "type": "S",
+    "q": "某古建筑屋顶有一条正脊、四条垂脊、四条戗脊，应判为何种形制？",
+    "options": [
+      "庑殿顶",
+      "歇山顶",
+      "硬山顶",
+      "悬山顶"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "九脊由1正脊、4垂脊、4戗脊组成，属于歇山；庑殿为五脊。",
+    "source": "roof2",
+    "locator": "屋顶形式",
+    "topic": "古建筑形制",
+    "kind": "回忆考点改编",
+    "year": 2023,
+    "recallSource": "r2023",
+    "recallLocator": "公开判断题第19题：歇山顶与庑殿顶",
+    "recallNote": "依据可见回忆考点独立重写题干或选项；答案以所列权威依据复核。不是官方原题。"
+  },
+  {
+    "id": "v3-3-002",
+    "subject": 3,
+    "type": "S",
+    "q": "比较硬山与悬山，最有区分度的观察点是？",
+    "options": [
+      "是否都有坡面",
+      "屋面檩端是否伸出山墙",
+      "是否一律用琉璃瓦",
+      "是否必须有两层檐"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "悬山檩端伸出山墙，硬山檩端包砌在山墙内；瓦色和重檐非本质区分。",
+    "source": "roof2",
+    "locator": "硬山顶与悬山顶",
+    "topic": "古建筑形制",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-003",
+    "subject": 3,
+    "type": "S",
+    "q": "古建屋顶各坡向一点汇合、上置宝顶，通常属于？",
+    "options": [
+      "庑殿顶",
+      "歇山顶",
+      "攒尖顶",
+      "悬山顶"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "攒尖顶以各坡汇向顶部一点为特征，不具有常规长正脊。",
+    "source": "roof2",
+    "locator": "攒尖顶",
+    "topic": "古建筑形制",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-004",
+    "subject": 3,
+    "type": "S",
+    "q": "一座四面坡殿堂，只有一条正脊和四条垂脊，其基本屋顶类型是？",
+    "options": [
+      "庑殿顶",
+      "歇山顶",
+      "卷棚顶",
+      "硬山顶"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "庑殿四坡五脊，歇山多出四条戗脊。",
+    "source": "roof2",
+    "locator": "庑殿顶",
+    "topic": "古建筑形制",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-005",
+    "subject": 3,
+    "type": "S",
+    "q": "故宫中和殿屋顶形制应识别为？",
+    "options": [
+      "重檐庑殿顶",
+      "重檐歇山顶",
+      "单檐四角攒尖顶",
+      "单檐悬山顶"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "中和殿平面近方形，为单檐四角攒尖顶，不能与两侧大殿混淆。",
+    "source": "palace2",
+    "locator": "中和殿图注",
+    "topic": "宫殿建筑识别",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-006",
+    "subject": 3,
+    "type": "S",
+    "q": "保和殿的屋顶与太和殿相比，其主要类型是？",
+    "options": [
+      "重檐歇山顶",
+      "单檐硬山顶",
+      "圆形攒尖顶",
+      "悬山顶"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "保和殿为重檐歇山，太和殿为重檐庑殿；重檐不是唯一识别指标。",
+    "source": "palace2",
+    "locator": "保和殿图注",
+    "topic": "宫殿建筑识别",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-007",
+    "subject": 3,
+    "type": "S",
+    "q": "故宫“前朝后寝”格局中，属于外朝中心建筑的一组是？",
+    "options": [
+      "乾清宫、交泰殿、坤宁宫",
+      "太和殿、中和殿、保和殿",
+      "养心殿、储秀宫、长春宫",
+      "慈宁宫、寿康宫、宁寿宫"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "前三殿为外朝中心，后三宫为内廷中心，两组功能不同。",
+    "source": "palace",
+    "locator": "外朝与内廷",
+    "topic": "礼制空间",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-008",
+    "subject": 3,
+    "type": "S",
+    "q": "讲解故宫内廷中心“后三宫”，应列出哪组？",
+    "options": [
+      "太和殿、中和殿、保和殿",
+      "乾清宫、交泰殿、坤宁宫",
+      "武英殿、文华殿、奉先殿",
+      "午门、神武门、东华门"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "后三宫是内廷中轴的重要组成，与前三殿形成前朝后寝关系。",
+    "source": "palace",
+    "locator": "外朝与内廷",
+    "topic": "礼制空间",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-009",
+    "subject": 3,
+    "type": "S",
+    "q": "游客将四大佛教名山与菩萨对应，下列哪组正确？",
+    "options": [
+      "普陀山—文殊",
+      "五台山—文殊",
+      "峨眉山—地藏",
+      "九华山—观音"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "五台文殊、峨眉普贤、普陀观音、九华地藏，考点在准确配对。",
+    "source": "culture",
+    "locator": "第53项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-010",
+    "subject": 3,
+    "type": "S",
+    "q": "下面哪座山属于四大道教名山而不属于四大佛教名山？",
+    "options": [
+      "五台山",
+      "九华山",
+      "齐云山",
+      "普陀山"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "齐云山与武当、龙虎、青城并称四大道教名山。",
+    "source": "culture",
+    "locator": "第53、54项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-011",
+    "subject": 3,
+    "type": "S",
+    "q": "四大佛教名山中，普贤菩萨道场通常指？",
+    "options": [
+      "普陀山",
+      "峨眉山",
+      "九华山",
+      "五台山"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "名称中的“普”容易误导：普贤对应峨眉，观音对应普陀。",
+    "source": "culture",
+    "locator": "第53项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-012",
+    "subject": 3,
+    "type": "S",
+    "q": "“三清”中，与太清境相联系的是？",
+    "options": [
+      "元始天尊",
+      "灵宝天尊",
+      "道德天尊",
+      "玉皇大帝"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "三清为元始、灵宝、道德天尊，不能把玉皇大帝混入。",
+    "source": "culture",
+    "locator": "第60项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-013",
+    "subject": 3,
+    "type": "S",
+    "q": "下列绣种与传统代表地区搭配正确的是？",
+    "options": [
+      "湘绣—四川",
+      "蜀绣—湖南",
+      "苏绣—江苏苏州",
+      "粤绣—福建"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "苏绣苏州、湘绣湖南、蜀绣四川、粤绣广东。",
+    "source": "culture",
+    "locator": "第3项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-014",
+    "subject": 3,
+    "type": "S",
+    "q": "《千里江山图》的作者是？",
+    "options": [
+      "张择端",
+      "王希孟",
+      "黄公望",
+      "顾闳中"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "王希孟对应千里江山图；张择端对应清明上河图。",
+    "source": "culture",
+    "locator": "第58项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-015",
+    "subject": 3,
+    "type": "S",
+    "q": "《富春山居图》与作者的正确配对是？",
+    "options": [
+      "黄公望",
+      "顾恺之",
+      "阎立本",
+      "韩滉"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "黄公望为元代画家，不能与晋唐五代人物画作者混淆。",
+    "source": "culture",
+    "locator": "第58项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-016",
+    "subject": 3,
+    "type": "S",
+    "q": "下列不属于元曲四大家的是？",
+    "options": [
+      "关汉卿",
+      "马致远",
+      "郑光祖",
+      "王实甫"
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "通行元曲四大家为关汉卿、白朴、马致远、郑光祖。",
+    "source": "culture",
+    "locator": "第59项",
+    "topic": "宗教与传统文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-017",
+    "subject": 3,
+    "type": "S",
+    "q": "以下哪组山脉最能对应中国地势第二、三级阶梯的主要分界？",
+    "options": [
+      "昆仑、祁连、横断",
+      "大兴安岭、太行、巫山、雪峰山",
+      "天山、阴山、秦岭",
+      "南岭、武夷、台湾山脉"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "昆仑—祁连—横断主要属第一、二级分界，须辨清阶梯。",
+    "source": "geo",
+    "locator": "中国地貌·三大阶梯",
+    "topic": "地势与地貌",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-018",
+    "subject": 3,
+    "type": "S",
+    "q": "位于中国地势第一级阶梯的主体地形是？",
+    "options": [
+      "黄土高原",
+      "内蒙古高原",
+      "青藏高原",
+      "四川盆地"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "第一级主体为青藏高原，第二级包含若干高原和盆地。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "地势与地貌",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-019",
+    "subject": 3,
+    "type": "S",
+    "q": "从宏观地貌分区看，黄土高原与云贵高原主要位于？",
+    "options": [
+      "第一级阶梯",
+      "第二级阶梯",
+      "第三级阶梯",
+      "大陆架"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "不能因云贵地势南部较低就归入第三级。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "地势与地貌",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-020",
+    "subject": 3,
+    "type": "S",
+    "q": "中科院地理资料将秦岭描述为哪两大水系的重要分水岭？",
+    "options": [
+      "黄河与长江",
+      "长江与珠江",
+      "海河与辽河",
+      "黑龙江与松花江"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "秦岭对应黄河—长江，南岭对应长江—珠江。",
+    "source": "geo",
+    "locator": "东西走向山脉",
+    "topic": "地势与地貌",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-021",
+    "subject": 3,
+    "type": "S",
+    "q": "长江与珠江水系的重要分水岭是？",
+    "options": [
+      "阴山",
+      "南岭",
+      "燕山",
+      "大兴安岭"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "分水岭应按水系位置判断，不以山脉知名度判断。",
+    "source": "geo",
+    "locator": "东西走向山脉",
+    "topic": "地势与地貌",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-022",
+    "subject": 3,
+    "type": "S",
+    "q": "在全国地势阶梯中，以广阔平原和丘陵为主的东部地带主要属于？",
+    "options": [
+      "第一级",
+      "第二级",
+      "第三级",
+      "全部属于高山峡谷区"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "第三级主要为东部平原、丘陵与低山，不等于完全没有起伏。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "地势与地貌",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-023",
+    "subject": 3,
+    "type": "S",
+    "q": "以下哪一项属于世界文化与自然双重遗产？",
+    "options": [
+      "武夷山",
+      "九寨沟",
+      "苏州古典园林",
+      "武陵源"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "武夷山为双重遗产；九寨沟和武陵源为自然遗产，苏州园林为文化遗产。",
+    "source": "wh",
+    "locator": "Mixed / Natural / Cultural",
+    "topic": "遗产类别与年代",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-024",
+    "subject": 3,
+    "type": "S",
+    "q": "把“庐山国家公园”仅凭名称归入自然遗产，是否正确？",
+    "options": [
+      "正确，国家公园必为自然遗产",
+      "不正确，其名录类别是文化遗产",
+      "不正确，其类别是双重遗产",
+      "正确，所有山岳均为自然遗产"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "遗产类别依据申报与列入价值，不依据名称是否有“山”或“公园”。",
+    "source": "wh",
+    "locator": "Cultural",
+    "topic": "遗产类别与年代",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-025",
+    "subject": 3,
+    "type": "S",
+    "q": "以下四项中，列入世界遗产名录最早的是？",
+    "options": [
+      "北京中轴线",
+      "泉州宋元海洋商贸中心",
+      "中国大运河",
+      "长城"
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "长城1987年；大运河2014年；泉州2021年；北京中轴线2024年。",
+    "source": "wh",
+    "locator": "各条目入选年份",
+    "topic": "遗产类别与年代",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-026",
+    "subject": 3,
+    "type": "S",
+    "q": "“普洱景迈山古茶林文化景观”属于哪类世界遗产？",
+    "options": [
+      "自然遗产",
+      "文化遗产",
+      "双重遗产",
+      "仅为非遗，未列世界遗产"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "文化景观可列为文化遗产，不能因有森林就认定自然遗产。",
+    "source": "wh",
+    "locator": "Cultural",
+    "topic": "遗产类别与年代",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-027",
+    "subject": 3,
+    "type": "S",
+    "q": "以下哪项属于世界自然遗产？",
+    "options": [
+      "梵净山",
+      "五台山",
+      "青城山与都江堰",
+      "武当山古建筑群"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "梵净山为自然遗产，其余列为文化遗产。",
+    "source": "wh",
+    "locator": "Natural / Cultural",
+    "topic": "遗产类别与年代",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-028",
+    "subject": 3,
+    "type": "S",
+    "q": "“峨眉山—乐山大佛”在名录中的类别是？",
+    "options": [
+      "单纯文化遗产",
+      "单纯自然遗产",
+      "文化与自然双重遗产",
+      "仅为非物质文化遗产"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "该遗产兼具自然与文化价值；不能只看大佛或只看山体。",
+    "source": "wh",
+    "locator": "Mixed",
+    "topic": "遗产类别与年代",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-029",
+    "subject": 3,
+    "type": "S",
+    "q": "《大学》《中庸》在独立成为“四书”组成之前，原为哪部书中的篇章？",
+    "options": [
+      "《周礼》",
+      "《礼记》",
+      "《仪礼》",
+      "《尚书》"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "二篇原出礼记，须与三礼中的周礼、仪礼区别。",
+    "source": "books",
+    "locator": "四书词条",
+    "topic": "典籍体系",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-030",
+    "subject": 3,
+    "type": "S",
+    "q": "下列哪部作品属于“四书”而不属于“五经”？",
+    "options": [
+      "《尚书》",
+      "《周易》",
+      "《孟子》",
+      "《春秋》"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "四书为大学、中庸、论语、孟子；五经中不包括孟子。",
+    "source": "books",
+    "locator": "四书词条",
+    "topic": "典籍体系",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-031",
+    "subject": 3,
+    "type": "S",
+    "q": "《四书章句集注》与哪位思想家关系最直接？",
+    "options": [
+      "朱熹",
+      "董仲舒",
+      "王充",
+      "韩非"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "南宋朱熹的四书注释体系影响后世经学与科举。",
+    "source": "books",
+    "locator": "四书词条",
+    "topic": "典籍体系",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-032",
+    "subject": 3,
+    "type": "S",
+    "q": "明清科举中，乡试中式者通常取得什么身份？",
+    "options": [
+      "秀才",
+      "举人",
+      "贡士",
+      "进士"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "乡试举人，会试贡士，殿试按等级授进士出身。",
+    "source": "keju",
+    "locator": "明清科举考试程序",
+    "topic": "明清科举",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-033",
+    "subject": 3,
+    "type": "S",
+    "q": "明清会试由哪一中央机构主持？",
+    "options": [
+      "工部",
+      "礼部",
+      "刑部",
+      "户部"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "会试是礼部主持的考试，不能与皇帝主持殿试混淆。",
+    "source": "keju",
+    "locator": "明清科举考试程序",
+    "topic": "明清科举",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-034",
+    "subject": 3,
+    "type": "S",
+    "q": "明清会试通过后、参加殿试前，考生通常称为？",
+    "options": [
+      "生员",
+      "举人",
+      "贡士",
+      "探花"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "会试录取为贡士，探花属于殿试一甲第三名。",
+    "source": "keju",
+    "locator": "明清科举考试程序",
+    "topic": "明清科举",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-035",
+    "subject": 3,
+    "type": "S",
+    "q": "明清殿试一甲第二名通常称为？",
+    "options": [
+      "解元",
+      "会元",
+      "榜眼",
+      "探花"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "一甲三名依次状元、榜眼、探花。",
+    "source": "keju",
+    "locator": "殿试三甲",
+    "topic": "明清科举",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-036",
+    "subject": 3,
+    "type": "S",
+    "q": "明清殿试“同进士出身”对应哪一甲？",
+    "options": [
+      "一甲",
+      "二甲",
+      "三甲",
+      "乡试甲等"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "一甲进士及第，二甲进士出身，三甲同进士出身。",
+    "source": "keju",
+    "locator": "殿试三甲",
+    "topic": "明清科举",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-037",
+    "subject": 3,
+    "type": "S",
+    "q": "下列哪项属于再加工茶而不是六大基本茶类之一？",
+    "options": [
+      "黄茶",
+      "白茶",
+      "花茶",
+      "黑茶"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "文旅部资料区分六大茶类与花茶等再加工茶。",
+    "source": "tea",
+    "locator": "六大茶类与再加工茶",
+    "topic": "茶文化与非遗",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-038",
+    "subject": 3,
+    "type": "S",
+    "q": "中国传统制茶技艺及其相关习俗于哪年列入人类非遗代表作名录？",
+    "options": [
+      "2008年",
+      "2014年",
+      "2022年",
+      "2024年"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "该项目2022年列入；与2023年景迈山文化景观世界遗产不同。",
+    "source": "tea",
+    "locator": "2022-11-29公告",
+    "topic": "茶文化与非遗",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-039",
+    "subject": 3,
+    "type": "S",
+    "q": "传统制茶技艺集中分布的四大茶区，哪项不在其中？",
+    "options": [
+      "江南",
+      "江北",
+      "西南",
+      "东北"
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "四大茶区为江南、江北、西南、华南。",
+    "source": "tea",
+    "locator": "四大茶区",
+    "topic": "茶文化与非遗",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-040",
+    "subject": 3,
+    "type": "S",
+    "q": "国家移民管理局介绍的八大菜系中，“闽”对应哪一省？",
+    "options": [
+      "广东",
+      "福建",
+      "浙江",
+      "湖南"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "闽菜福建，粤菜广东，浙菜浙江，湘菜湖南。",
+    "source": "food",
+    "locator": "八大菜系",
+    "topic": "饮食文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-041",
+    "subject": 3,
+    "type": "S",
+    "q": "下列哪组均属于通常所称“八大菜系”？",
+    "options": [
+      "鲁、川、粤、苏",
+      "京、沪、东北、鲁",
+      "豫、晋、陕、湘",
+      "鲁、京、沪、粤"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "京菜、本帮菜、东北菜为地方特色，但不在这一通行八大菜系名单内。",
+    "source": "food",
+    "locator": "八大菜系",
+    "topic": "饮食文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-042",
+    "subject": 3,
+    "type": "S",
+    "q": "那达慕大会最典型地与哪个民族传统相联系？",
+    "options": [
+      "蒙古族",
+      "傣族",
+      "藏族",
+      "朝鲜族"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "那达慕对应蒙古族，不能与泼水节、藏历年等混同。",
+    "source": "ethnic",
+    "locator": "少数民族主要节日",
+    "topic": "民族节庆辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-043",
+    "subject": 3,
+    "type": "S",
+    "q": "关于火把节，下列哪项表述更准确？",
+    "options": [
+      "只有彝族庆祝",
+      "多个民族有相关传统，并非单一民族独有",
+      "主要对应朝鲜族老人节的另一名称",
+      "与蒙古族那达慕为同一节日"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "官方资料列举彝、白、佤等多个民族，不宜把共有节日说成绝对独有。",
+    "source": "ethnic",
+    "locator": "火把节",
+    "topic": "民族节庆辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-044",
+    "subject": 3,
+    "type": "S",
+    "q": "“老人节”在该民宗部门资料中与哪个民族对应？",
+    "options": [
+      "朝鲜族",
+      "蒙古族",
+      "傣族",
+      "回族"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "区别朝鲜族老人节、蒙古族那达慕、傣族泼水节。",
+    "source": "ethnic",
+    "locator": "少数民族主要节日",
+    "topic": "民族节庆辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-045",
+    "subject": 3,
+    "type": "T",
+    "q": "庑殿顶与歇山顶都必然只有两面坡。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "庑殿为四面坡，歇山有复合形制，不能等同两坡硬山。",
+    "source": "roof2",
+    "locator": "屋顶形式",
+    "topic": "形制判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-046",
+    "subject": 3,
+    "type": "T",
+    "q": "硬山顶与悬山顶可通过檩端是否出山墙来区分。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "这是二者重要形制差异，不以瓦色判断。",
+    "source": "roof2",
+    "locator": "硬山与悬山",
+    "topic": "形制判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-047",
+    "subject": 3,
+    "type": "T",
+    "q": "“重檐”描述檐层关系，不能单独确定屋顶属于庑殿还是歇山。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "庑殿、歇山均有单檐与重檐形式。",
+    "source": "roof2",
+    "locator": "庑殿、歇山",
+    "topic": "形制判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-048",
+    "subject": 3,
+    "type": "T",
+    "q": "典型攒尖顶有一条水平长正脊和四条戗脊。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "攒尖各坡汇向宝顶，不能套用歇山九脊构成。",
+    "source": "roof2",
+    "locator": "攒尖顶",
+    "topic": "形制判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-049",
+    "subject": 3,
+    "type": "T",
+    "q": "四大佛教名山中的九华山位于安徽，传统上对应地藏菩萨。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "九华地藏与峨眉普贤、普陀观音、五台文殊区别记忆。",
+    "source": "culture",
+    "locator": "第53项",
+    "topic": "文化辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-050",
+    "subject": 3,
+    "type": "T",
+    "q": "青城山属于四大佛教名山之一。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "青城山属于四大道教名山。",
+    "source": "culture",
+    "locator": "第53、54项",
+    "topic": "文化辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-051",
+    "subject": 3,
+    "type": "T",
+    "q": "苏绣与蜀绣分别对应江苏与四川的传统刺绣。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "苏、蜀字音相近，地域不能混淆。",
+    "source": "culture",
+    "locator": "第3项",
+    "topic": "文化辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-052",
+    "subject": 3,
+    "type": "T",
+    "q": "《清明上河图》与《千里江山图》均由张择端所作。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "前者张择端，后者王希孟。",
+    "source": "culture",
+    "locator": "第58项",
+    "topic": "文化辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-053",
+    "subject": 3,
+    "type": "T",
+    "q": "中国地势第二级阶梯只包括高原，不包括盆地。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "第二级还包括塔里木、准噶尔、四川等盆地。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "自然地理判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-054",
+    "subject": 3,
+    "type": "T",
+    "q": "大兴安岭、太行山等可作为第二、三级阶梯分界的组成。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "应与第一、二级分界的山系区别。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "自然地理判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-055",
+    "subject": 3,
+    "type": "T",
+    "q": "南岭是长江与珠江水系间的重要分水岭。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "不能与秦岭的黄河、长江分水岭混淆。",
+    "source": "geo",
+    "locator": "东西走向山脉",
+    "topic": "自然地理判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-056",
+    "subject": 3,
+    "type": "T",
+    "q": "世界遗产中的文化景观，必然归入文化与自然双重遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "文化景观可归为文化遗产，例如哈尼梯田、景迈山古茶林。",
+    "source": "wh",
+    "locator": "Cultural",
+    "topic": "遗产分类判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-057",
+    "subject": 3,
+    "type": "T",
+    "q": "黄山与泰山均列为文化与自然双重遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "两者均在Mixed类别中。",
+    "source": "wh",
+    "locator": "Mixed",
+    "topic": "遗产分类判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-058",
+    "subject": 3,
+    "type": "T",
+    "q": "九寨沟与武陵源均属世界自然遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "名录中均列于Natural类别。",
+    "source": "wh",
+    "locator": "Natural",
+    "topic": "遗产分类判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-059",
+    "subject": 3,
+    "type": "T",
+    "q": "非物质文化遗产代表作名录与世界遗产名录是同一张名单。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "二者为不同保护制度与名录，传统制茶技艺和景迈山文化景观不能混为一个项目。",
+    "source": "wh",
+    "locator": "世界遗产名录；结合茶非遗公告",
+    "topic": "遗产分类判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-060",
+    "subject": 3,
+    "type": "T",
+    "q": "明清乡试录取者称贡士，会试录取者称举人。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "顺序倒置：乡试举人、会试贡士。",
+    "source": "keju",
+    "locator": "明清科举程序",
+    "topic": "科举身份判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-061",
+    "subject": 3,
+    "type": "T",
+    "q": "明清殿试一甲三名依次为状元、榜眼、探花。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "三者为殿试名次，不能与乡试、会试第一名混用。",
+    "source": "keju",
+    "locator": "殿试三甲",
+    "topic": "科举身份判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-062",
+    "subject": 3,
+    "type": "T",
+    "q": "《论语》《孟子》《大学》《中庸》合称“四书”。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "四书与五经属于两套经典组合。",
+    "source": "books",
+    "locator": "四书词条",
+    "topic": "典籍判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-063",
+    "subject": 3,
+    "type": "T",
+    "q": "《大学》《中庸》最初均是《礼记》篇章。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "后来独立进入四书体系，不等于最初独立成书。",
+    "source": "books",
+    "locator": "四书词条",
+    "topic": "典籍判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-064",
+    "subject": 3,
+    "type": "T",
+    "q": "花茶是与绿茶、红茶并列的六大基本茶类之一。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "花茶属于再加工茶；六大基本类包含黄茶、黑茶、白茶、乌龙茶等。",
+    "source": "tea",
+    "locator": "六大茶类",
+    "topic": "茶类判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-065",
+    "subject": 3,
+    "type": "M",
+    "q": "关于常见屋顶形制，哪些描述正确？",
+    "options": [
+      "庑殿顶有四面坡",
+      "典型歇山有九脊",
+      "悬山檩端伸出山墙",
+      "硬山檩端伸出山墙，与悬山相同",
+      "攒尖顶必有长正脊"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "应从坡面、脊线、山墙关系区分，攒尖不具有一般长正脊。 本题选项中“硬山檩端伸出山墙，与悬山相同”为干扰项，不符合所列依据。",
+    "source": "roof2",
+    "locator": "屋顶形式",
+    "topic": "建筑综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-066",
+    "subject": 3,
+    "type": "M",
+    "q": "以下哪些特征有助于识别歇山顶？",
+    "options": [
+      "一条正脊",
+      "四条垂脊",
+      "只有四条垂脊，不存在戗脊",
+      "俗称九脊殿",
+      "仅看黄色琉璃瓦即可确定"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "瓦色不能决定形制，应看脊线与坡面的组合。 本题选项中“只有四条垂脊，不存在戗脊”为干扰项，不符合所列依据。",
+    "source": "roof2",
+    "locator": "歇山顶",
+    "topic": "建筑综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-067",
+    "subject": 3,
+    "type": "M",
+    "q": "四大佛教名山与菩萨对应正确的有？",
+    "options": [
+      "五台山—文殊",
+      "峨眉山—文殊",
+      "普陀山—观音",
+      "九华山—地藏",
+      "武当山—弥勒"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "武当山为道教名山，不属于这一组佛教道场。 本题选项中“峨眉山—文殊”为干扰项，不符合所列依据。",
+    "source": "culture",
+    "locator": "第53项",
+    "topic": "文化配对综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-068",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些属于四大道教名山？",
+    "options": [
+      "武当山",
+      "龙虎山",
+      "普陀山",
+      "青城山",
+      "九华山"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "武当山、青城山、龙虎山属于道教名山；普陀山、九华山属于佛教名山。",
+    "source": "culture",
+    "locator": "第54项",
+    "topic": "文化配对综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-069",
+    "subject": 3,
+    "type": "M",
+    "q": "关于画作与作者，配对正确的有？",
+    "options": [
+      "《洛神赋图》—顾恺之",
+      "《清明上河图》—顾恺之",
+      "《富春山居图》—黄公望",
+      "《千里江山图》—王希孟",
+      "《步辇图》—顾闳中"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "步辇图对应阎立本，顾闳中对应韩熙载夜宴图。 本题选项中“《清明上河图》—顾恺之”为干扰项，不符合所列依据。",
+    "source": "culture",
+    "locator": "第58项",
+    "topic": "文化配对综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-070",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些属于通行“元曲四大家”？",
+    "options": [
+      "关汉卿",
+      "白朴",
+      "王实甫",
+      "郑光祖",
+      "汤显祖"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "汤显祖为明代戏曲家，不在元曲四大家中。 本题选项中“王实甫”为干扰项，不符合所列依据。",
+    "source": "culture",
+    "locator": "第59项",
+    "topic": "文化配对综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-071",
+    "subject": 3,
+    "type": "M",
+    "q": "属于地势第二级阶梯的典型地形单元有？",
+    "options": [
+      "内蒙古高原",
+      "黄土高原",
+      "东北平原",
+      "四川盆地",
+      "长江中下游平原"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "长江中下游平原主要属第三级；高原与盆地可同属第二级。 本题选项中“东北平原”为干扰项，不符合所列依据。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "地貌综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-072",
+    "subject": 3,
+    "type": "M",
+    "q": "构成第二、三级阶梯分界的山脉包括？",
+    "options": [
+      "大兴安岭",
+      "昆仑山",
+      "巫山",
+      "雪峰山",
+      "喜马拉雅山"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "喜马拉雅山不能混入东部第二、三级阶梯分界山系。 本题选项中“昆仑山”为干扰项，不符合所列依据。",
+    "source": "geo",
+    "locator": "三大阶梯",
+    "topic": "地貌综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-073",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些列为文化与自然双重遗产？",
+    "options": [
+      "泰山",
+      "九寨沟",
+      "武夷山",
+      "峨眉山—乐山大佛",
+      "三清山"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "泰山、峨眉山—乐山大佛和武夷山属于文化与自然双重遗产；九寨沟、三清山为自然遗产。",
+    "source": "wh",
+    "locator": "Mixed / Natural",
+    "topic": "世界遗产综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-074",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些属于文化遗产？",
+    "options": [
+      "苏州古典园林",
+      "平遥古城",
+      "武陵源",
+      "普洱景迈山古茶林文化景观",
+      "九寨沟"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "不能凭是否有山水、植被来判定名录类别。 本题选项中“武陵源”为干扰项，不符合所列依据。",
+    "source": "wh",
+    "locator": "Cultural / Natural",
+    "topic": "世界遗产综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-075",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些属于自然遗产？",
+    "options": [
+      "中国南方喀斯特",
+      "中国丹霞",
+      "五台山",
+      "青海可可西里",
+      "庐山国家公园"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "庐山在世界遗产名录中为文化遗产。 本题选项中“五台山”为干扰项，不符合所列依据。",
+    "source": "wh",
+    "locator": "Natural / Cultural",
+    "topic": "世界遗产综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-076",
+    "subject": 3,
+    "type": "M",
+    "q": "下列属于“四书”的有？",
+    "options": [
+      "《大学》",
+      "《中庸》",
+      "《周易》",
+      "《孟子》",
+      "《尚书》"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "尚书属于五经体系，不在四书中。 本题选项中“《尚书》”为干扰项，不符合所列依据。",
+    "source": "classics",
+    "locator": "四书与五经",
+    "topic": "典籍组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-077",
+    "subject": 3,
+    "type": "M",
+    "q": "下列属于“五经”的有？",
+    "options": [
+      "《诗经》",
+      "《尚书》",
+      "《大学》",
+      "《春秋》",
+      "《孟子》"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "五经另含礼；孟子为四书之一。 本题选项中“《大学》”为干扰项，不符合所列依据。",
+    "source": "classics",
+    "locator": "四书与五经",
+    "topic": "典籍组合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-078",
+    "subject": 3,
+    "type": "M",
+    "q": "明清科举程序与身份对应正确的有？",
+    "options": [
+      "乡试—举人",
+      "会试—举人",
+      "殿试一甲第一—状元",
+      "殿试一甲第二—榜眼",
+      "殿试一甲第三—会元"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "一甲第三为探花，会元是会试第一名称谓。 本题选项中“会试—举人”为干扰项，不符合所列依据。",
+    "source": "keju",
+    "locator": "科举程序与殿试三甲",
+    "topic": "科举综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-079",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些属于六大基本茶类？",
+    "options": [
+      "白茶",
+      "黄茶",
+      "茉莉花茶",
+      "乌龙茶",
+      "花茶"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "六大茶类还包括绿茶、红茶；花茶属于再加工茶。 本题选项中“茉莉花茶”为干扰项，不符合所列依据。",
+    "source": "tea",
+    "locator": "六大茶类",
+    "topic": "茶文化综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-080",
+    "subject": 3,
+    "type": "M",
+    "q": "八大菜系与省份配对正确的有？",
+    "options": [
+      "鲁菜—山东",
+      "苏菜—浙江",
+      "湘菜—湖南",
+      "徽菜—安徽",
+      "闽菜—广东"
+    ],
+    "answer": [
+      0,
+      2,
+      3
+    ],
+    "explanation": "闽菜福建，粤菜广东，注意省份简称区分。 本题选项中“苏菜—浙江”为干扰项，不符合所列依据。",
+    "source": "food",
+    "locator": "八大菜系",
+    "topic": "饮食地域综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-081",
+    "subject": 3,
+    "type": "M",
+    "q": "下列节庆与民族配对正确的有？",
+    "options": [
+      "那达慕—蒙古族",
+      "泼水节—傣族",
+      "老人节—傣族",
+      "藏历年—藏族",
+      "火把节—仅汉族"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "火把节为多个民族传统，不能说仅汉族。 本题选项中“老人节—傣族”为干扰项，不符合所列依据。",
+    "source": "ethnic",
+    "locator": "少数民族主要节日",
+    "topic": "民族习俗综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-3-082",
+    "subject": 3,
+    "type": "M",
+    "q": "五岳与省份对应正确的有？",
+    "options": [
+      "泰山—山东",
+      "华山—陕西",
+      "衡山—山西",
+      "恒山—山西",
+      "嵩山—河北"
+    ],
+    "answer": [
+      0,
+      1,
+      3
+    ],
+    "explanation": "嵩山位于河南，南衡北恒尤其容易混淆。 本题选项中“衡山—山西”为干扰项，不符合所列依据。",
+    "source": "five",
+    "locator": "五岳词条",
+    "topic": "五岳综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-001",
+    "subject": 4,
+    "type": "S",
+    "q": "以明清县城格局、票号金融历史为突出价值的世界遗产是？",
+    "options": [
+      "平遥古城",
+      "丽江古城",
+      "开平碉楼",
+      "鼓浪屿"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "平遥的传统县城形态与近代金融商业历史是辨识线索。",
+    "source": "pingyao",
+    "locator": "遗产价值简介",
+    "topic": "山西",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-002",
+    "subject": 4,
+    "type": "S",
+    "q": "平遥古城遗产范围除城内建筑外，还包括哪组寺院？",
+    "options": [
+      "双林寺、镇国寺",
+      "悬空寺、善化寺",
+      "晋祠、永乐宫",
+      "华严寺、南禅寺"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "遗产包括平遥城、双林寺与镇国寺，不能把山西其他名寺混入。",
+    "source": "pingyao",
+    "locator": "Brief synthesis",
+    "topic": "山西",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-003",
+    "subject": 4,
+    "type": "S",
+    "q": "以下哪组均属于苏州古典园林世界遗产组成？",
+    "options": [
+      "拙政园、留园、网师园",
+      "颐和园、北海、静宜园",
+      "豫园、个园、何园",
+      "承德避暑山庄、寄畅园、瞻园"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "名录九园包括拙政园、留园、网师园等，其他地方名园不能混算。",
+    "source": "gardens",
+    "locator": "九处园林名单",
+    "topic": "江苏",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-004",
+    "subject": 4,
+    "type": "S",
+    "q": "苏州园林的“小中见大”思想更接近哪种设计取向？",
+    "options": [
+      "依靠中轴线与严格对称强化皇家礼制",
+      "在有限居住空间内营造自然山水意境",
+      "强调原始自然面貌，排除人工山石建筑",
+      "只按植物种类分类布置，回避诗画意境"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "取法自然、在有限空间构建山水意境是核心，非机械复制皇家宫殿。",
+    "source": "gardens",
+    "locator": "遗产价值简介",
+    "topic": "江苏",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-005",
+    "subject": 4,
+    "type": "S",
+    "q": "“森林—村寨—梯田—水系”共同构成长期生态农业系统，最符合哪个遗产？",
+    "options": [
+      "红河哈尼梯田",
+      "福建土楼",
+      "开平碉楼",
+      "平遥古城"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "哈尼梯田的价值包括生态、水管理与人类生产生活的组合。",
+    "source": "hani",
+    "locator": "文化景观构成",
+    "topic": "云南梯田",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-006",
+    "subject": 4,
+    "type": "S",
+    "q": "红河哈尼梯田文化景观主要位于哪一省？",
+    "options": [
+      "贵州",
+      "云南",
+      "广西",
+      "四川"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "红河哈尼梯田在云南，不能与其他民族梯田地名混同。",
+    "source": "hani",
+    "locator": "遗产位置",
+    "topic": "云南梯田",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-007",
+    "subject": 4,
+    "type": "S",
+    "q": "福建土楼的建筑与社会功能，哪项表述最准确？",
+    "options": [
+      "均为圆形，且不具有防御功能",
+      "以夯土等建造，兼具集体居住与防御功能",
+      "以中西折衷的多层钢筋混凝土侨乡塔楼为主",
+      "以明清汉族县城票号院落为主体"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "土楼有圆、方等形式，不能把“圆形”当成所有土楼的必要条件。",
+    "source": "tulou",
+    "locator": "Description / OUV",
+    "topic": "福建民居",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-008",
+    "subject": 4,
+    "type": "S",
+    "q": "在建筑类型比较中，哪项最适合与福建土楼区分开来？",
+    "options": [
+      "福建山区夯土围合的大型民居",
+      "围合院落中的家族共同生活空间",
+      "广东开平兼具防御功能的多层碉楼",
+      "兼顾居住和防御的夯土建筑群"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "开平碉楼虽有居住防御功能，但区域、材料和建筑形态不同。",
+    "source": "tulou",
+    "locator": "遗产简介；结合开平",
+    "topic": "福建民居",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-009",
+    "subject": 4,
+    "type": "S",
+    "q": "拉萨布达拉宫历史建筑群世界遗产的组成还包括？",
+    "options": [
+      "大昭寺和罗布林卡",
+      "扎什伦布寺和萨迦寺",
+      "塔尔寺和拉卜楞寺",
+      "哲蚌寺和色拉寺"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "大昭寺和罗布林卡列入扩展组成；其他寺院并非此遗产的组成。",
+    "source": "potala",
+    "locator": "遗产组成",
+    "topic": "西藏",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-010",
+    "subject": 4,
+    "type": "S",
+    "q": "布达拉宫历史建筑群应归入哪一省级区域的地方基础知识？",
+    "options": [
+      "青海",
+      "甘肃",
+      "西藏",
+      "四川"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "位于西藏拉萨，应与青海、甘肃的藏传佛教寺院区分。",
+    "source": "potala",
+    "locator": "遗产位置",
+    "topic": "西藏",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-011",
+    "subject": 4,
+    "type": "S",
+    "q": "开平碉楼的突出文化特征是？",
+    "options": [
+      "侨乡背景下中西建筑形式交融",
+      "徽商宗族聚居的粉墙黛瓦村落",
+      "纳西古城顺应山地的街巷水系",
+      "汉族县城与票号金融街区格局"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "侨乡历史、居住防御功能与中西形式结合是识别关键。",
+    "source": "kaiping",
+    "locator": "遗产价值简介",
+    "topic": "广东",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-012",
+    "subject": 4,
+    "type": "S",
+    "q": "开平碉楼与村落所在省份是？",
+    "options": [
+      "广西",
+      "广东",
+      "福建",
+      "海南"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "开平在广东；福建土楼和澳门历史城区需分别识别。",
+    "source": "kaiping",
+    "locator": "遗产位置",
+    "topic": "广东",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-013",
+    "subject": 4,
+    "type": "S",
+    "q": "体现纳西文化并保留适应山地地形的古城格局与水系，最符合哪个遗产？",
+    "options": [
+      "丽江古城",
+      "平遥古城",
+      "澳门历史城区",
+      "皖南古村落"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "丽江的纳西文化与水系格局区别于平遥的汉族县城形态。",
+    "source": "lijiang",
+    "locator": "遗产价值简介",
+    "topic": "云南古城",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-014",
+    "subject": 4,
+    "type": "S",
+    "q": "丽江古城所在省份，与下列哪项遗产相同？",
+    "options": [
+      "红河哈尼梯田",
+      "开平碉楼",
+      "福建土楼",
+      "平遥古城"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "丽江与哈尼梯田均在云南，不能仅按同为民居判断地域。",
+    "source": "lijiang",
+    "locator": "遗产位置；结合哈尼梯田",
+    "topic": "云南古城",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-015",
+    "subject": 4,
+    "type": "S",
+    "q": "某遗产以宋元时期海洋商贸、港口设施与多元宗教遗存为核心，指的是？",
+    "options": [
+      "泉州",
+      "广州南越王宫遗址",
+      "宁波天一阁",
+      "扬州大运河沿线古迹"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "泉州以宋元海洋贸易中心及相关遗存构成整体价值。",
+    "source": "quanzhou",
+    "locator": "遗产名称与价值",
+    "topic": "福建海洋文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-016",
+    "subject": 4,
+    "type": "S",
+    "q": "“泉州：宋元中国的世界海洋商贸中心”与哪组时代对应？",
+    "options": [
+      "秦汉",
+      "隋唐",
+      "宋元",
+      "明清"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "遗产名称即明确宋元时期，不能因海上丝路历史悠久就替换时代。",
+    "source": "quanzhou",
+    "locator": "遗产名称",
+    "topic": "福建海洋文化",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-017",
+    "subject": 4,
+    "type": "S",
+    "q": "云南“三江并流”中的三条河流是？",
+    "options": [
+      "金沙江、澜沧江、怒江",
+      "长江、黄河、珠江",
+      "怒江、红河、元江",
+      "金沙江、雅鲁藏布江、黄河"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "三江并流指金沙江、澜沧江、怒江在横断山区近距离平行流经。",
+    "source": "rivers",
+    "locator": "Description",
+    "topic": "云南自然地理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-018",
+    "subject": 4,
+    "type": "S",
+    "q": "三江并流保护区所属省份与自然地理背景是？",
+    "options": [
+      "云南，横断山区",
+      "湖南，洞庭湖平原",
+      "福建，沿海丘陵",
+      "山西，黄土高原"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "“并流”指空间邻近而并非三条河合为一条。",
+    "source": "rivers",
+    "locator": "遗产位置与简介",
+    "topic": "云南自然地理",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-019",
+    "subject": 4,
+    "type": "S",
+    "q": "“中国南方喀斯特”以哪类地貌形成作用为重要基础？",
+    "options": [
+      "可溶性岩石的溶蚀作用",
+      "沙漠风积沙丘",
+      "黄土堆积",
+      "冰川搬运砾石"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "喀斯特与可溶岩溶蚀相关，须与丹霞红层、风沙地貌区分。",
+    "source": "karst",
+    "locator": "遗产简介",
+    "topic": "喀斯特地域",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-020",
+    "subject": 4,
+    "type": "S",
+    "q": "下面哪一组均为“中国南方喀斯特”的组成地？",
+    "options": [
+      "石林、荔波、武隆",
+      "丹霞山、龙虎山、赤水",
+      "黄山、泰山、庐山",
+      "莫高窟、云冈、龙门"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "石林、荔波、武隆属首批组成；丹霞山等属于另一序列遗产。",
+    "source": "karst",
+    "locator": "组成地",
+    "topic": "喀斯特地域",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-021",
+    "subject": 4,
+    "type": "S",
+    "q": "中国丹霞遗产的岩性与景观识别，哪项最准确？",
+    "options": [
+      "以红色陆相碎屑岩及陡崖等为重要特征",
+      "以石灰岩溶洞为唯一特征",
+      "只由冰川沉积构成",
+      "全部为海上珊瑚礁"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "丹霞与喀斯特不能混同；红层与侵蚀形成的陡崖是关键线索。",
+    "source": "danxia",
+    "locator": "Description",
+    "topic": "丹霞地域",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-022",
+    "subject": 4,
+    "type": "S",
+    "q": "以下哪组属于“中国丹霞”的组成地？",
+    "options": [
+      "丹霞山、龙虎山、赤水",
+      "石林、荔波、武隆",
+      "云冈、龙门、莫高窟",
+      "平遥、西递、宏村"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "三处分别涉及广东、江西、贵州，是丹霞序列中的组成。",
+    "source": "danxia",
+    "locator": "组成地",
+    "topic": "丹霞地域",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-023",
+    "subject": 4,
+    "type": "S",
+    "q": "北京中轴线遗产南北端点的正确搭配是？",
+    "options": [
+      "永定门—钟鼓楼",
+      "正阳门—颐和园",
+      "天坛—雍和宫",
+      "午门—十三陵"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "中轴线从南端永定门至北端钟鼓楼，不能把北京所有景点都视作轴上组成。",
+    "source": "axis",
+    "locator": "遗产范围",
+    "topic": "北京",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-024",
+    "subject": 4,
+    "type": "S",
+    "q": "北京中轴线列入世界遗产名录的年份是？",
+    "options": [
+      "1987",
+      "1998",
+      "2014",
+      "2024"
+    ],
+    "answer": [
+      3
+    ],
+    "explanation": "1987是故宫等首批入选年，1998为颐和园、天坛，2014为大运河，2024为中轴线。",
+    "source": "axis",
+    "locator": "2024年列入",
+    "topic": "北京",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-025",
+    "subject": 4,
+    "type": "S",
+    "q": "武当山古建筑群以哪类宗教建筑传统为核心？",
+    "options": [
+      "道教",
+      "藏传佛教",
+      "伊斯兰教",
+      "天主教"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "其建筑群与道教发展及明代皇家营建密切相关。",
+    "source": "wudang",
+    "locator": "遗产简介",
+    "topic": "湖北",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-026",
+    "subject": 4,
+    "type": "S",
+    "q": "武当山古建筑群所在省份是？",
+    "options": [
+      "湖北",
+      "湖南",
+      "江西",
+      "安徽"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "武当在湖北，龙虎山江西，齐云山安徽，不能只凭道教名山名称混记。",
+    "source": "wudang",
+    "locator": "遗产位置",
+    "topic": "湖北",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-027",
+    "subject": 4,
+    "type": "S",
+    "q": "“皖南古村落”世界遗产中的两处村落是？",
+    "options": [
+      "西递与宏村",
+      "乌镇与西塘",
+      "周庄与同里",
+      "婺源与篁岭"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "西递、宏村位于安徽，其他选项属于不同江南聚落。",
+    "source": "villages",
+    "locator": "遗产名称",
+    "topic": "安徽",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-028",
+    "subject": 4,
+    "type": "S",
+    "q": "讲解西递宏村，最合适的地域文化背景是？",
+    "options": [
+      "徽州文化",
+      "闽南海洋文化",
+      "草原游牧文化",
+      "青藏高原文化"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "皖南古村落的布局与建筑传统体现徽州区域文化。",
+    "source": "villages",
+    "locator": "遗产价值简介",
+    "topic": "安徽",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-029",
+    "subject": 4,
+    "type": "S",
+    "q": "良渚古城遗址与哪组关键词联系最密切？",
+    "options": [
+      "新石器时代、稻作农业、玉器",
+      "北魏石窟、皇家造像",
+      "清代皇家避暑",
+      "宋元海港商贸"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "良渚展现新石器晚期国家形态、稻作与玉礼器文化。",
+    "source": "liangzhu",
+    "locator": "遗产价值简介",
+    "topic": "浙江考古",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-030",
+    "subject": 4,
+    "type": "S",
+    "q": "良渚古城遗址位于哪一省？",
+    "options": [
+      "江苏",
+      "浙江",
+      "河南",
+      "陕西"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "良渚在浙江杭州区域，应区别河南殷墟和陕西秦陵。",
+    "source": "liangzhu",
+    "locator": "遗产位置",
+    "topic": "浙江考古",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-031",
+    "subject": 4,
+    "type": "S",
+    "q": "大足石刻主要体现的宗教思想融合是？",
+    "options": [
+      "佛教、道教与儒家",
+      "以伊斯兰教与儒家思想融合为主",
+      "只表现佛教思想，不涉及其他传统",
+      "以道教和基督教融合为核心"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "大足石刻显示三种思想传统的融合，并具有鲜明生活化表现。",
+    "source": "dazu",
+    "locator": "Description",
+    "topic": "重庆",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-032",
+    "subject": 4,
+    "type": "S",
+    "q": "澳门历史城区的重要价值线索是？",
+    "options": [
+      "中葡文化与建筑交流",
+      "北方明清县城票号",
+      "史前稻作水利",
+      "藏传佛教宫殿"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "澳门历史城区体现长期中西文化交流，不能与平遥等汉族古城混同。",
+    "source": "macao",
+    "locator": "Description",
+    "topic": "澳门",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-033",
+    "subject": 4,
+    "type": "S",
+    "q": "“天地之中”历史建筑群位于？",
+    "options": [
+      "河南登封",
+      "山东曲阜",
+      "山西大同",
+      "河北承德"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "登封与嵩山地区的礼制、天文及宗教建筑共同构成遗产。",
+    "source": "dengfeng",
+    "locator": "遗产名称与位置",
+    "topic": "河南礼制建筑",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-034",
+    "subject": 4,
+    "type": "S",
+    "q": "鼓浪屿世界遗产位于哪座城市？",
+    "options": [
+      "福州",
+      "厦门",
+      "泉州",
+      "漳州"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "鼓浪屿在厦门，泉州的宋元海洋商贸遗产是另一项目。",
+    "source": "kulangsu",
+    "locator": "遗产位置",
+    "topic": "福建近代社区",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-035",
+    "subject": 4,
+    "type": "S",
+    "q": "秦始皇陵及兵马俑应归入哪一地区的旅游资源？",
+    "options": [
+      "陕西西安",
+      "河南洛阳",
+      "山西大同",
+      "山东曲阜"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "秦陵在西安临潼区域；洛阳龙门、大同云冈、曲阜三孔需区别。",
+    "source": "qin",
+    "locator": "遗产位置",
+    "topic": "陕西",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-036",
+    "subject": 4,
+    "type": "S",
+    "q": "避暑山庄及周围寺庙位于哪座城市？",
+    "options": [
+      "北京",
+      "承德",
+      "沈阳",
+      "洛阳"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "承德位于河北，遗产体现清代皇家园林与多种寺庙建筑传统。",
+    "source": "chengde",
+    "locator": "遗产位置",
+    "topic": "河北",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-037",
+    "subject": 4,
+    "type": "S",
+    "q": "元上都遗址所反映的文化交融主要是？",
+    "options": [
+      "草原游牧传统与中原农耕文明",
+      "中葡海港贸易与近代殖民城市文化",
+      "岭南侨乡与欧美建筑形式",
+      "江南私家园林与文人隐逸传统"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "元上都在内蒙古，城市布局与文化体现游牧和农耕文明交融。",
+    "source": "xanadu",
+    "locator": "遗产价值简介",
+    "topic": "内蒙古",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-038",
+    "subject": 4,
+    "type": "S",
+    "q": "“曲阜三孔”是指？",
+    "options": [
+      "孔庙、孔林、孔府",
+      "孔庙、国子监、雍和宫",
+      "孔林、泰庙、岱庙",
+      "孔府、岳麓书院、白鹿洞书院"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "三孔是曲阜的孔庙孔林孔府，不能与北京孔庙国子监混同。",
+    "source": "qufu",
+    "locator": "遗产名称",
+    "topic": "山东",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-039",
+    "subject": 4,
+    "type": "S",
+    "q": "土司遗址中的老司城、唐崖、海龙屯分属哪组省份？",
+    "options": [
+      "湖南、湖北、贵州",
+      "河南、河北、山西",
+      "广东、广西、福建",
+      "四川、云南、西藏"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "三处序列组成分别在湘鄂黔，须区别同属西南区域的其他省份。",
+    "source": "tusi",
+    "locator": "组成地",
+    "topic": "跨省遗产",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-040",
+    "subject": 4,
+    "type": "S",
+    "q": "殷墟与哪组线索对应最准确？",
+    "options": [
+      "河南安阳、晚商、甲骨文",
+      "陕西西安、秦代、兵马俑",
+      "浙江杭州、新石器时代、玉器",
+      "河北承德、清代、避暑山庄"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "殷墟是晚商都城遗址，甲骨文是其核心历史证据之一。",
+    "source": "yinxu",
+    "locator": "遗产简介",
+    "topic": "河南考古",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-041",
+    "subject": 4,
+    "type": "S",
+    "q": "左江花山岩画文化景观位于哪一省级区域？",
+    "options": [
+      "广西",
+      "广东",
+      "云南",
+      "贵州"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "位于广西左江流域，不能与云南石林或红河梯田混同。",
+    "source": "huashan",
+    "locator": "遗产位置",
+    "topic": "广西",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-042",
+    "subject": 4,
+    "type": "S",
+    "q": "黄龙景观最具代表性的地貌线索是？",
+    "options": [
+      "彩池与钙华沉积",
+      "红层丹霞陡崖",
+      "海岸珊瑚礁",
+      "沙漠风积沙丘"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "黄龙以钙华彩池等为突出特征；注意不同自然遗产的成因辨析。",
+    "source": "huanglong",
+    "locator": "Description",
+    "topic": "四川",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-043",
+    "subject": 4,
+    "type": "S",
+    "q": "可可西里遗产最适合用哪组词概括？",
+    "options": [
+      "青藏高原、高寒生态、藏羚羊",
+      "云贵高原、亚热带喀斯特、峰林",
+      "四川盆地、湿润森林、钙华彩池",
+      "东南沿海、潮间带湿地、候鸟"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "其高海拔高寒生态系统与藏羚羊栖息迁徙有密切关系。",
+    "source": "hohxil",
+    "locator": "Description",
+    "topic": "青海",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-044",
+    "subject": 4,
+    "type": "S",
+    "q": "新疆天山自然遗产的代表性组合更接近？",
+    "options": [
+      "雪峰冰川、森林草甸与干旱区山地景观",
+      "红色陆相碎屑岩、丹崖与石柱",
+      "沿海潮间带、盐沼与迁徙鸟类",
+      "亚热带石灰岩、溶洞与峰林"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "天山在干旱地区仍具显著垂直带谱与冰川雪峰，不可把新疆等同纯沙漠。",
+    "source": "tianshan",
+    "locator": "Description",
+    "topic": "新疆",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-045",
+    "subject": 4,
+    "type": "T",
+    "q": "平遥古城的世界遗产范围只包括城墙，不包括城内建筑和关联寺院。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "范围包括古城及双林寺、镇国寺等，不能缩减为单一城墙。",
+    "source": "pingyao",
+    "locator": "Brief synthesis",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-046",
+    "subject": 4,
+    "type": "T",
+    "q": "拙政园、留园、网师园均属于苏州古典园林遗产组成。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "均列于九处组成园林，不能与其他城市园林混记。",
+    "source": "gardens",
+    "locator": "九处园林名单",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-047",
+    "subject": 4,
+    "type": "T",
+    "q": "红河哈尼梯田因有稻田和森林，因此在世界遗产中只属于自然遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "其类别为文化景观，列为文化遗产。",
+    "source": "hani",
+    "locator": "遗产类别",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-048",
+    "subject": 4,
+    "type": "T",
+    "q": "福建土楼全部为圆形，方形建筑不能属于土楼。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "土楼存在圆形、方形等形态，不能绝对化。",
+    "source": "tulou",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-049",
+    "subject": 4,
+    "type": "T",
+    "q": "大昭寺与罗布林卡属于布达拉宫历史建筑群世界遗产组成。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "分别通过扩展纳入同一遗产。",
+    "source": "potala",
+    "locator": "组成与扩展",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-050",
+    "subject": 4,
+    "type": "T",
+    "q": "开平碉楼与村落位于福建，是福建土楼的同名项目。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "开平在广东，两项遗产分别列入。",
+    "source": "kaiping",
+    "locator": "遗产位置",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-051",
+    "subject": 4,
+    "type": "T",
+    "q": "丽江古城的价值与纳西文化和古城水系有关。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "多种文化与适应地形的城市水系是重要特征。",
+    "source": "lijiang",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-052",
+    "subject": 4,
+    "type": "T",
+    "q": "云南三江并流中的三江是金沙江、澜沧江和怒江。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "并流是空间格局，不表示三江在此汇成同一河流。",
+    "source": "rivers",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-053",
+    "subject": 4,
+    "type": "T",
+    "q": "北京中轴线世界遗产于2024年列入名录。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "不要与1987年故宫、1998年天坛颐和园混淆。",
+    "source": "axis",
+    "locator": "入选年份",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-054",
+    "subject": 4,
+    "type": "T",
+    "q": "武当山古建筑群位于湖南，是以佛教建筑为核心的遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "位于湖北，核心为道教建筑传统。",
+    "source": "wudang",
+    "locator": "遗产简介",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-055",
+    "subject": 4,
+    "type": "T",
+    "q": "皖南古村落世界遗产的名称明确包含西递、宏村。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "对应安徽，不包含浙江乌镇、西塘。",
+    "source": "villages",
+    "locator": "遗产名称",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-056",
+    "subject": 4,
+    "type": "T",
+    "q": "良渚古城遗址主要反映明清皇家宫殿营建。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "主要为新石器晚期考古遗址，与稻作、玉礼器和早期国家相关。",
+    "source": "liangzhu",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-057",
+    "subject": 4,
+    "type": "T",
+    "q": "大足石刻位于重庆，内容体现佛、道、儒思想的交融。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "宗教艺术与世俗生活表达共同构成重要价值。",
+    "source": "dazu",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-058",
+    "subject": 4,
+    "type": "T",
+    "q": "鼓浪屿位于泉州，是泉州宋元海洋商贸遗产的唯一组成。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "鼓浪屿位于厦门，且为独立遗产项目。",
+    "source": "kulangsu",
+    "locator": "遗产位置",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-059",
+    "subject": 4,
+    "type": "T",
+    "q": "承德避暑山庄及周围寺庙属于河北的世界文化遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "承德与北京、沈阳的皇家遗产应分别识别。",
+    "source": "chengde",
+    "locator": "位置与类别",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-060",
+    "subject": 4,
+    "type": "T",
+    "q": "元上都遗址位于内蒙古，反映游牧与农耕文明交融。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "遗产价值不限于单一建筑形制。",
+    "source": "xanadu",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-061",
+    "subject": 4,
+    "type": "T",
+    "q": "曲阜三孔中的“孔林”是孔氏家族墓地，并非皇家园林。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "孔林与孔庙、孔府功能有别。",
+    "source": "qufu",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-062",
+    "subject": 4,
+    "type": "T",
+    "q": "殷墟位于陕西西安，与秦始皇兵马俑属于同一遗产。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "殷墟位于河南安阳，为晚商遗址，与秦陵年代地域均不同。",
+    "source": "yinxu",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-063",
+    "subject": 4,
+    "type": "T",
+    "q": "黄龙的彩池景观与钙华沉积密切相关。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "须与丹霞红层、冰川地貌区分。",
+    "source": "huanglong",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-064",
+    "subject": 4,
+    "type": "T",
+    "q": "青海可可西里的代表性生态环境是低海拔热带雨林。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "它是高海拔高寒生态系统的重要代表。",
+    "source": "hohxil",
+    "locator": "Description",
+    "topic": "区域判断",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-065",
+    "subject": 4,
+    "type": "M",
+    "q": "下列属于故宫内廷中心后三宫的有？",
+    "options": [
+      "乾清宫",
+      "交泰殿",
+      "坤宁宫",
+      "保和殿",
+      "中和殿"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "后三宫为乾清、交泰、坤宁；保和与中和属于外朝前三殿。",
+    "source": "palace",
+    "locator": "外朝内廷",
+    "topic": "北京专项综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-066",
+    "subject": 4,
+    "type": "M",
+    "q": "下列哪些是苏州古典园林遗产组成？",
+    "options": [
+      "沧浪亭",
+      "狮子林",
+      "网师园",
+      "豫园",
+      "颐和园"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "沧浪亭、狮子林、网师园在苏州古典园林遗产范围内；豫园在上海，颐和园在北京。",
+    "source": "gardens",
+    "locator": "九处园林",
+    "topic": "江苏综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-067",
+    "subject": 4,
+    "type": "M",
+    "q": "关于平遥古城遗产，哪些陈述正确？",
+    "options": [
+      "位于山西",
+      "保留传统汉族县城格局",
+      "与近代票号金融历史有关",
+      "以葡式海港建筑为核心",
+      "主要是热带岛屿景观"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "位置、城镇形态与金融历史是识别平遥的关键，不能与其他城镇景观混淆。",
+    "source": "pingyao",
+    "locator": "Brief synthesis",
+    "topic": "山西综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-068",
+    "subject": 4,
+    "type": "M",
+    "q": "属于布达拉宫历史建筑群世界遗产组成的有？",
+    "options": [
+      "布达拉宫",
+      "大昭寺",
+      "罗布林卡",
+      "塔尔寺",
+      "拉卜楞寺"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "布达拉宫、大昭寺、罗布林卡属于拉萨这一序列遗产；塔尔寺在青海，拉卜楞寺在甘肃。",
+    "source": "potala",
+    "locator": "遗产组成",
+    "topic": "西藏综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-069",
+    "subject": 4,
+    "type": "M",
+    "q": "云南三江并流涉及哪些河流？",
+    "options": [
+      "金沙江",
+      "澜沧江",
+      "怒江",
+      "黄河",
+      "珠江"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "金沙江、澜沧江、怒江在横断山区形成近距离并行的独特地理格局。",
+    "source": "rivers",
+    "locator": "Description",
+    "topic": "云南河流综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-070",
+    "subject": 4,
+    "type": "M",
+    "q": "下列哪些属于中国南方喀斯特组成地？",
+    "options": [
+      "云南石林",
+      "贵州荔波",
+      "重庆武隆",
+      "广东丹霞山",
+      "江西龙虎山"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "广东丹霞山、江西龙虎山属于中国丹霞，不属中国南方喀斯特这一序列。",
+    "source": "karst",
+    "locator": "遗产组成",
+    "topic": "跨省喀斯特综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-071",
+    "subject": 4,
+    "type": "M",
+    "q": "中国丹霞序列遗产包括哪些组成地？",
+    "options": [
+      "广东丹霞山",
+      "贵州赤水",
+      "江西龙虎山",
+      "云南石林",
+      "重庆武隆"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "所选正确项属于中国丹霞，石林、武隆属于中国南方喀斯特。",
+    "source": "danxia",
+    "locator": "遗产组成",
+    "topic": "跨省丹霞综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-072",
+    "subject": 4,
+    "type": "M",
+    "q": "土司遗址的组成地与省份配对正确的有？",
+    "options": [
+      "老司城—湖南",
+      "唐崖—湖北",
+      "海龙屯—贵州",
+      "老司城—广西",
+      "唐崖—云南"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "三处分别为湘、鄂、黔的历史土司遗存。",
+    "source": "tusi",
+    "locator": "组成地",
+    "topic": "土司遗址综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-073",
+    "subject": 4,
+    "type": "M",
+    "q": "名茶与传统产地配对正确的有？",
+    "options": [
+      "西湖龙井—浙江杭州",
+      "碧螺春—江苏太湖洞庭山",
+      "铁观音—福建安溪",
+      "祁门红茶—云南普洱",
+      "君山银针—江苏苏州"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "祁门在安徽，君山在湖南岳阳；避免按“名茶”笼统记忆。",
+    "source": "culture",
+    "locator": "第2项",
+    "topic": "地方名茶综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-074",
+    "subject": 4,
+    "type": "M",
+    "q": "下列哪些名山位于山西或陕西？",
+    "options": [
+      "恒山",
+      "华山",
+      "衡山",
+      "嵩山",
+      "泰山"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "恒山山西，华山陕西；衡山湖南、嵩山河南、泰山山东。",
+    "source": "five",
+    "locator": "五岳词条",
+    "topic": "名山地域综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-075",
+    "subject": 4,
+    "type": "M",
+    "q": "下列哪些石窟位于甘肃？",
+    "options": [
+      "莫高窟",
+      "麦积山石窟",
+      "云冈石窟",
+      "龙门石窟",
+      "大足石刻"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "莫高窟敦煌、麦积山天水均在甘肃；其他分别山西、河南、重庆。",
+    "source": "caves",
+    "locator": "四大石窟",
+    "topic": "石窟地域综合",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-076",
+    "subject": 4,
+    "type": "M",
+    "q": "关于泉州遗产，哪些表述正确？",
+    "options": [
+      "重点反映宋元海洋商贸",
+      "位于福建",
+      "等同厦门鼓浪屿项目",
+      "以清代北方票号为核心",
+      "属于世界自然遗产"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "泉州为文化遗产，宋元海贸与相关遗存为核心，不与鼓浪屿或平遥混同。",
+    "source": "quanzhou",
+    "locator": "名称、位置、类别",
+    "topic": "福建遗产辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-077",
+    "subject": 4,
+    "type": "M",
+    "q": "关于开平碉楼，哪些表述正确？",
+    "options": [
+      "位于广东侨乡",
+      "体现中西建筑交流",
+      "全部为福建圆形土楼",
+      "只具有宗教祭祀功能",
+      "属于高寒自然遗产"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "碉楼兼具居住、防御等用途，侨乡与中西融合是重要线索。",
+    "source": "kaiping",
+    "locator": "Description",
+    "topic": "侨乡建筑辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-078",
+    "subject": 4,
+    "type": "M",
+    "q": "与良渚古城遗址密切相关的有？",
+    "options": [
+      "新石器时代晚期",
+      "稻作农业与玉礼器",
+      "清代避暑制度",
+      "宋元海运港口",
+      "晚商甲骨文都城"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "须区分良渚、殷墟、承德与泉州各自时代和资源特征。",
+    "source": "liangzhu",
+    "locator": "Description",
+    "topic": "考古文化辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-079",
+    "subject": 4,
+    "type": "M",
+    "q": "澳门历史城区的正确认识包括？",
+    "options": [
+      "体现中葡文化交流",
+      "属于世界文化遗产",
+      "等同福建土楼",
+      "主要反映北魏佛教石窟",
+      "仅是世界自然遗产"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "名录价值在历史城区及文化交流，并非自然遗产。",
+    "source": "macao",
+    "locator": "Description、类别",
+    "topic": "澳门文化辨析",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-080",
+    "subject": 4,
+    "type": "M",
+    "q": "关于承德避暑山庄及周围寺庙，正确的有？",
+    "options": [
+      "位于河北",
+      "与清代皇家活动关系密切",
+      "与西藏布达拉宫为同一遗产",
+      "属于福建侨乡碉楼",
+      "全部是自然形成没有文化价值"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "皇家园林与周围寺庙共同构成文化遗产。",
+    "source": "chengde",
+    "locator": "Description",
+    "topic": "河北皇家遗产",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-081",
+    "subject": 4,
+    "type": "M",
+    "q": "关于黄龙，哪些陈述正确？",
+    "options": [
+      "位于四川",
+      "彩池与钙华景观突出",
+      "以海岸红树林为主要特征",
+      "属于北京皇家祭坛",
+      "以近代金融票号为核心"
+    ],
+    "answer": [
+      0,
+      1
+    ],
+    "explanation": "区域与地貌成因一起记忆，避免只记景点名称。",
+    "source": "huanglong",
+    "locator": "Description",
+    "topic": "四川自然遗产",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-082",
+    "subject": 4,
+    "type": "S",
+    "q": "杭州西湖文化景观的遗产价值最强调哪种关系？",
+    "options": [
+      "山水、堤岛与历史文化景观的长期融合",
+      "保持完全不受人类活动影响的原始森林",
+      "以明清皇家轴线和礼制空间为主",
+      "以近代侨乡中西折衷防御建筑为主"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "西湖体现人文营造与山水美学的结合，不能归为未经人类影响的纯自然空间。",
+    "source": "westlake",
+    "locator": "Description",
+    "topic": "浙江园林景观",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-083",
+    "subject": 4,
+    "type": "S",
+    "q": "杭州西湖文化景观列入世界遗产名录的年份是？",
+    "options": [
+      "1998年",
+      "2005年",
+      "2011年",
+      "2019年"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "西湖为2011年；良渚2019年，两项浙江遗产的年份不同。",
+    "source": "westlake",
+    "locator": "Date of inscription",
+    "topic": "浙江园林景观",
+    "kind": "模拟题",
+    "year": null
+  },
+  {
+    "id": "v3-4-084",
+    "subject": 4,
+    "type": "T",
+    "q": "舟山群岛是我国最大的群岛。",
+    "options": [
+      "正确",
+      "错误"
+    ],
+    "answer": [
+      0
+    ],
+    "explanation": "中科院地理资源所资料可核对这一结论；群岛与单个岛屿不是同一概念。",
+    "source": "islands",
+    "locator": "中国的岛屿·舟山群岛",
+    "topic": "历年回忆核验",
+    "kind": "回忆题原句",
+    "year": 2023,
+    "recallSource": "r2023",
+    "recallLocator": "公开判断题第2题",
+    "recallNote": "保留可见短题原句；发布方标为2023年回忆资料，不是官方试卷。",
+    "extra": true
+  },
+  {
+    "id": "v3-1-083",
+    "subject": 1,
+    "type": "S",
+    "q": "依现行宪法，中国特色社会主义最本质的特征是哪一项？",
+    "options": [
+      "人民代表大会制度",
+      "中国共产党领导",
+      "社会主义市场经济",
+      "基层群众自治制度"
+    ],
+    "answer": [
+      1
+    ],
+    "explanation": "宪法第一条明确规定中国共产党领导；根本政治制度与最本质特征不能混同。",
+    "source": "constitution",
+    "locator": "第一条",
+    "topic": "历年回忆核验",
+    "kind": "回忆考点改编",
+    "year": 2025,
+    "recallSource": "r2025",
+    "recallLocator": "第1页：最本质特征单选条目",
+    "recallNote": "回忆摘要无完整选项，本题重新设问并补配干扰项。",
+    "extra": true
+  },
+  {
+    "id": "v3-3-083",
+    "subject": 3,
+    "type": "M",
+    "q": "下列哪些是《诗经》的三大分类，而非其表现手法？",
+    "options": [
+      "风",
+      "雅",
+      "颂",
+      "赋",
+      "比"
+    ],
+    "answer": [
+      0,
+      1,
+      2
+    ],
+    "explanation": "风雅颂是分类；赋比兴是表现手法。不能把合称的六义理解为六个内容部分。",
+    "source": "shijing",
+    "locator": "篇章分类",
+    "topic": "历年回忆核验",
+    "kind": "回忆考点改编",
+    "year": 2023,
+    "recallSource": "r2023",
+    "recallLocator": "公开判断题第16题：《诗经》分类",
+    "recallNote": "围绕可见回忆考点提高辨析要求，独立编写，非原题。",
+    "extra": true
+  },
+  {
+    "id": "v3-3-084",
+    "subject": 3,
+    "type": "S",
+    "q": "讲解《诗经》时，若问“宗庙祭祀乐歌主要属于哪类”，应选？",
+    "options": [
+      "风",
+      "雅",
+      "颂",
+      "兴"
+    ],
+    "answer": [
+      2
+    ],
+    "explanation": "颂对应祭祀乐歌；兴属表现手法，并非与风雅颂并列的内容分类。",
+    "source": "shijing",
+    "locator": "篇章分类",
+    "topic": "历年回忆核验",
+    "kind": "回忆考点改编",
+    "year": 2023,
+    "recallSource": "r2023",
+    "recallLocator": "公开判断题第16题：《诗经》分类",
+    "recallNote": "围绕可见回忆考点提高辨析要求，独立编写，非原题。",
+    "extra": true
+  }
+], SOURCES={
+  "law": [
+    "中华人民共和国旅游法（2018修正）",
+    "https://zwgk.mct.gov.cn/zfxxgkml/zcfg/fl/202105/t20210526_924763.html"
+  ],
+  "civil": [
+    "中华人民共和国民法典·总则编",
+    "https://www.cac.gov.cn/2020-06/01/c_1592561777268319.htm"
+  ],
+  "consumer": [
+    "消费者权益保护法",
+    "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_0a323e046fba43f0b6e9e977f1e8d5fc.html"
+  ],
+  "guide": [
+    "导游人员管理条例",
+    "https://zwgk.mct.gov.cn/zfxxgkml/zcfg/bmgz/202012/t20201204_905313.html"
+  ],
+  "safety": [
+    "旅游安全管理办法",
+    "https://www.jingyuan.gov.cn/zfxxgk/bmhxzxxgk/bmdw/wtgdhlyj/fdzdgknr/lzyj/zcfg/art/2026/art_738546e75d3e47d799cdbbc91015a66c.html"
+  ],
+  "service": [
+    "GB/T 15971—2023 导游服务规范（2024-04-01实施）",
+    "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3432/site/attach/0/4cfa56a75a4f40fc8fe3a105a31c9f65.pdf"
+  ],
+  "roof": [
+    "故宫博物院：歇山式顶",
+    "https://www.dpm.org.cn/lemmas/241412.html"
+  ],
+  "roof2": [
+    "故宫博物院：古建筑屋顶形制",
+    "https://www.dpm.org.cn/Uploads/pdf/1600/T00012_00.pdf"
+  ],
+  "culture": [
+    "北京市语委办：中华传统文化知识集锦",
+    "https://jw.beijing.gov.cn/language/ywsh/201612/t20161219_1056554.html"
+  ],
+  "ethnic": [
+    "苏州市民宗局：少数民族主要节日",
+    "https://mzzjswj.suzhou.gov.cn/zjj/cjwtjd/202101/54d7572e98f34f1ab2bd387822987e2d.shtml"
+  ],
+  "geo": [
+    "中科院地理资源所：中国地貌",
+    "https://www.igsnrr.cas.cn/cbkx/kpyd/zgdl/cndm/202009/t20200910_5692389.html"
+  ],
+  "geography": [
+    "中国地理概况（中央政府驻澳联络办）",
+    "https://www.locpg.gov.cn/zggq/2014-01/04/c_125956300.htm"
+  ],
+  "wh": [
+    "UNESCO：中国世界遗产名录（类别与入选年份）",
+    "https://whc.unesco.org/en/statesparties/cn/"
+  ],
+  "gardens": [
+    "UNESCO：苏州古典园林",
+    "https://whc.unesco.org/en/list/813/"
+  ],
+  "pingyao": [
+    "UNESCO：平遥古城",
+    "https://whc.unesco.org/en/list/812/"
+  ],
+  "hani": [
+    "UNESCO：红河哈尼梯田文化景观",
+    "https://whc.unesco.org/en/list/1111/"
+  ],
+  "tulou": [
+    "UNESCO：福建土楼",
+    "https://whc.unesco.org/en/list/1113/"
+  ],
+  "potala": [
+    "UNESCO：拉萨布达拉宫历史建筑群",
+    "https://whc.unesco.org/en/list/707/"
+  ],
+  "kaiping": [
+    "UNESCO：开平碉楼与村落",
+    "https://whc.unesco.org/en/list/1112/"
+  ],
+  "lijiang": [
+    "UNESCO：丽江古城",
+    "https://whc.unesco.org/en/list/811/"
+  ],
+  "quanzhou": [
+    "UNESCO：泉州宋元海洋商贸中心",
+    "https://whc.unesco.org/en/list/1561/"
+  ],
+  "rivers": [
+    "UNESCO：云南三江并流保护区",
+    "https://whc.unesco.org/en/list/1083/"
+  ],
+  "karst": [
+    "UNESCO：中国南方喀斯特",
+    "https://whc.unesco.org/en/list/1248/"
+  ],
+  "danxia": [
+    "UNESCO：中国丹霞",
+    "https://whc.unesco.org/en/list/1335/"
+  ],
+  "axis": [
+    "UNESCO：北京中轴线",
+    "https://whc.unesco.org/en/list/1714/"
+  ],
+  "palace": [
+    "故宫博物院：外朝与内廷",
+    "https://www.dpm.org.cn/forum_detail/99719.html"
+  ],
+  "palace2": [
+    "故宫博物院：前三殿与后三宫建筑形制",
+    "https://www.dpm.org.cn/Uploads/File/pdf/6a/7c/bc/6a7cbcd5a792ef683777997c41083d88.pdf"
+  ],
+  "caves": [
+    "云冈区政府：云冈与四大石窟",
+    "https://www.yungang.gov.cn/ygqrmzfz/whdt/202009/466ab7f9c796433cac1a99ab4ca7f347.shtml"
+  ],
+  "tea": [
+    "文旅部：中国传统制茶技艺及其相关习俗",
+    "https://www.mct.gov.cn/wlbphone/wlbydd/xxfb/jiaodianxinwen/202211/t20221129_937816.html"
+  ],
+  "exam": [
+    "2026全国导游资格考试笔试大纲·第2页",
+    "https://zwgk.mct.gov.cn/zfxxgkml/scgl/202607/P020260730404717970912.pdf"
+  ],
+  "beijing": [
+    "2026北京现场考试大纲",
+    "https://whlyj.beijing.gov.cn/zwgk/tzgg/202607/P020260731709313684567.pdf"
+  ],
+  "r2023": [
+    "环球网校：2023科目三、四考生回忆题（2024整理）",
+    "https://m.hqwx.com/dyz-kaoshi/news/17267375252553.html"
+  ],
+  "r2025": [
+    "环球网校：2025政策法规考生回忆版（含缺漏，需复核）",
+    "https://oss-hqwx-video.hqwx.com/2025%E5%AF%BC%E6%B8%B8%E8%B5%84%E6%A0%BC%E3%80%8A%E6%94%BF%E7%AD%96%E6%B3%95%E8%A7%84%E3%80%8B%E8%80%83%E8%AF%95%E7%9C%9F%E9%A2%98_d7ee5923aa6237017829abe599e584abfd152a82.pdf"
+  ],
+  "food": [
+    "国家移民管理局：欢迎来到中国·饮食文化",
+    "https://www.nia.gov.cn/2022cn/files/basic-html/page29.html"
+  ],
+  "five": [
+    "故宫博物院：五岳",
+    "https://www.dpm.org.cn/lemmas/244350.html"
+  ],
+  "books": [
+    "故宫博物院：四书",
+    "https://www.dpm.org.cn/lemmas/241555.html"
+  ],
+  "keju": [
+    "中央纪委国家监委：国子文脉·明清科举程序",
+    "https://www.ccdi.gov.cn/yaowenn/202303/t20230303_250188.html"
+  ],
+  "classics": [
+    "共产党员网：四书章句集注",
+    "https://www.12371.cn/2020/06/15/VIDE1592226002225502.shtml"
+  ],
+  "wudang": [
+    "UNESCO：武当山古建筑群",
+    "https://whc.unesco.org/en/list/705/"
+  ],
+  "villages": [
+    "UNESCO：皖南古村落西递宏村",
+    "https://whc.unesco.org/en/list/1002/"
+  ],
+  "liangzhu": [
+    "UNESCO：良渚古城遗址",
+    "https://whc.unesco.org/en/list/1592/"
+  ],
+  "dazu": [
+    "UNESCO：大足石刻",
+    "https://whc.unesco.org/en/list/912/"
+  ],
+  "macao": [
+    "UNESCO：澳门历史城区",
+    "https://whc.unesco.org/en/list/1110/"
+  ],
+  "dengfeng": [
+    "UNESCO：登封天地之中历史建筑群",
+    "https://whc.unesco.org/en/list/1305/"
+  ],
+  "kulangsu": [
+    "UNESCO：鼓浪屿历史国际社区",
+    "https://whc.unesco.org/en/list/1541/"
+  ],
+  "qin": [
+    "UNESCO：秦始皇陵",
+    "https://whc.unesco.org/en/list/441/"
+  ],
+  "chengde": [
+    "UNESCO：承德避暑山庄及周围寺庙",
+    "https://whc.unesco.org/en/list/703/"
+  ],
+  "xanadu": [
+    "UNESCO：元上都遗址",
+    "https://whc.unesco.org/en/list/1389/"
+  ],
+  "qufu": [
+    "UNESCO：曲阜孔庙孔林孔府",
+    "https://whc.unesco.org/en/list/704/"
+  ],
+  "tusi": [
+    "UNESCO：土司遗址",
+    "https://whc.unesco.org/en/list/1474/"
+  ],
+  "westlake": [
+    "UNESCO：杭州西湖文化景观",
+    "https://whc.unesco.org/en/list/1334/"
+  ],
+  "yinxu": [
+    "UNESCO：殷墟",
+    "https://whc.unesco.org/en/list/1114/"
+  ],
+  "huashan": [
+    "UNESCO：左江花山岩画文化景观",
+    "https://whc.unesco.org/en/list/1508/"
+  ],
+  "huanglong": [
+    "UNESCO：黄龙",
+    "https://whc.unesco.org/en/list/638/"
+  ],
+  "hohxil": [
+    "UNESCO：青海可可西里",
+    "https://whc.unesco.org/en/list/1540/"
+  ],
+  "tianshan": [
+    "UNESCO：新疆天山",
+    "https://whc.unesco.org/en/list/1414/"
+  ],
+  "islands": [
+    "中科院地理资源所：中国的岛屿",
+    "https://igsnrr.cas.cn/cbkx/kpyd/zgdl/cnh/202009/t20200910_5692438.html"
+  ],
+  "constitution": [
+    "宪法（2018修正）·第一条",
+    "https://zjzd.stats.gov.cn/gjtjjhzdcd/zwgk/xxgkml/tjfg/art/2026/art_f6a61bb85dda4b0abdc0de34bf2ba0c9.html"
+  ],
+  "shijing": [
+    "国家民委：《诗经》篇章与分类",
+    "https://www.neac.gov.cn/seac/c103391/202210/1158971.shtml"
+  ]
+};</script><script>const Engine={
+ equal:(a,b)=>a.length===b.length&&[...a].sort().join(',')===[...b].sort().join(','),
+ shuffle(a,seed=Date.now()){let s=seed>>>0; const r=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296};a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a},
+ paper(bank,n,seed=1){return ['T','S','M'].flatMap((t,i)=>this.shuffle(bank.filter(q=>!q.extra&&q.type===t&&Math.ceil(q.subject/2)===n),seed+i))},
+ score(q,a=[]){return this.equal(q.answer,a)?(q.type==='M'?1:.5):0},
+ date(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())},
+ daily(bank,day){let seed=[...day].reduce((s,c)=>s*31+c.charCodeAt(0),0);return ['T','S','M'].flatMap((t,i)=>this.shuffle(bank.filter(q=>q.type===t),seed+i).slice(0,[4,6,2][i]))}
+};
+if(typeof module!=='undefined')module.exports=Engine;
+</script><script>const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),names=['','政策与法律法规','导游业务','全国导游基础知识','地方导游基础知识'],types={T:'判断题',S:'单项选择',M:'多项选择'},key='beijing-guide-v3';
+let state;try{state=JSON.parse(localStorage.getItem(key))}catch{}if(!state||!state.wrong||!state.days)state={wrong:{},days:{},history:[],session:null};let page='home',session=state.session,oralEnd=0;
+const byId=Object.fromEntries(BANK.map(q=>[q.id,q]));if(session&&!session.ids?.every(id=>byId[id]))session=state.session=null;
+function save(){state.session=session;try{localStorage.setItem(key,JSON.stringify(state))}catch{}}
+function link(key,label){const s=SOURCES[key];return s?`<a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(label||s[0])}</a>`:''}
+function nav(){const items=[['home','今日闯关'],['mock','模拟考试'],['past','历年题'],['wrong','错题本'],['oral','北京面试'],['sources','核验依据']];$('#nav').innerHTML=items.map(([id,t])=>`<button class="${page===id?'active':''}" onclick="go('${id}')">${t}</button>`).join('')}
+function go(p){page=p;nav();({home,mock,past,wrong,oral,sources,quiz}[p]||home)();window.scrollTo(0,0)}
+function home(){const day=Engine.date(),done=state.days[day],count=Object.keys(state.days).length;$('#app').innerHTML=`<section class="card"><span class="tag">今日任务 · ${day}</span><h2>${done?'今天已过关，巩固再出发':'12 道题，认真过一关'}</h2><p>4 道判断 · 6 道单选 · 2 道多选。提交后看解析，训练辨别条件和相近概念。</p><div class="row"><button class="primary" onclick="startDaily()">${done?'重练今日题':'开始今日闯关'}</button>${session?'<button onclick="go(\'quiz\')">继续未完成答题</button>':''}</div></section><div class="grid"><div class="card"><div class="stat">${count}</div>已完成天数</div><div class="card"><div class="stat">${Object.keys(state.wrong).length}</div>待巩固错题</div><div class="card"><div class="stat">${BANK.length}</div>已核验题目（含改编与模拟）</div></div><section class="card"><h3>对齐考试结构，区分题目来源</h3><p>两张笔试卷，每卷 165 题、100 分、90 分钟；覆盖四科。北京现场考试另设专项练习。</p><p class="warning">当前是首套核验专题模拟题库，尚未覆盖全部大纲考点。回忆考点改编不等于官方原题，模拟成绩不能预测是否合格。</p><div class="row"><button onclick="go('mock')">进入双卷模考</button><button onclick="go('past')">查看历年题与来源</button></div></section><section class="card"><h3>分科训练</h3><div class="row">${names.slice(1).map((n,i)=>`<button onclick="practice(${i+1})">${n}</button>`).join('')}</div><button onclick="exportData()">导出学习记录</button></section>`}
+function startDaily(){start(Engine.daily(BANK,Engine.date()),'daily','每日闯关')}
+function practice(n){start(Engine.shuffle(BANK.filter(q=>q.subject===n)).slice(0,20),'practice',names[n]+' · 20题训练')}
+function start(qs,mode,title,full=false,paper=0){if(!qs.length)return alert('暂无待练题目。');if(session&&!confirm('已有未完成的答题。开始新练习会结束该次答题，是否继续？'))return;session={ids:qs.map(q=>q.id),orders:Object.fromEntries(qs.map(q=>[q.id,Engine.shuffle(q.options.map((_,i)=>i))])),answers:{},checked:{},flags:{},i:0,mode,title,full,paper,stage:1,deadline:mode==='exam'?Date.now()+90*60000:null,started:Date.now(),day:Engine.date()};save();go('quiz')}
+function mock(){const main=BANK.filter(q=>!q.extra);$('#app').innerHTML=`<section class="card"><h2>模拟考试</h2><p>每卷：判断 40 × 0.5 分，单选 90 × 0.5 分，多选 35 × 1 分。卷内两科各占 50 分。</p><p>卷一：政策与法律法规 + 导游业务；卷二：全国导游基础知识 + 地方导游基础知识。</p><p class="warning">这是依据考纲编写的专题模拟卷，${main.length} 题固定题库，重考会重复考点。不是历年完整原卷，也不是官方界面的复刻。多选本站采用全对得分，错选、漏选不得分；正式规则以考生须知为准。</p><div class="row"><button class="primary" onclick="startExam(0)">双卷模拟 · 180分钟</button><button onclick="startExam(1)">卷一 · 90分钟</button><button onclick="startExam(2)">卷二 · 90分钟</button></div><p class="muted">计时按实际时间推进，刷新、切换页面后继续。双卷交卷一后不可返回，完成卷二才显示全部答案。本站练习允许提前交卷。</p>${session?'<button onclick="go(\'quiz\')">继续当前答题</button>':''}</section><section class="card"><h3>最近考试</h3>${state.history.slice(-6).reverse().map(h=>`<p>${esc(h.day)} · ${esc(h.title)} · ${h.score}/${h.max} 分</p>`).join('')||'<p class="muted">尚无完成记录</p>'}</section>`}
+function startExam(p){let qs=p?Engine.paper(BANK,p,Date.now()):[...Engine.paper(BANK,1,Date.now()),...Engine.paper(BANK,2,Date.now()+19)];start(qs,'exam',p?'卷'+(p===1?'一':'二')+'模拟':'双卷模拟',!p,p)}
+function past(){const qs=BANK.filter(q=>q.year);$('#app').innerHTML=`<section class="card"><h2>历年题 · 可追溯练习</h2><p>已核验 2023 年公开回忆判断题和 2025 年法规回忆考点。当前收录 ${qs.filter(q=>q.kind==='回忆题原句').length} 道短句回忆题、${qs.filter(q=>q.kind==='回忆考点改编').length} 道独立改编题。</p><p class="warning">资料来自培训机构考生回忆，非主管部门公布原卷。2024 年只提供资料入口，未取得完整题文，不标称逐题核验。不虚构未公开的历年原题。</p><div class="row"><button class="primary" onclick="start(BANK.filter(q=>q.year),'practice','历年回忆考点训练')">练习已核验题</button></div>${[2025,2023].map(y=>`<p><b>${y} 年：</b>${link('r'+y)} <button onclick="start(BANK.filter(q=>q.year===${y}),'practice','${y} 回忆考点')">练习</button></p>`).join('')}<p><b>2024 年：</b><a target="_blank" rel="noopener" href="https://www.hqwx.com/dyz-kaoshi/ziliaolm/1062935.html">卷一回忆资料入口</a> · <a target="_blank" rel="noopener" href="https://www.hqwx.com/dyz-kaoshi/ziliaolm/1062936.html">卷二回忆资料入口</a>（可能需要登录）</p></section><section class="card"><h3>怎样核验与改编</h3><p>回忆摘要中的撤销权期限需要区分重大误解、欺诈、胁迫；不能把所有情形都写成一个期限。本库以现行法条重新设置情境，并逐题标出回忆考点位置和答案依据。</p><p>模考其他题目均标注“模拟题”，以法条、国家标准及权威文化遗产资料为依据独立编写。</p></section>`}
+function bounds(){return session.full?[session.stage===1?0:165,session.stage===1?165:330]:[0,session.ids.length]}
+function quiz(){if(!session)return go('home');const s=session,q=byId[s.ids[s.i]],[lo,hi]=bounds(),a=s.answers[q.id]||[],checked=s.mode!=='exam'&&s.checked[q.id];$('#app').innerHTML=`<section class="card"><div class="row"><span class="tag">${esc(s.title)}${s.full?' · 当前卷'+s.stage:''}</span>${s.deadline?'<span class="timer" id="clock"></span>':''}<span>${s.i-lo+1}/${hi-lo}</span></div><progress value="${s.ids.slice(lo,hi).filter(id=>(s.answers[id]||[]).length).length}" max="${hi-lo}"></progress><div class="row"><span class="tag">${names[q.subject]}</span><span class="tag">${types[q.type]}</span><span class="tag">${esc(q.kind)}</span>${q.year?`<span class="tag">${q.year}</span>`:''}</div><h2 class="question">${esc(q.q)}</h2>${s.orders[q.id].map((v,i)=>`<button class="option ${a.includes(v)?'selected':''} ${checked?(q.answer.includes(v)?'correct':a.includes(v)?'wrong':''):''}" ${checked?'disabled':''} onclick="choose(${v})"><b>${String.fromCharCode(65+i)}</b><span>${esc(q.options[v])}</span></button>`).join('')}<small>${q.type==='M'?'多选：选择所有符合条件的选项。':'选择一个答案。'}</small>${checked?explanation(q):''}<div class="row">${s.mode!=='exam'&&!checked?`<button class="primary" onclick="check()" ${a.length?'':'disabled'}>提交答案</button>`:''}<button onclick="move(-1)" ${s.i===lo?'disabled':''}>上一题</button><button onclick="move(1)" ${s.i===hi-1?'disabled':''}>下一题</button><button onclick="flag()">${s.flags[q.id]?'取消标记':'标记疑问'}</button><button onclick="submit()">${s.full&&s.stage===1?'交卷一，进入卷二':'结束并查看结果'}</button></div><details><summary>答题卡 · 已答 ${s.ids.slice(lo,hi).filter(id=>(s.answers[id]||[]).length).length}/${hi-lo} · 粗边为标记题</summary><div class="numbers">${s.ids.slice(lo,hi).map((id,i)=>`<button class="${(s.answers[id]||[]).length?'done':''} ${s.flags[id]?'flag':''}" onclick="jump(${lo+i})">${i+1}</button>`).join('')}</div></details></section>`;tick()}
+function choose(v){const q=byId[session.ids[session.i]];if(session.checked[q.id])return;let a=session.answers[q.id]||[];session.answers[q.id]=q.type==='M'?(a.includes(v)?a.filter(x=>x!==v):[...a,v]):[v];save();quiz()}
+function explanation(q){return `<div class="explain"><b>正确答案：</b>${q.answer.map(i=>esc(q.options[i])).join('；')}<p>${esc(q.explanation)}</p><small>答案依据：${link(q.source)} · ${esc(q.locator)}${q.recallSource?`<br>回忆出处：${link(q.recallSource)} · ${esc(q.recallLocator)}<br>${esc(q.recallNote)}`:''}</small></div>`}
+function record(q){const correct=Engine.equal(q.answer,session.answers[q.id]||[]);if(!correct)state.wrong[q.id]={day:Engine.date(),count:(state.wrong[q.id]?.count||0)+1};else if(state.wrong[q.id])delete state.wrong[q.id]}
+function check(){const q=byId[session.ids[session.i]];if(!(session.answers[q.id]||[]).length)return;session.checked[q.id]=true;record(q);save();quiz()}
+function move(n){const [lo,hi]=bounds();session.i=Math.max(lo,Math.min(hi-1,session.i+n));save();quiz()}
+function jump(i){session.i=i;save();quiz()}
+function flag(){const id=session.ids[session.i];session.flags[id]=!session.flags[id];save();quiz()}
+function submit(auto=false){let[lo,hi]=bounds(),missing=session.ids.slice(lo,hi).filter(id=>!(session.answers[id]||[]).length).length;if(!auto&&!confirm(`本卷/练习还有 ${missing} 道未答。确定提交？${session.full&&session.stage===1?'提交后无法返回卷一。':''}`))return;if(session.full&&session.stage===1){session.stage=2;session.i=165;session.deadline=auto?session.deadline+90*60000:Date.now()+90*60000;save();go('quiz')}else finish()}
+function finish(){const s=session;let total=0,max=0;const rows=names.slice(1).map((n,i)=>{let qs=s.ids.map(id=>byId[id]).filter(q=>q.subject===i+1),score=qs.reduce((v,q)=>v+Engine.score(q,s.answers[q.id]),0),m=qs.reduce((v,q)=>v+(q.type==='M'?1:.5),0);total+=score;max+=m;return qs.length?`<p>${n}：${score}/${m} 分</p>`:''}).join('');s.ids.forEach(id=>record(byId[id]));const completed=s.ids.every(id=>(s.answers[id]||[]).length);if(s.mode==='daily'&&completed)state.days[s.day]=true;state.history.push({day:Engine.date(),title:s.title,score:total,max});state.history=state.history.slice(-50);const errors=s.ids.filter(id=>!Engine.equal(byId[id].answer,s.answers[id]||[]));session=null;save();page='result';nav();$('#app').innerHTML=`<section class="card"><h2>${esc(s.title)} · 已完成</h2><div class="stat">${total} / ${max} 分</div>${rows}<p>错题及未答 ${errors.length} 道，已加入错题本。${s.mode==='daily'&&!completed?'今日题尚未答齐，不计过关。':''}</p><p class="muted">这是练习成绩，不设置或推测官方合格线。</p><button onclick="go('wrong')">复习错题</button> <button onclick="go('home')">回到首页</button></section>${s.ids.map((id,i)=>{const q=byId[id],a=s.answers[id]||[];return `<details class="card"><summary>${i+1}. ${Engine.equal(q.answer,a)?'✓':'✗'} ${esc(q.q)}</summary><p>你的答案：${a.map(v=>esc(q.options[v])).join('；')||'未答'}</p>${explanation(q)}</details>`}).join('')}`}
+function tick(){if(session?.deadline){const left=session.deadline-Date.now();if(left<=0){submit(true);return}const el=$('#clock');if(el)el.textContent=`剩余 ${Math.floor(left/60000)}:${String(Math.floor(left/1000)%60).padStart(2,'0')}`}if(oralEnd&&$('#oralClock')){let n=Math.max(0,Math.ceil((oralEnd-Date.now())/1000));$('#oralClock').textContent=n?`${Math.floor(n/60)}:${String(n%60).padStart(2,'0')}`:'练习时间到';if(!n)oralEnd=0}}
+function wrong(){const ids=Object.keys(state.wrong).filter(id=>byId[id]);$('#app').innerHTML=`<section class="card"><h2>错题本 · ${ids.length} 题</h2><p>答错和未答自动收录；再次答对后移出。建议隔天复习，先独立作答再看依据。</p><button class="primary" onclick="start(Object.keys(state.wrong).filter(id=>byId[id]).map(id=>byId[id]),'practice','错题巩固')" ${ids.length?'':'disabled'}>开始复习</button></section>${ids.map(id=>`<div class="card"><span class="tag">${names[byId[id].subject]}</span>${esc(byId[id].q)}</div>`).join('')}`}
+const sites=['天安门及广场','故宫','天坛','颐和园','长城','明十三陵'];
+function oral(){const site=sites[Math.floor(Math.random()*sites.length)];$('#app').innerHTML=`<section class="card"><h2>北京现场考试 · 口述自练</h2><p>北京采用机考。2026 大纲列明 6 个讲解景区、15 个景区问答范围；本页只辅助讲解与知识组织，不模拟官方评分。</p><h3>本次抽练：${site}</h3><div class="row"><select id="oralM"><option value="3">练习 3 分钟</option><option value="5">练习 5 分钟</option><option value="8">练习 8 分钟</option></select><button onclick="oralEnd=Date.now()+Number($('#oralM').value)*60000;tick()">开始计时</button><button onclick="oralEnd=0;$('#oralClock').textContent='已停止'">停止</button><button onclick="oralEnd=0;oral()">重新抽题</button><span class="timer" id="oralClock">待开始</span></div><p class="muted">以上时长为自练设置，并非北京官方分环节限时。</p><ol><li>开场定位：地理位置、历史沿革、价值特点。</li><li>沿参观路线组织 2—3 个重点，解释建筑、人物或文化含义。</li><li>用具体例子讲解，避免只报年代与数字。</li><li>以参观提示和文明旅游提醒自然收尾。</li></ol><h3>自查</h3>${['史实、年代、名称准确','讲解层次和游览路线清楚','语言自然，能面向游客解释专业词','有文明旅游和必要安全提示'].map(t=>`<label style="display:block"><input type="checkbox"> ${t}</label>`).join('')}</section><section class="card"><h3>正式范围提示</h3><p>讲解：${sites.join('、')}。</p><p>问答另含周口店北京人遗址、北京大运河、北京中轴线、恭王府、北海、景山、雍和宫、奥林匹克公园、孔庙和国子监；还应复习北京概况、传统文化、民俗、文博、红色旅游及当年时事等大纲内容。</p><a target="_blank" rel="noopener" href="https://whlyj.beijing.gov.cn/zwgk/tzgg/202607/P020260731709313684567.pdf">查看北京官方现场考试大纲</a></section>`}
+function sources(){$('#app').innerHTML=`<section class="card"><h2>核验依据与使用边界</h2><p>先核对回忆题考点，再以法律原文、国家标准、官方景区与文化遗产资料确定答案。每题解析附具体依据位置。</p><p><a target="_blank" href="https://zwgk.mct.gov.cn/zfxxgkml/scgl/202607/t20260730_966721.html" rel="noopener">文化和旅游部 2026 考试大纲</a>：题型、题量、时长和科目占比。</p><p><a target="_blank" href="https://whlyj.beijing.gov.cn/zwgk/tzgg/202608/t20260806_4811381.html" rel="noopener">北京 2026 考试通知</a>：笔试日期 11 月 21 日，卷一 9:00—10:30，卷二 10:30—12:00。</p><p><a target="_blank" href="https://www.hqwx.com/dyz-kaoshi/news/17933289662485.html" rel="noopener">培训机构题型说明</a>：本站多选计分方式参考；此项不是官方评分细则原文。</p><p class="warning">本库尚非全考点题库，尤其需另补当年时政、完整教材和北京现场考试问答。历史资料均标注来源性质；未获取题文的年份仅作索引。旧版练习记录保留在浏览器原存储键中，不混入新版正确率。</p></section><section class="card"><h3>逐题使用的资料目录</h3>${Object.keys(SOURCES).map(k=>`<p>${link(k)}</p>`).join('')}</section>`}
+function exportData(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));a.download='导游学习记录-'+Engine.date()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+setInterval(tick,1000);go(session?'quiz':'home');
+</script></html>
